@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #FFF;
 }
 
 body {
@@ -106,13 +107,46 @@ nav a:hover .fa-caret-down {
     gap: 5px;
 }
 
-#register {
+.form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
-    color: #FFF;
     width: 30%;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.form input {
+    padding: 5px 0 5px 5px;
+    width: 100%;
+    border-radius: 5px;
+    caret-color: #F00;
+    color: #000;
+}
+
+
+.submit {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #d01a1a83;
+    transition: 0.5s;
+}
+
+.submit:hover {
+    background-color: #FFF;
+    color: #d01a1a83;
 }
