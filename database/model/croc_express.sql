@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 19 jan. 2024 à 10:51
+-- Généré le : ven. 19 jan. 2024 à 12:52
 -- Version du serveur : 5.7.39
--- Version de PHP : 7.4.33
+-- Version de PHP : 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -200,9 +200,18 @@ CREATE TABLE `users` (
   `lastname` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `is_admin` tinyint(1) NOT NULL DEFAULT '0',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `is_admin` tinyint(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `is_admin`, `created_at`) VALUES
+(1, 'Tom', 'Cruise', 'tom@mail.com', 'toto', NULL, '2024-01-19 12:50:24'),
+(2, 'Tom', 'Cruise', 'tom@mail.com', 'toto', NULL, '2024-01-19 12:50:52'),
+(3, 'Tom', 'Cruise', 'tom@mail.com', 'toto', NULL, '2024-01-19 12:51:24');
 
 --
 -- Index pour les tables déchargées
@@ -379,7 +388,7 @@ ALTER TABLE `products_images`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
