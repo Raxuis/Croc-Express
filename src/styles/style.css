@@ -15,6 +15,34 @@ body {
     background-color: #1f2937;
 }
 
+main {
+    margin: 20px 0 0 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #1f2937;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 2rem;
+    width: 30em;
+    margin: 1rem;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding-top: 10px;
+}
+
 #copyrights {
     font-size: 0.8em;
     font-weight: 400;
