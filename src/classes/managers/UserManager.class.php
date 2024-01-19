@@ -8,21 +8,21 @@ class UserManager extends Manager {
         parent::__construct($database_connection, $table);
     }
 
-    public function createOne(object $user): int
+    public function createOne(object $data): int
     {
-        if ($user instanceof User) {
+        if ($data instanceof User) {
             $query = "INSERT INTO users (firstname, lastname, email, password, is_admin) VALUES (:firstname, :lastname, :email, :password, :is_admin)";
             $response = $this->bdd->prepare($query);
             $response->execute([
-                'firstname' => $user->getFirstName(),
-                'lastname' => $user->getLastname(),
-                'email' => $user->getEmail(),
-                'password' => $user->getPassword(),
-                'is_admin' => $user->getIsAdmin(),
+                'firstname' => $data->getFirstName(),
+                'lastname' => $data->getLastname(),
+                'email' => $data->getEmail(),
+                'password' => $data->getPassword(),
+                'is_admin' => $data->getIsAdmin(),
             ]);
         }
 
-        $user->setId($this->bdd->lastInsertId());
+        $data->setId($this->bdd->lastInsertId());
         return $this->bdd->lastInsertId();
     }
 
