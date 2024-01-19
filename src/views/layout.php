@@ -18,27 +18,32 @@
         <nav>
             <a href="?page=homepage"><img src="./assets/favicon.ico"></a>
             <ul>
-                <li class="dropdown-main"><a href="?page=admin">Administration<i class="fa-solid fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="?page=admin&action=deliver">Mes commandes à livrer</a></li>
-                        <li><a href="?page=admin&action=commands">Toutes mes commandes</a></li>
-                        <li><a href="?page=admin&action=turnover">Chiffres d'affaire</a></li>
-                        <li><a href="?page=admin&action=bestseller">Meilleures ventes</a></li>
-                        <li><a href="?page=admin&action=categories">Catégories</a></li>
-                        <li><a href="?page=admin&action=products">Produits</a></li>
-                        <li><a href="?page=admin&action=food">Aliments</a></li>
-                        <li><a href="?page=admin&action=messages">Messages</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown-main"><a href="?page=profile">User<i class="fa-solid fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="?page=profile&action=profile">Profil</a></li>
-                        <li><a href="?page=profile&action=commands">Commandes</a></li>
-                        <li><a href="?page=profile&action=logout">Se déconnecter</a></li>
-                    </ul>
-                </li>
-                <li><a href="?page=contact">Contactez-nous</a></li>
-                <li><a href="?page=cart"></a></li>
+                <?php if (isset($_SESSION['logged'])): ?>
+                    <li class="dropdown-main"><a href="?page=admin">Administration<i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="?page=admin&action=deliver">Mes commandes à livrer</a></li>
+                            <li><a href="?page=admin&action=commands">Toutes mes commandes</a></li>
+                            <li><a href="?page=admin&action=turnover">Chiffres d'affaire</a></li>
+                            <li><a href="?page=admin&action=bestseller">Meilleures ventes</a></li>
+                            <li><a href="?page=admin&action=categories">Catégories</a></li>
+                            <li><a href="?page=admin&action=products">Produits</a></li>
+                            <li><a href="?page=admin&action=food">Aliments</a></li>
+                            <li><a href="?page=admin&action=messages">Messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-main"><a href="?page=profile">User<i class="fa-solid fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="?page=profile&action=profile">Profil</a></li>
+                            <li><a href="?page=profile&action=commands">Commandes</a></li>
+                            <li><a href="?page=profile&action=logout">Se déconnecter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="?page=contact">Contactez-nous</a></li>
+                    <li><a href="?page=cart"></a></li>
+                <?php else: ?>
+                    <li><a href="?page=login">Se connecter</a></li>
+                    <li><a href="?page=register">S'inscrire</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
