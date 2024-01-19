@@ -26,7 +26,7 @@ class UserManager extends Manager {
         return $this->bdd->lastInsertId();
     }
 
-    public function editOne(User|Product $user): void
+    public function editOne(object $user): void
     {
         echo "editUser";
     }
