@@ -6,7 +6,6 @@ require "../src/classes/managers/UserManager.class.php";
 require "../src/classes/User.class.php";
 
 if (isset($_GET['kill']) && $_GET['kill'] == "all") {
-    echo "Successfully deleted all session datas";
     session_start();
     session_destroy();
 }

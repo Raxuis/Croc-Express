@@ -126,6 +126,10 @@ nav a:hover .fa-caret-down {
     color: #FFF;
 }
 
+nav i {
+    color: #788c82;
+}
+
 .fa-caret-down {
     margin-left: 5px;
     transition: 0.5s;
@@ -148,6 +152,7 @@ nav a:hover .fa-caret-down {
     padding-bottom: 5px;
     margin-left: -50px;
     gap: 5px;
+    z-index: 1000;
 }
 
 .form {
