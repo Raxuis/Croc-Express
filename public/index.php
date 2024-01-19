@@ -5,6 +5,11 @@ require "../src/core/DBconnection.php";
 require "../src/classes/Manager.class.php";
 require "../src/classes/User.class.php";
 
+if (isset($_GET['kill']) && $_GET['kill'] == "all") {
+    echo "Successfully deleted all session datas";
+    session_start();
+    session_destroy();
+}
 $availableRoutes = ['homepage', 'register', 'login'];
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
