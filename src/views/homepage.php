@@ -60,4 +60,4 @@
         </div>
     </div>
 </div>
-<script src="../src/scripts/script.js"></script>
+<script src="../src/scripts/carousel.js"></script>
