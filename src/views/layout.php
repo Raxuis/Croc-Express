@@ -14,7 +14,7 @@
     </main>
     <footer>
         <div id="footer-container">
-            <p id="copyrights">© 2024 Raphaël | Benoît CODA, Orléans. All Rights Reserved</p>
+            <p id="copyrights">© 2024 Raphaël | Benoît, CODA-Orléans. All Rights Reserved</p>
         </div>
     </footer>
 </body>
