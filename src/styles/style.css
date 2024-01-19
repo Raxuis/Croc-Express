@@ -27,7 +27,7 @@ main {
 .container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .card {
@@ -35,13 +35,21 @@ main {
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 2rem;
-    width: 30em;
+    width: 25em;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card img {
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
+}
+
+.card-header {
+    text-align: center;
 }
 
 .card-body {
@@ -72,8 +80,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5em 1em;
-    height: 3em;
+    padding: 1.5em 1em;
     background-color: #19242a;
 }
 
@@ -192,7 +199,7 @@ h3 {
     display: flex;
     padding: 10px;
     border-radius: 5px;
-    width: 45%;
+    width: 50%;
     background-color: #f97111;
     font-size: 1em;
     justify-content: center;

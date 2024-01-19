@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 19 jan. 2024 à 12:52
+-- Généré le : ven. 19 jan. 2024 à 17:29
 -- Version du serveur : 5.7.39
 -- Version de PHP : 8.2.0
 
@@ -46,8 +46,15 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `is_hidden` tinyint(1) NOT NULL DEFAULT '0'
+  `is_hidden` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `description`, `is_hidden`) VALUES
+(1, 'burger', 'un burger', 0);
 
 -- --------------------------------------------------------
 
@@ -74,8 +81,21 @@ CREATE TABLE `foods` (
   `protein` int(11) NOT NULL,
   `carbohydrate` int(11) NOT NULL,
   `weight` int(11) NOT NULL,
-  `is_hidden` tinyint(1) NOT NULL DEFAULT '0'
+  `is_hidden` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `foods`
+--
+
+INSERT INTO `foods` (`id`, `name`, `lipid`, `protein`, `carbohydrate`, `weight`, `is_hidden`) VALUES
+(1, 'Pain', 5, 5, 5, 10, NULL),
+(2, 'Pain', 5, 5, 5, 10, NULL),
+(3, 'Pain', 5, 5, 5, 10, NULL),
+(4, 'Pain', 5, 5, 5, 10, NULL),
+(5, 'Pain', 5, 5, 5, 10, NULL),
+(6, 'Pain', 5, 5, 5, 10, NULL),
+(7, 'Pain', 5, 5, 5, 10, NULL);
 
 -- --------------------------------------------------------
 
@@ -161,8 +181,15 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `buying_price` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `is_hidden` tinyint(1) NOT NULL DEFAULT '0'
+  `is_hidden` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `buying_price`, `category_id`, `is_hidden`) VALUES
+(1, 'Burger', 'Burger avec un steak', 5, 1, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -209,9 +236,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `is_admin`, `created_at`) VALUES
-(1, 'Tom', 'Cruise', 'tom@mail.com', 'toto', NULL, '2024-01-19 12:50:24'),
-(2, 'Tom', 'Cruise', 'tom@mail.com', 'toto', NULL, '2024-01-19 12:50:52'),
-(3, 'Tom', 'Cruise', 'tom@mail.com', 'toto', NULL, '2024-01-19 12:51:24');
+(24, 'Evan', 'Sandoval', 'jykaxyl@mailinator.com', '$2y$10$UfoRHYvltZp3JtY14eVvHeeIPStooMGlpZvmErOQm3ZvviTT/P1FW', NULL, '2024-01-19 14:23:11'),
+(25, 'Stephanie', 'Macias', 'kyfymoraho@mailinator.com', '$2y$10$/vwkskwG.mFLVHXSgRZBQ.XARKstCMmPhA6yuC9hZuSLCKbiIE3mC', NULL, '2024-01-19 14:31:58'),
+(26, 'Alika', 'Rush', 'mehifycyx@mailinator.com', '$2y$10$wj6g87dwYY8SWYLiJNwF0OxJ5.qalaIJfYxATaHyufyxyDZUt0nZi', NULL, '2024-01-19 14:33:48'),
+(27, 'Alika', 'Rush', 'mehifycyx@mailinator.com', '$2y$10$3Ed3RqWNAWxtJN.2dyG3w.GIW0MpBr7EkKt93EiefdqZ/qJ5YNuBa', NULL, '2024-01-19 14:34:30'),
+(28, 'Uriel', 'Park', 'lyzekuruc@mailinator.com', '$2y$10$qdRTdKluzpKPHU3MvIFdM.DQ3603w6cZBtOiYs4488XfzBb46LRFu', NULL, '2024-01-19 14:37:34'),
+(29, 'Hiroko', 'Barton', 'komodumah@mailinator.com', '$2y$10$tya6cSbzJFceFbxoQlduq.41DP7P7snnzrzR2MOFdFDwRMtLEzzfa', NULL, '2024-01-19 14:40:11'),
+(30, 'Baker', 'Mccall', 'xejox@mailinator.com', '$2y$10$SLDwnY236a5wd3DFegVJwOxuM1XnLyWOznPXYFKyGXvltmzdbsHl2', NULL, '2024-01-19 14:55:53'),
+(31, 'Sigourney', 'Rasmussen', 'hello@world.com', '$2y$10$k6aczS1MAc3x.hJSV4v1PuVhH..KuvksWIwwg.ZAExFWBaYmpSOWW', NULL, '2024-01-19 15:03:01');
 
 --
 -- Index pour les tables déchargées
@@ -322,7 +354,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `coupons`
@@ -334,7 +366,7 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT pour la table `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `menus`
@@ -370,7 +402,7 @@ ALTER TABLE `orders_products`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `products_foods`
@@ -388,7 +420,7 @@ ALTER TABLE `products_images`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Contraintes pour les tables déchargées
