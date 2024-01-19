@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 19 jan. 2024 à 10:25
+-- Généré le : ven. 19 jan. 2024 à 10:51
 -- Version du serveur : 5.7.39
 -- Version de PHP : 7.4.33
 
@@ -45,6 +45,7 @@ CREATE TABLE `address` (
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `is_hidden` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -85,11 +86,21 @@ CREATE TABLE `foods` (
 CREATE TABLE `menus` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `main_id` int(11) NOT NULL,
-  `side_id` int(11) NOT NULL,
-  `drink_id` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `is_hidden` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `menus_products`
+--
+
+CREATE TABLE `menus_products` (
+  `id` int(11) NOT NULL,
+  `menu_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -102,7 +113,8 @@ CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
   `content` varchar(255) NOT NULL,
-  `sender_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `ip` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -115,7 +127,11 @@ CREATE TABLE `messages` (
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `price` int(11) NOT NULL
+  `price` int(11) NOT NULL,
+  `coupon_id` int(11) DEFAULT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `is_in_delivery` tinyint(1) NOT NULL DEFAULT '0',
+  `is_validated` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -127,7 +143,9 @@ CREATE TABLE `orders` (
 CREATE TABLE `orders_products` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL
+  `product_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -141,6 +159,7 @@ CREATE TABLE `products` (
   `name` varchar(100) NOT NULL,
   `description` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
+  `buying_price` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `is_hidden` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -181,6 +200,7 @@ CREATE TABLE `users` (
   `lastname` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -217,23 +237,31 @@ ALTER TABLE `foods`
 -- Index pour la table `menus`
 --
 ALTER TABLE `menus`
-  ADD KEY `croc_menus_main_id_foreign` (`main_id`),
-  ADD KEY `croc_menus_side_id_foreign` (`side_id`),
-  ADD KEY `croc_menus_drink_id_foreign` (`drink_id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `menus_products`
+--
+ALTER TABLE `menus_products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `croc_menus_products_product_id_foreign` (`product_id`),
+  ADD KEY `croc_menus_products_menu_id_foreign` (`menu_id`);
 
 --
 -- Index pour la table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `croc_message_sender_id_foreign` (`sender_id`);
+  ADD KEY `croc_message_sender_id_foreign` (`user_id`);
 
 --
 -- Index pour la table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `croc_orders_sender_id_foreign` (`user_id`);
+  ADD KEY `croc_orders_coupon_id_foreign` (`coupon_id`),
+  ADD KEY `croc_orders_address_id_foreign` (`address_id`),
+  ADD KEY `croc_orders_user_id_foreign` (`user_id`);
 
 --
 -- Index pour la table `orders_products`
@@ -300,6 +328,18 @@ ALTER TABLE `foods`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `menus`
+--
+ALTER TABLE `menus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `menus_products`
+--
+ALTER TABLE `menus_products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
@@ -352,24 +392,25 @@ ALTER TABLE `address`
   ADD CONSTRAINT `croc_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Contraintes pour la table `menus`
+-- Contraintes pour la table `menus_products`
 --
-ALTER TABLE `menus`
-  ADD CONSTRAINT `croc_menus_drink_id_foreign` FOREIGN KEY (`drink_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `croc_menus_main_id_foreign` FOREIGN KEY (`main_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `croc_menus_side_id_foreign` FOREIGN KEY (`side_id`) REFERENCES `products` (`id`);
+ALTER TABLE `menus_products`
+  ADD CONSTRAINT `croc_menus_products_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`),
+  ADD CONSTRAINT `croc_menus_products_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
 -- Contraintes pour la table `messages`
 --
 ALTER TABLE `messages`
-  ADD CONSTRAINT `croc_message_sender_id_foreign` FOREIGN KEY (`sender_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `croc_message_sender_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Contraintes pour la table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `croc_orders_sender_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `croc_orders_address_id_foreign` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`),
+  ADD CONSTRAINT `croc_orders_coupon_id_foreign` FOREIGN KEY (`coupon_id`) REFERENCES `coupons` (`id`),
+  ADD CONSTRAINT `croc_orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Contraintes pour la table `orders_products`
