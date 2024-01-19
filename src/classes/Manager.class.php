@@ -13,7 +13,7 @@ class Manager
     public function createUser(User $user): int
     {
         if ($user instanceof User) {
-            $query = "INSERT INTO users (id, firstname, lastname, email, password, is_admin) VALUES (null, :firstname, :lastname, :email, :password, :is_admin)";
+            $query = "INSERT INTO users (firstname, lastname, email, password, is_admin) VALUES (:firstname, :lastname, :email, :password, :is_admin)";
             $response = $this->bdd->prepare($query);
             $response->execute([
                 'firstname' => $user->getFirstName(),
