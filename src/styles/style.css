@@ -73,15 +73,15 @@ nav a:hover {
     color: #FFF;
 }
 
+nav a:hover .fa-caret-down {
+    transform: rotate(180deg);
+    color: #FFF;
+}
+
 .fa-caret-down {
     margin-left: 5px;
     transition: 0.5s;
     cursor: pointer;
-}
-
-.fa-caret-down:hover {
-    transform: rotate(180deg);
-    color: #FFF;
 }
 
 .dropdown-main:hover .dropdown-menu {
