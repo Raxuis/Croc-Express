@@ -4,7 +4,8 @@ require '../src/classes/Verify.class.php';
 if (!empty($_POST)) {
     $verif = new Verify();
     if ($verif->verifyPassword($_POST['password']) && $verif->verifyFirstname($_POST['firstname']) && $verif->verifyLastname($_POST['lastname']) && $verif->verifyEmail($_POST['email'])) {
-        $database = new UserManager($bdd);
+        // TODO : Move this in index.php
+        $database = new UserManager($bdd, "users");
 
         $user = new User([
             'firstname' => $_POST['firstname'],
@@ -14,7 +15,7 @@ if (!empty($_POST)) {
             'isAdmin' => null,
         ]);
 
-        $database->createUser($user);
+        $database->createOne($user);
         $_SESSION['logged'] = true;
     }
 }
