@@ -3,69 +3,32 @@ require "Manager.class.php";
 
 class ProductManager extends Manager {
 
-    public function __construct(PDO $database_connection)
+    public function __construct(PDO $database_connection, string $table)
     {
-        parent::__construct($database_connection);
+        parent::__construct($database_connection, $table);
     }
 
-    public function createProduct(Product $product): int
+    public function createOne(object $data): int
     {
-        if ($product instanceof Product) {
+        if ($data instanceof Product) {
             $query = "INSERT INTO products (name, description, price, buying_price, category_id, is_hidden) VALUES (:name, :description, :price, :buyingPrice, :categoryId, :isHidden)";
             $response = $this->bdd->prepare($query);
             $response->execute([
-                'name' => $product->getName(),
-                'description' => $product->getDescription(),
-                'price' => $product->getPrice(),
-                'buyingPrice' => $product->getBuyingPrice(),
-                'categoryId' => $product->getCategoryId(),
-                'isHidden' => $product->getIsHidden(),
+                'name' => $data->getName(),
+                'description' => $data->getDescription(),
+                'price' => $data->getPrice(),
+                'buyingPrice' => $data->getBuyingPrice(),
+                'categoryId' => $data->getCategoryId(),
+                'isHidden' => $data->getIsHidden(),
             ]);
         }
 
-        $product->setId($this->bdd->lastInsertId());
+        $data->setId($this->bdd->lastInsertId());
         return $this->bdd->lastInsertId();
     }
 
-    public function getProduct(int $product_id)
+    public function editOne(object $data): void
     {
-        $query = "SELECT * FROM products WHERE id=:id";
-        $response = $this->bdd->prepare($query);
-        $response->execute([
-            'id' => $product_id
-        ]);
-        return $response->fetch();
+        // TODO: Implement editOne() method.
     }
-
-    public function getAllProducts(): array|null
-    {
-        $query = "SELECT * FROM products";
-        $response = $this->bdd->query($query);
-        return $response->fetchAll();
-    }
-
-    public function editProduct(Product $product)
-    {
-        echo "editProduct";
-    }
-
-    public function deleteProduct(int $product_id)
-    {
-        $query = "DELETE FROM products WHERE id = " . $product_id;
-        $execute = $this->bdd->query($query);
-        $execute->execute();
-    }
-
-    public function countProducts(): int
-    {
-        $query = "SELECT count(*) FROM products";
-        $response = $this->bdd->query($query);
-        return $response->fetchColumn();
-    }
-
-    public function exists(int $id)
-    {
-        echo "exists";
-    }
-
 }
