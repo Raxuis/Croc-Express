@@ -18,7 +18,7 @@ if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
 require "../src/classes/managers/FoodManager.class.php";
 require "../src/classes/Food.class.php";
 
-$foodManager = new FoodManager($bdd, "foods");
+/* $foodManager = new FoodManager($bdd, "foods");
 $food = new Food([
     'name' => "Pain",
     'lipid' => 5,
@@ -27,6 +27,6 @@ $food = new Food([
     'weight' => 10,
     'isHidden' => null
 ]);
-$foodManager->createOne($food);
+$foodManager->createOne($food); */
 
 require '../src/views/layout.php';
