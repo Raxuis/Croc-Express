@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    font-family: "Work Sans", sans-serif;
+}
+
+#copyrights {
+    font-size: 0.8em;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
