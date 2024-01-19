@@ -7,8 +7,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     color: #FFF;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 body {
@@ -41,6 +46,9 @@ main {
 
 .card-body {
     padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #copyrights {
@@ -55,7 +63,7 @@ main {
 }
 
 #footer-container {
-    position: absolute;
+    position: fixed;
     bottom: 5px;
     width: 100%;
 }
@@ -172,9 +180,37 @@ h3 {
     cursor: pointer;
     background-color: #d01a1a83;
     transition: 0.5s;
+    margin-left: 5px;
 }
 
 .submit:hover {
     background-color: #FFF;
     color: #d01a1a83;
+}
+
+.other-products {
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    width: 45%;
+    background-color: #f97111;
+    font-size: 1em;
+    justify-content: center;
+    transition: 0.5s;
+    font-weight: 600;
+}
+
+.other-products i {
+    margin-left: 20px;
+    transition: 0.5s;
+}
+
+.other-products:hover i {
+    transform: translate(5px);
+    color: #f97111;
+}
+
+.other-products:hover {
+    background-color: #FFF;
+    color: #f97111;
 }
