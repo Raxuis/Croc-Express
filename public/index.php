@@ -2,7 +2,7 @@
 global $bdd;
 require "../src/core/DBconnection.php";
 
-require "../src/classes/Manager.class.php";
+require "../src/classes/managers/UserManager.class.php";
 require "../src/classes/User.class.php";
 
 $availableRoutes = ['homepage', 'register', 'login'];

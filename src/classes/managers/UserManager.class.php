@@ -1,14 +1,12 @@
 <?php
+require "Manager.class.php";
 
-class Manager
-{
-    private PDO $bdd;
+class UserManager extends Manager {
 
     public function __construct(PDO $database_connection)
     {
-        $this->bdd = $database_connection;
+        parent::__construct($database_connection);
     }
-
 
     public function createUser(User $user): int
     {
@@ -68,5 +66,4 @@ class Manager
     {
         echo "exists";
     }
-
 }

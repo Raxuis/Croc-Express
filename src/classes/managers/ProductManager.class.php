@@ -1,11 +1,11 @@
 <?php
-class ProductManager {
+require "Manager.class.php";
 
-    private PDO $bdd;
+class ProductManager extends Manager {
 
     public function __construct(PDO $database_connection)
     {
-        $this->bdd = $database_connection;
+        parent::__construct($database_connection);
     }
 
     public function createProduct(Product $product): int
