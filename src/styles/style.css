@@ -44,7 +44,7 @@ main {
 }
 
 .card img {
-    width: 90%;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -220,4 +220,64 @@ h3 {
 .other-products:hover {
     background-color: #FFF;
     color: #f97111;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.slides-container {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    flex: 1 0 100%;
+}
+
+.slides-container {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+/* WebKit */
+.slides-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 4rem;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.first-carousel-arrows {
+    color: #000;
+}
+
+.second-carousel-arrows {
+    color: #f97111;
+}
+
+.slide-arrow-prev {
+    left: 0;
+}
+
+.slide-arrow-next {
+    right: 0;
 }
