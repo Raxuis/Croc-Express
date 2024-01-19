@@ -72,3 +72,32 @@ nav a {
 nav a:hover {
     color: #FFF;
 }
+
+.fa-caret-down {
+    margin-left: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.fa-caret-down:hover {
+    transform: rotate(180deg);
+    color: #FFF;
+}
+
+.dropdown-main:hover .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #19242a;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    margin-left: -50px;
+    gap: 5px;
+}
