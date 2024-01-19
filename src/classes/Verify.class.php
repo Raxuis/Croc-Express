@@ -1,68 +1,44 @@
 <?php
-class VerifyClass
+
+class Verify
 {
-    protected $password;
-    protected $firstname;
-    protected $lastname;
-    protected $email;
-    public function __construct(string $password, string $email, string $firstname, string $lastname)
+    public function verifyPassword($data): bool
     {
-        $this->setEmail($email);
-        $this->setPassword($password);
-        $this->setFirstname($firstname);
-        $this->setLastname($lastname);
-    }
-    public function setPassword($data): bool
-    {
-        if (strlen($data) >= 8) {
-            $this->password = $data;
-            return true;
+        if (strcmp($_POST['password'], $_POST['password_confirmation']) === 0) {
+            if (strlen($data) >= 8) {
+                return true;
+            }
         }
-        echo "Veuillez rentrer un mot de passe d'au minimum 8 caractères";
+
+        echo "Mot de passe incorrect : 8 caractères minimum";
         return false;
     }
-    public function getPassword(): void
-    {
-        echo $this->password;
-    }
-    public function setFirstname($data): bool
+
+    public function verifyFirstname($data): bool
     {
         if (!empty($data)) {
-            $this->firstname = $data;
             return true;
         }
         echo 'Veuillez renseigner votre prénom';
         return false;
     }
-    public function getFirstname(): void
-    {
-        echo $this->firstname;
-    }
-    public function setLastname($data): bool
+
+    public function verifyLastname($data): bool
     {
         if (!empty($data)) {
-            $this->lastname;
             return true;
         }
         echo 'Veuillez renseigner votre nom';
         return false;
     }
-    public function getLastname(): void
-    {
-        echo $this->lastname;
-    }
-    public function setEmail($data): bool
+
+    public function verifyEmail($data): bool
     {
         if (!filter_var($data, FILTER_VALIDATE_EMAIL)) {
             echo "Veuillez rentrer une adresse mail valide";
             return false;
         } else {
-            $this->email = $data;
             return true;
         }
-    }
-    public function getEmail(): void
-    {
-        echo $this->email;
     }
 }

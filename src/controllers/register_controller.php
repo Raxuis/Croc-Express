@@ -2,23 +2,20 @@
 require '../src/views/register.php';
 require '../src/classes/Verify.class.php';
 if (!empty($_POST)) {
-    $verif = new VerifyClass($_POST['password'], $_POST['email'], $_POST['firstname'], $_POST['lastname']);
-    if ($verif->setPassword($_POST['password']) && $verif->setFirstname($_POST['firstname']) && $verif->setLastname($_POST['lastname']) && $verif->setEmail($_POST['email'])) {
-        $database = new Manager($bdd);
+    $verif = new Verify();
+    if ($verif->verifyPassword($_POST['password']) && $verif->verifyFirstname($_POST['firstname']) && $verif->verifyLastname($_POST['lastname']) && $verif->verifyEmail($_POST['email'])) {
+        // TODO : Move this in index.php
+        $database = new UserManager($bdd, "users");
 
         $user = new User([
             'firstname' => $_POST['firstname'],
             'lastname' => $_POST['lastname'],
             'email' => $_POST['email'],
-            'password' => $_POST['password'],
+            'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
             'isAdmin' => null,
         ]);
 
-        $database->createUser($user);
+        $database->createOne($user);
         $_SESSION['logged'] = true;
     }
 }
-/*
-Condition for Benoît :
-    strcmp($_POST['password'], $_POST['password_confirmation']) !== 0 
-*/
