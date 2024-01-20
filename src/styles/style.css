@@ -71,10 +71,12 @@ main {
     margin-top: 1em;
 }
 
-#footer-container {
+footer {
     position: fixed;
-    bottom: 5px;
+    bottom: 0;
     width: 100%;
+    padding: 10px;
+    text-align: center;
 }
 
 nav {
