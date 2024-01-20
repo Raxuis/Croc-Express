@@ -48,8 +48,13 @@
                         </a>
                     </div>
                 <?php else: ?>
-                    <li><a href="?page=login">Se connecter</a></li>
-                    <li><a href="?page=register">S'inscrire</a></li>
+                    <li><a href="?page=login" class="nav-links not-logged">Se connecter</a></li>
+                    <li><a href="?page=register" class="nav-links not-logged">S'inscrire</a></li>
+                    <div class="burger-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa-solid fa-bars" id="burger-icon"></i>
+                        </a>
+                    </div>
                 <?php endif; ?>
 
             </ul>
