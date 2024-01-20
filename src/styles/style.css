@@ -316,10 +316,25 @@ h3 {
     }
 
     .nav-menu li:not(.burger-menu) {
-        margin: 16px 0;
+        gap: 10px;
+        width: 60%;
+        font-size: 1em;
+    }
+
+    .nav-menu .fa-cart-shopping {
+        margin: 30px 0;
     }
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .dropdown-menu {
+        margin: 16px auto;
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
     }
 }
