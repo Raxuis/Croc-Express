@@ -28,6 +28,7 @@ main {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -98,7 +99,7 @@ nav img:hover {
 nav>ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -152,7 +153,7 @@ nav i {
     padding-bottom: 5px;
     margin-left: -50px;
     gap: 5px;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .form {
@@ -285,4 +286,40 @@ h3 {
 
 .slide-arrow-next {
     right: 2px;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+        position: fixed;
+        top: 40px;
+        right: 30px;
+        font-size: 2em;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 75px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #19242a;
+        width: 100%;
+        text-align: center;
+        transition: 0.5s;
+        z-index: 1;
+    }
+
+    .nav-menu li:not(.burger-menu) {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
 }

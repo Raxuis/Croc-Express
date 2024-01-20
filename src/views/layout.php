@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+$_SESSION['logged'] = true;
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -18,34 +22,42 @@
     <header>
         <nav>
             <a href="?page=homepage"><img src="./assets/favicon.ico"></a>
-            <ul>
+            <ul class="nav-menu">
                 <?php if (isset($_SESSION['logged'])): ?>
                     <li class="dropdown-main"><a href="?page=admin">Administration<i class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="?page=admin&action=deliver">Mes commandes à livrer</a></li>
-                            <li><a href="?page=admin&action=commands">Toutes mes commandes</a></li>
-                            <li><a href="?page=admin&action=turnover">Chiffres d'affaire</a></li>
-                            <li><a href="?page=admin&action=bestseller">Meilleures ventes</a></li>
-                            <li><a href="?page=admin&action=categories">Catégories</a></li>
-                            <li><a href="?page=admin&action=products">Produits</a></li>
-                            <li><a href="?page=admin&action=food">Aliments</a></li>
-                            <li><a href="?page=admin&action=messages">Messages</a></li>
+                            <li><a href="?page=admin&action=deliver" class="nav-links">Mes commandes à livrer</a></li>
+                            <li><a href="?page=admin&action=commands" class="nav-links">Toutes mes commandes</a></li>
+                            <li><a href="?page=admin&action=turnover" class="nav-links">Chiffres d'affaire</a></li>
+                            <li><a href="?page=admin&action=bestseller" class="nav-links">Meilleures ventes</a></li>
+                            <li><a href="?page=admin&action=categories" class="nav-links">Catégories</a></li>
+                            <li><a href="?page=admin&action=products" class="nav-links">Produits</a></li>
+                            <li><a href="?page=admin&action=food" class="nav-links">Aliments</a></li>
+                            <li><a href="?page=admin&action=messages" class="nav-links">Messages</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown-main"><a href="?page=profile">User<i class="fa-solid fa-caret-down"></i></a>
+                    <li class="dropdown-main"><a href="?page=profile" class="nav-links">User<i
+                                class="fa-solid fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="?page=profile&action=profile">Profil</a></li>
-                            <li><a href="?page=profile&action=commands">Commandes</a></li>
-                            <li><a href="?page=profile&action=logout">Se déconnecter</a></li>
+                            <li><a href="?page=profile&action=profile" class="nav-links">Profil</a></li>
+                            <li><a href="?page=profile&action=commands" class="nav-links">Commandes</a></li>
+                            <li><a href="?page=profile&action=logout" class="nav-links">Se déconnecter</a></li>
                         </ul>
                     </li>
-                    <li><a href="?page=contact">Contactez-nous</a></li>
-                    <li><a href="?page=cart"></a></li>
+                    <li><a href="?page=contact" class="nav-links">Contactez-nous</a></li>
+                    <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <div class="burger-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa-solid fa-bars" id="burger-icon"></i>
+                        </a>
+                    </div>
                 <?php else: ?>
                     <li><a href="?page=login">Se connecter</a></li>
                     <li><a href="?page=register">S'inscrire</a></li>
                 <?php endif; ?>
+
             </ul>
+
         </nav>
     </header>
     <main>
@@ -59,6 +71,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../src/scripts/burgermenu.js"></script>
 </body>
 
 </html>
