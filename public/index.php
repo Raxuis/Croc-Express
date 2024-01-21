@@ -32,6 +32,9 @@ require "../src/classes/Category.class.php";
 require "../src/classes/managers/MessageManager.class.php";
 require "../src/classes/Message.class.php";
 
+require "../src/classes/managers/MenuManager.class.php";
+require "../src/classes/Menu.class.php";
+
 /* $foodManager = new FoodManager($bdd, "foods");
 $food = new Food([
     'name' => "Pain",
@@ -74,6 +77,14 @@ $foodManager->createOne($food); */
 //    'ip' => $_SERVER['REMOTE_ADDR'],
 //]);
 //$messageManager->createOne($message);
+
+$menuManager = new MenuManager($bdd, "menus");
+$menu = new Menu([
+    'name' => "Formule Midi",
+    'price' => 10,
+    'isHidden' => null
+]);
+$menuManager->createOne($menu);
 
 
 require '../src/views/layout.php';
