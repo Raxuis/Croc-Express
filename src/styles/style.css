@@ -164,7 +164,7 @@ nav a:hover .fa-caret-down {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
     width: 30%;
 }
