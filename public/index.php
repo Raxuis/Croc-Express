@@ -23,6 +23,9 @@ require "../src/classes/Food.class.php";
 require "../src/classes/managers/ProductFoodManager.class.php";
 require "../src/classes/ProductFood.class.php";
 
+require "../src/classes/managers/CouponsManager.class.php";
+require "../src/classes/Coupons.class.php";
+
 /* $foodManager = new FoodManager($bdd, "foods");
 $food = new Food([
     'name' => "Pain",
@@ -41,5 +44,12 @@ $foodManager->createOne($food); */
 //]);
 //$productFoodManager->createOne($productFood);
 
+
+//$couponManager = new CouponsManager($bdd, "coupons");
+//$coupon = new Coupons([
+//    'name' => "TEST",
+//    'reduction' => 10,
+//]);
+//$couponManager->createOne($coupon);
 
 require '../src/views/layout.php';
