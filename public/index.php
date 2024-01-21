@@ -29,6 +29,9 @@ require "../src/classes/Coupons.class.php";
 require "../src/classes/managers/CategoryManager.class.php";
 require "../src/classes/Category.class.php";
 
+require "../src/classes/managers/MessageManager.class.php";
+require "../src/classes/Message.class.php";
+
 /* $foodManager = new FoodManager($bdd, "foods");
 $food = new Food([
     'name' => "Pain",
@@ -62,6 +65,15 @@ $foodManager->createOne($food); */
 //    'isHidden' => null
 //]);
 //$categoryManager->createOne($category);
+
+//$messageManager = new MessageManager($bdd, "messages");
+//$message = new Message([
+//    'title' => "TEST",
+//    'content' => 'TEST',
+//    'userId' => 1,
+//    'ip' => $_SERVER['REMOTE_ADDR'],
+//]);
+//$messageManager->createOne($message);
 
 
 require '../src/views/layout.php';
