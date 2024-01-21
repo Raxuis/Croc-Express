@@ -9,7 +9,7 @@ if (isset($_GET['kill']) && $_GET['kill'] == "all") {
     session_start();
     session_destroy();
 }
-$availableRoutes = ['homepage', 'register', 'login'];
+$availableRoutes = ['homepage', 'register', 'login', 'cart'];
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];

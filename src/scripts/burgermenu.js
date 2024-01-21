@@ -1,6 +1,7 @@
 const burgerMenu = document.getElementsByClassName("burger-menu")[0];
 const burgerIcon = document.getElementById('burger-icon');
 const navMenu = document.getElementsByClassName("nav-menu")[0];
+const navLinks = document.querySelectorAll(".nav-links");
 let currentState = "notClicked";
 
 function myFunction() {
@@ -18,7 +19,7 @@ function myFunction() {
     }
 }
 
-document.querySelectorAll(".nav-links").forEach(link => link.addEventListener("click", () => {
+navLinks.forEach(link => link.addEventListener("click", () => {
     burgerMenu.classList.remove("active");
     navMenu.classList.remove("active");
 }));
