@@ -9,8 +9,6 @@ class ProductFoodManager extends Manager
 
     public function createOne(object $data): int
     {
-        // TODO: Implement createOne() method.
-
         if ($data instanceof ProductFood) {
             $query = "INSERT INTO products_foods (product_id, food_id) VALUES (:product_id, :food_id)";
             $response = $this->bdd->prepare($query);
