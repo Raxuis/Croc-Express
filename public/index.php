@@ -35,6 +35,9 @@ require "../src/classes/Message.class.php";
 require "../src/classes/managers/MenuManager.class.php";
 require "../src/classes/Menu.class.php";
 
+require "../src/classes/managers/AddressManager.class.php";
+require "../src/classes/Address.class.php";
+
 /* $foodManager = new FoodManager($bdd, "foods");
 $food = new Food([
     'name' => "Pain",
@@ -78,13 +81,23 @@ $foodManager->createOne($food); */
 //]);
 //$messageManager->createOne($message);
 
-$menuManager = new MenuManager($bdd, "menus");
-$menu = new Menu([
-    'name' => "Formule Midi",
-    'price' => 10,
-    'isHidden' => null
-]);
-$menuManager->createOne($menu);
+//$menuManager = new MenuManager($bdd, "menus");
+//$menu = new Menu([
+//    'name' => "Formule Midi",
+//    'price' => 10,
+//    'isHidden' => null
+//]);
+//$menuManager->createOne($menu);
+
+//$addressManager = new AddressManager($bdd, "address");
+//$address = new Address([
+//    'userId' => 1,
+//    'street' => "Rue de la Paix",
+//    'city' => 'Sougy',
+//    'zip' => '45410',
+//    'country' => 'France',
+//]);
+//$addressManager->createOne($address);
 
 
 require '../src/views/layout.php';
