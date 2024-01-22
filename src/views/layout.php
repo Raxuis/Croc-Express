@@ -22,17 +22,17 @@
             <a href="?page=homepage"><img src="./assets/favicon.ico"></a>
             <ul class="nav-menu">
                 <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true): ?>
-                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
                         <li class="dropdown-main"><a href="?page=admin">Administration<i class="fa-solid fa-caret-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="?page=admin&action=deliver" class="nav-links">Mes commandes à livrer</a></li>
                                 <li><a href="?page=admin&action=commands" class="nav-links">Toutes mes commandes</a></li>
                                 <li><a href="?page=admin&action=turnover" class="nav-links">Chiffres d'affaire</a></li>
                                 <li><a href="?page=admin&action=bestseller" class="nav-links">Meilleures ventes</a></li>
-                                <li><a href="?page=admin&action=categories" class="nav-links">Catégories</a></li>
-                                <li><a href="?page=admin&action=products" class="nav-links">Produits</a></li>
-                                <li><a href="?page=admin&action=food" class="nav-links">Aliments</a></li>
-                                <li><a href="?page=admin&action=messages" class="nav-links">Messages</a></li>
+                                <li><a href="?page=admin_add_category" class="nav-links">Catégories</a></li>
+                                <li><a href="?page=admin_add_product" class="nav-links">Produits</a></li>
+                                <li><a href="?page=admin_add_food" class="nav-links">Aliments</a></li>
+                                <li><a href="?page=admin_messages" class="nav-links">Messages</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>

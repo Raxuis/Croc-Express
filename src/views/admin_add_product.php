@@ -17,7 +17,6 @@
         </select>
 
         <select name="foodList[]" id="foodList" multiple>
-            <option value="">-- Sélectionnez des aliments --</option>
             <?php foreach ($allFood as $food) { ?>
                 <option value="<?= $food["id"] ?>">
                     <?= $food["name"] ?>
@@ -29,9 +28,10 @@
             <input type="checkbox" name="isHidden">
         </div>
 
-        <button type="submit" class="submit">Ajouter ce produit</button>
+    <button type="submit" class="submit">Ajouter ce produit</button>
 
-    </form>
+</form>
+
 </div>
 <script>
     $(document).ready(function () {

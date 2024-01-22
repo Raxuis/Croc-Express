@@ -72,7 +72,7 @@ $category = new Category([
 ]);
 $categoryManager->createOne($category); */
 
-//$messageManager = new MessageManager($bdd, "messages");
+$messageManager = new MessageManager($bdd, "messages");
 //$message = new Message([
 //    'title' => "TEST",
 //    'content' => 'TEST',
@@ -81,7 +81,7 @@ $categoryManager->createOne($category); */
 //]);
 //$messageManager->createOne($message);
 
-//$menuManager = new MenuManager($bdd, "menus");
+$menuManager = new MenuManager($bdd, "menus");
 //$menu = new Menu([
 //    'name' => "Formule Midi",
 //    'price' => 10,
@@ -126,7 +126,7 @@ $categoryManager->createOne($category); */
 //]);
 //$orderProductManager->createOne($orderProduct);
 
-//$menuProductManager = new MenuProductManager($bdd, "menus_products");
+$menuProductManager = new MenuProductManager($bdd, "menus_products");
 //$menuProduct = new MenuProduct([
 //    'menuId' => 1,
 //    'productId' => 1,
