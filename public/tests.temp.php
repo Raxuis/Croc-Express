@@ -61,13 +61,13 @@ require "../src/classes/MenuProduct.class.php";
 //]);
 //$couponManager->createOne($coupon);
 
-$categoryManager = new CategoryManager($bdd, "categories");
+/* $categoryManager = new CategoryManager($bdd, "categories");
 $category = new Category([
     'name' => "TEST",
     'description' => 'TEST',
     'isHidden' => false
 ]);
-$categoryManager->createOne($category);
+$categoryManager->createOne($category); */
 
 //$messageManager = new MessageManager($bdd, "messages");
 //$message = new Message([
