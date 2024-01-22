@@ -12,17 +12,16 @@ function setupSlider(slidesContainer, slides, prevButton, nextButton, currentInd
     });
 }
 
-const slidesContainer1 = document.getElementById("slides-container1");
-const slidesContainer2 = document.getElementById("slides-container2");
+function initializeSlider(containerId, slidesClass, prevButtonClass, nextButtonClass) {
+    const slidesContainer = document.getElementById(containerId);
+    const slides = document.querySelectorAll("." + slidesClass);
+    const prevButton = document.querySelector("." + prevButtonClass);
+    const nextButton = document.querySelector("." + nextButtonClass);
 
-const slidesFirst = document.querySelectorAll(".slideFirst");
-const slidesSecond = document.querySelectorAll(".slideSecond");
+    let currentIndex = 0;
 
-const prevButtons = document.getElementsByClassName("slide-arrow-prev");
-const nextButtons = document.getElementsByClassName("slide-arrow-next");
+    setupSlider(slidesContainer, slides, prevButton, nextButton, currentIndex);
+}
 
-let currentIndexFirst = 0;
-let currentIndexSecond = 0;
-
-setupSlider(slidesContainer1, slidesFirst, prevButtons[0], nextButtons[0], currentIndexFirst);
-setupSlider(slidesContainer2, slidesSecond, prevButtons[1], nextButtons[1], currentIndexSecond);
+initializeSlider("slides-container1", "slideFirst", "slide-arrow-prev", "slide-arrow-next");
+initializeSlider("slides-container2", "slideSecond", "slide-arrow-prev", "slide-arrow-next");

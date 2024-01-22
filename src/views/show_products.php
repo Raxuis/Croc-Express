@@ -6,31 +6,33 @@
                 <div class="card-header">
                     <section class="slider-wrapper">
                         <button class="slide-arrow slide-arrow-prev">
-                            <i class="fa-solid fa-arrow-left second-carousel-arrows"></i>
+                            <i class="fa-solid fa-arrow-left first-carousel-arrows"></i>
                         </button>
 
                         <button class="slide-arrow slide-arrow-next">
-                            <i class="fa-solid fa-arrow-right second-carousel-arrows"></i>
+                            <i class="fa-solid fa-arrow-right first-carousel-arrows"></i>
 
                         </button>
 
-                        <ul class="slides-container">
+                        <ul class="slides-container" id="slides-container1">
                             <?php foreach ($images as $image) { ?>
-                                <li class="slide slideSecond"><img src="<?= $image['image'] ?>" alt="pizza_<?= $image['id'] ?>">
+
+                                <li class="slide slideFirst"><img src="<?= $image['image'] ?>" alt="pizza_<?= $image['id'] ?>">
                                 </li>
                             <?php } ?>
                         </ul>
                     </section>
-
-                    <h3>
-                        <?= $product['name'] ?>
-                    </h3>
-                    <p>
-                        <?= $product['description'] ?>
-                    </p>
-                    <p>
-                        <?= $product['price'] ?> €
-                    </p>
+                    <div class="card-body">
+                        <h3>
+                            <?= $product['name'] ?>
+                        </h3>
+                        <p>
+                            <?= $product['description'] ?>
+                        </p>
+                        <p>
+                            <?= $product['price'] ?> €
+                        </p>
+                    </div>
                 </div>
             </div>
         <?php }
