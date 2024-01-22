@@ -9,7 +9,7 @@ if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     session_destroy();
     header('Location:../public/index.php');
 }
-$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food', 'admin_add_product'];
+$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food', 'admin_add_product', 'admin_add_menu'];
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];

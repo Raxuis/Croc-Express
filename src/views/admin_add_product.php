@@ -15,7 +15,6 @@
     </select>
 
     <select name="foodList[]" id="foodList" multiple >
-        <option value="">-- Séléctionnez des aliments --</option>
         <?php foreach ($allFood as $food) { ?>
             <option value="<?= $food["id"] ?>"><?= $food["name"] ?></option>
         <?php } ?>

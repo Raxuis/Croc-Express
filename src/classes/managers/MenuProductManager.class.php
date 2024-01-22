@@ -9,12 +9,11 @@ class MenuProductManager extends Manager {
     public function createOne(object $data): int
     {
         if ($data instanceof MenuProduct) {
-            $query = "INSERT INTO menus_products (menu_id, product_id, price) VALUES (:menu_id, :product_id, :price)";
+            $query = "INSERT INTO menus_products (menu_id, product_id) VALUES (:menu_id, :product_id)";
             $response = $this->bdd->prepare($query);
             $response->execute([
                 'menu_id' => $data->getMenuId(),
-                'product_id' => $data->getProductId(),
-                'price' => $data->getPrice()
+                'product_id' => $data->getProductId()
             ]);
         }
 

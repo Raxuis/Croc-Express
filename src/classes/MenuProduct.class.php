@@ -4,7 +4,6 @@ class MenuProduct {
     private int $id;
     private int $menuId;
     private int $productId;
-    private int $price;
 
     public function __construct(array $data)
     {
@@ -49,15 +48,5 @@ class MenuProduct {
     public function setProductId(int $productId): void
     {
         $this->productId = $productId;
-    }
-
-    public function getPrice(): int
-    {
-        return $this->price;
-    }
-
-    public function setPrice(int $price): void
-    {
-        $this->price = $price;
     }
 }
