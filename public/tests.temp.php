@@ -72,7 +72,7 @@ $category = new Category([
 ]);
 $categoryManager->createOne($category); */
 
-//$messageManager = new MessageManager($bdd, "messages");
+$messageManager = new MessageManager($bdd, "messages");
 //$message = new Message([
 //    'title' => "TEST",
 //    'content' => 'TEST',
