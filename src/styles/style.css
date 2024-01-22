@@ -170,6 +170,10 @@ nav a:hover .fa-caret-down {
     width: 30%;
 }
 
+option {
+    color: #000;
+}
+
 h3 {
     font-size: 1.5em;
     font-weight: 400;
@@ -179,7 +183,8 @@ h3 {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.form input {
+.form input,
+.form textarea {
     padding: 5px 0 5px 5px;
     width: 100%;
     border-radius: 5px;
@@ -305,6 +310,16 @@ select {
     cursor: pointer;
 }
 
+.hidden {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.hidden label {
+    width: 60%;
+}
+
 @media (max-width: 768px) {
     .burger-menu {
         display: block;
@@ -357,5 +372,9 @@ select {
         gap: 10px;
         padding: 10px;
         width: 100%;
+    }
+
+    .form {
+        width: 70%;
     }
 }
