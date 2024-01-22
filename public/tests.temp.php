@@ -29,6 +29,9 @@ require "../src/classes/Order.class.php";
 require "../src/classes/managers/ProductImageManager.class.php";
 require "../src/classes/ProductImage.class.php";
 
+require "../src/classes/managers/OrderProductManager.class.php";
+require "../src/classes/OrderProduct.class.php";
+
 //$foodManager = new FoodManager($bdd, "foods");
 //$food = new Food([
 //    'name' => "Pain",
@@ -107,3 +110,12 @@ require "../src/classes/ProductImage.class.php";
 //    'image' => "image.png"
 //]);
 //$productImageManager->createOne($productImage);
+
+//$orderProductManager = new OrderProductManager($bdd, "orders_products");
+//$orderProduct = new OrderProduct([
+//    'orderId' => 1,
+//    'productId' => 1,
+//    'price' => 10,
+//    'quantity' => 1
+//]);
+//$orderProductManager->createOne($orderProduct);
