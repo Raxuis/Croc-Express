@@ -1,4 +1,5 @@
-<?php if (isset($products)) { ?>
+<?php ini_set('display_errors', 1);
+if (isset($products)) { ?>
     <div class="container">
         <?php foreach ($products as $product) { ?>
             <div class="card">
