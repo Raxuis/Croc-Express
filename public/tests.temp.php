@@ -26,6 +26,9 @@ require "../src/classes/Address.class.php";
 require "../src/classes/managers/OrderManager.class.php";
 require "../src/classes/Order.class.php";
 
+require "../src/classes/managers/ProductImageManager.class.php";
+require "../src/classes/ProductImage.class.php";
+
 //$foodManager = new FoodManager($bdd, "foods");
 //$food = new Food([
 //    'name' => "Pain",
@@ -97,3 +100,10 @@ require "../src/classes/Order.class.php";
 //    'isValidated' => null
 //]);
 //$orderManager->createOne($order);
+
+//$productImageManager = new ProductImageManager($bdd, "products_images");
+//$productImage = new ProductImage([
+//    'productId' => 1,
+//    'image' => "image.png"
+//]);
+//$productImageManager->createOne($productImage);
