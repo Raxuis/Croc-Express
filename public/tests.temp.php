@@ -5,6 +5,9 @@
 require "../src/classes/managers/FoodManager.class.php";
 require "../src/classes/Food.class.php";
 
+require "../src/classes/managers/ProductManager.class.php";
+require "../src/classes/Product.class.php";
+
 require "../src/classes/managers/ProductFoodManager.class.php";
 require "../src/classes/ProductFood.class.php";
 
