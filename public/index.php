@@ -19,5 +19,6 @@ if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
 require "tests.temp.php";
 $userManager = new UserManager($bdd, "users");
 $foodManager = new FoodManager($bdd, "foods");
+$productManager = new ProductManager($bdd, "products");
 
 require '../src/views/layout.php';
