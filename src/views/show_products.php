@@ -5,22 +5,31 @@ if (isset($products)) { ?>
             <div class="card">
                 <?php $images = $productImageManager->getImagesByProductId($product['id']); ?>
                 <div class="card-header">
-                    <section class="slider-wrapper">
-                        <button class="slide-arrow slide-arrow-prev">
-                            <i class="fa-solid fa-arrow-left first-carousel-arrows" id="arrow-left<?= $product['id'] ?>"></i>
-                        </button>
+                    <?php if (count($images) > 1) { ?>
+                        <section class="slider-wrapper">
+                            <button class="slide-arrow slide-arrow-prev">
+                                <i class="fa-solid fa-arrow-left first-carousel-arrows" id="arrow-left<?= $product['id'] ?>"></i>
+                            </button>
 
-                        <button class="slide-arrow slide-arrow-next">
-                            <i class="fa-solid fa-arrow-right first-carousel-arrows" id="arrow-right<?= $product['id'] ?>"></i>
-                        </button>
+                            <button class="slide-arrow slide-arrow-next">
+                                <i class="fa-solid fa-arrow-right first-carousel-arrows" id="arrow-right<?= $product['id'] ?>"></i>
+                            </button>
 
-                        <ul class="slides-container" id="slides-container-<?= $product['id'] ?>">
-                            <?php foreach ($images as $image) { ?>
-                                <li class="slide slide-<?= $product['id'] ?>"><img src="<?= $image['image'] ?>"
-                                        alt="pizza_<?= $image['id'] ?>"></li>
-                            <?php } ?>
-                        </ul>
-                    </section>
+                            <ul class="slides-container" id="slides-container-<?= $product['id'] ?>">
+                                <?php foreach ($images as $image) { ?>
+                                    <li class="slide slide-<?= $product['id'] ?>"><img src="<?= $image['image'] ?>"
+                                            alt="product_<?= $product['id'] ?>"></li>
+                                <?php } ?>
+                            </ul>
+                        </section>
+
+                    <?php } else { ?>
+                        <?php if (count($images) === 0) { ?>
+                            <h2>Il n'y a pas de photo pour ce produit</h2>
+                        <?php } else { ?>
+                            <img src="<?= $image['image'] ?>" alt="product_<?= $product['id'] ?>">
+                        <?php } ?>
+                    <?php } ?>
                     <div class="card-body">
                         <h3>
                             <?= $product['name'] ?>
@@ -35,6 +44,7 @@ if (isset($products)) { ?>
                 </div>
             </div>
         <?php } ?>
+
     </div>
 <?php } ?>
 <script src="../src/scripts/carousel.js"></script>

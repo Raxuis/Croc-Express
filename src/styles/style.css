@@ -37,11 +37,12 @@ main {
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 2rem;
     width: 25em;
-    margin: 1rem;
+    margin: 1rem 1rem 4rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-height: 40%;
 }
 
 .card img {
@@ -268,6 +269,12 @@ select {
     flex: 1 0 100%;
     display: flex;
     align-items: center;
+}
+
+.slide img {
+    max-height: 30vh;
+    width: 100%;
+    object-fit: contain;
 }
 
 .slides-container {
