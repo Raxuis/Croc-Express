@@ -19,21 +19,25 @@
         <nav>
             <a href="?page=homepage"><img src="./assets/favicon.ico"></a>
             <ul class="nav-menu">
-                <?php if (isset($_SESSION['logged'])): ?>
-                    <li class="dropdown-main"><a href="?page=admin">Administration<i class="fa-solid fa-caret-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="?page=admin&action=deliver" class="nav-links">Mes commandes à livrer</a></li>
-                            <li><a href="?page=admin&action=commands" class="nav-links">Toutes mes commandes</a></li>
-                            <li><a href="?page=admin&action=turnover" class="nav-links">Chiffres d'affaire</a></li>
-                            <li><a href="?page=admin&action=bestseller" class="nav-links">Meilleures ventes</a></li>
-                            <li><a href="?page=admin&action=categories" class="nav-links">Catégories</a></li>
-                            <li><a href="?page=admin&action=products" class="nav-links">Produits</a></li>
-                            <li><a href="?page=admin&action=food" class="nav-links">Aliments</a></li>
-                            <li><a href="?page=admin&action=messages" class="nav-links">Messages</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-main"><a href="?page=profile" class="nav-links">User<i
-                                class="fa-solid fa-caret-down"></i></a>
+                <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true): ?>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
+                        <li class="dropdown-main"><a href="?page=admin">Administration<i class="fa-solid fa-caret-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="?page=admin&action=deliver" class="nav-links">Mes commandes à livrer</a></li>
+                                <li><a href="?page=admin&action=commands" class="nav-links">Toutes mes commandes</a></li>
+                                <li><a href="?page=admin&action=turnover" class="nav-links">Chiffres d'affaire</a></li>
+                                <li><a href="?page=admin&action=bestseller" class="nav-links">Meilleures ventes</a></li>
+                                <li><a href="?page=admin&action=categories" class="nav-links">Catégories</a></li>
+                                <li><a href="?page=admin&action=products" class="nav-links">Produits</a></li>
+                                <li><a href="?page=admin&action=food" class="nav-links">Aliments</a></li>
+                                <li><a href="?page=admin&action=messages" class="nav-links">Messages</a></li>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+                    <li class="dropdown-main"><a href="?page=profile" class="nav-links">
+                            <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'Anonymous' ?><i
+                                class="fa-solid fa-caret-down"></i>
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a href="?page=profile&action=profile" class="nav-links">Profil</a></li>
                             <li><a href="?page=profile&action=commands" class="nav-links">Commandes</a></li>

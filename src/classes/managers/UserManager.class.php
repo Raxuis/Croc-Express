@@ -41,5 +41,4 @@ class UserManager extends Manager
         $data = $response->fetch(PDO::FETCH_ASSOC);
         return $data;
     }
-
 }
