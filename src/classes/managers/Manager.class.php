@@ -38,7 +38,7 @@ abstract class Manager
         $execute->execute();
     }
 
-    public function countUsers(): int
+    public function countItems(): int
     {
         $query = "SELECT count(*) FROM " . $this->table;
         $response = $this->bdd->query($query);

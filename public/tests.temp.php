@@ -23,16 +23,16 @@ require "../src/classes/Menu.class.php";
 require "../src/classes/managers/AddressManager.class.php";
 require "../src/classes/Address.class.php";
 
-/* $foodManager = new FoodManager($bdd, "foods");
-$food = new Food([
-    'name' => "Pain",
-    'lipid' => 5,
-    'protein' => 5,
-    'carbohydrate' => 5,
-    'weight' => 10,
-    'isHidden' => null
-]);
-$foodManager->createOne($food); */
+//$foodManager = new FoodManager($bdd, "foods");
+//$food = new Food([
+//    'name' => "Pain",
+//    'lipid' => 5,
+//    'protein' => 5,
+//    'carbohydrate' => 5,
+//    'weight' => 10,
+//    'isHidden' => null
+//]);
+//$foodManager->createOne($food);
 
 //$productFoodManager = new ProductFoodManager($bdd, "products_foods");
 //$productFood = new ProductFood([
