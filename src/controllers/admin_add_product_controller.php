@@ -1,9 +1,5 @@
 <?php
 
-if(!isset($_SESSION["is_admin"])) {
-    header('location: index.php');
-    exit(0);
-}
 
 $categoriesManager = new CategoryManager($bdd, "categories");
 $categories = $categoriesManager->getAll();
