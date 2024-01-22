@@ -23,6 +23,9 @@ require "../src/classes/Menu.class.php";
 require "../src/classes/managers/AddressManager.class.php";
 require "../src/classes/Address.class.php";
 
+require "../src/classes/managers/OrderManager.class.php";
+require "../src/classes/Order.class.php";
+
 //$foodManager = new FoodManager($bdd, "foods");
 //$food = new Food([
 //    'name' => "Pain",
@@ -83,3 +86,14 @@ require "../src/classes/Address.class.php";
 //    'country' => 'France',
 //]);
 //$addressManager->createOne($address);
+
+//$orderManager = new OrderManager($bdd, "orders");
+//$order = new Order([
+//    'userId' => 1,
+//    'price' => 25,
+//    'couponId' => null,
+//    'addressId' => null,
+//    'isInDelivery' => null,
+//    'isValidated' => null
+//]);
+//$orderManager->createOne($order);
