@@ -2,9 +2,6 @@
 <div class="container">
     <?php foreach ($categories as $category): ?>
         <div class="card">
-            <div class="card-header">
-                <img src="./assets/burgers/burger_1.jpg" alt="burger_1">
-            </div>
             <div class="card-body">
                 <h3>
                     <?= $category['name'] ?>
