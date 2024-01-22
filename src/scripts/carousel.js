@@ -15,13 +15,10 @@ function setupSlider(slidesContainer, slides, prevButton, nextButton, currentInd
 function initializeSlider(containerId, slidesClass, prevButtonClass, nextButtonClass) {
     const slidesContainer = document.getElementById(containerId);
     const slides = document.querySelectorAll("." + slidesClass);
-    const prevButton = document.querySelector("." + prevButtonClass);
-    const nextButton = document.querySelector("." + nextButtonClass);
+    const prevButton = document.querySelector("#" + prevButtonClass);
+    const nextButton = document.querySelector("#" + nextButtonClass);
 
     let currentIndex = 0;
 
     setupSlider(slidesContainer, slides, prevButton, nextButton, currentIndex);
 }
-
-initializeSlider("slides-container1", "slideFirst", "slide-arrow-prev", "slide-arrow-next");
-initializeSlider("slides-container2", "slideSecond", "slide-arrow-prev", "slide-arrow-next");
