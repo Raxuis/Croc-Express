@@ -32,6 +32,9 @@ require "../src/classes/ProductImage.class.php";
 require "../src/classes/managers/OrderProductManager.class.php";
 require "../src/classes/OrderProduct.class.php";
 
+require "../src/classes/managers/MenuProductManager.class.php";
+require "../src/classes/MenuProduct.class.php";
+
 //$foodManager = new FoodManager($bdd, "foods");
 //$food = new Food([
 //    'name' => "Pain",
@@ -119,3 +122,11 @@ require "../src/classes/OrderProduct.class.php";
 //    'quantity' => 1
 //]);
 //$orderProductManager->createOne($orderProduct);
+
+//$menuProductManager = new MenuProductManager($bdd, "menus_products");
+//$menuProduct = new MenuProduct([
+//    'menuId' => 1,
+//    'productId' => 1,
+//    'price' => 10,
+//]);
+//$menuProductManager->createOne($menuProduct);
