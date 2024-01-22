@@ -5,8 +5,8 @@ class Product
     private int $id;
     private string $name;
     private string $description;
-    private int $price;
-    private int $buyingPrice;
+    private float $price;
+    private float $buyingPrice;
     private int $categoryId;
     private bool $isHidden;
 
@@ -61,22 +61,22 @@ class Product
         $this->description = $description;
     }
 
-    public function getPrice(): int
+    public function getPrice(): float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): void
+    public function setPrice(float $price): void
     {
         $this->price = $price;
     }
 
-    public function getBuyingPrice(): int
+    public function getBuyingPrice(): float
     {
         return $this->buyingPrice;
     }
 
-    public function setBuyingPrice(int $buying_price): void
+    public function setBuyingPrice(float $buying_price): void
     {
         $this->buyingPrice = $buying_price;
     }

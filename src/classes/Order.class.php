@@ -3,7 +3,7 @@ class Order {
 
     private int $id;
     private int $userId;
-    private int $price;
+    private float $price;
     private int|null $couponId;
     private int|null $addressId;
     private bool $isInDelivery;
@@ -44,12 +44,12 @@ class Order {
         $this->userId = $userId;
     }
 
-    public function getPrice(): int
+    public function getPrice(): float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): void
+    public function setPrice(float $price): void
     {
         $this->price = $price;
     }

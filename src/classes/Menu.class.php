@@ -3,7 +3,7 @@ class Menu {
 
     private int $id;
     private string $name;
-    private int $price;
+    private float $price;
     private bool $isHidden;
 
     public function __construct(array $data)
@@ -41,12 +41,12 @@ class Menu {
         $this->name = $name;
     }
 
-    public function getPrice(): int
+    public function getPrice(): float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): void
+    public function setPrice(float $price): void
     {
         $this->price = $price;
     }
