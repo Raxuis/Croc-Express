@@ -9,7 +9,7 @@ if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     session_destroy();
     header('Location:../public/index.php');
 }
-$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products'];
+$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food'];
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];
@@ -18,4 +18,6 @@ if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
 // NE PAS SUPPRIMER : TESTS POUR VERIFIER QUE L'ARCHITECTURE BDD FONCTIONNE
 require "tests.temp.php";
 $userManager = new UserManager($bdd, "users");
+$foodManager = new FoodManager($bdd, "foods");
+
 require '../src/views/layout.php';
