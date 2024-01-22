@@ -320,6 +320,18 @@ select {
     width: 60%;
 }
 
+
+table {
+  border: 1px solid white;
+    border-collapse: collapse;
+}
+
+td {
+  border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
 @media (max-width: 768px) {
     .burger-menu {
         display: block;
