@@ -187,6 +187,14 @@ h3 {
     color: #000;
 }
 
+select {
+    padding: 5px 0 5px 5px;
+    width: 100%;
+    border-radius: 5px;
+    caret-color: #F00;
+    color: #000;
+}
+
 
 .submit {
     width: 100%;

@@ -49,7 +49,7 @@ require "../src/classes/MenuProduct.class.php";
 //]);
 //$foodManager->createOne($food);
 
-//$productFoodManager = new ProductFoodManager($bdd, "products_foods");
+$productFoodManager = new ProductFoodManager($bdd, "products_foods");
 //$productFood = new ProductFood([
 //    'productId' => 1,
 //    'foodId' => 1
