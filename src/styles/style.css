@@ -72,6 +72,7 @@ main {
 }
 
 footer {
+    background-color: #1f2937;
     position: fixed;
     bottom: 0;
     width: 100%;

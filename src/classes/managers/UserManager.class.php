@@ -38,7 +38,7 @@ class UserManager extends Manager
         $response->execute([
             'email' => $email,
         ]);
-        $data = $response->fetch(PDO::FETCH_ASSOC);
+        $data = $response->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
 }
