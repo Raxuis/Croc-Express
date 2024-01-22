@@ -12,7 +12,9 @@
                 <p>
                     <?= $category['description'] ?>
                 </p>
-                <button class="other-products">Tous nos produits<i class="fa-solid fa-arrow-right"></i></button>
+                <button class="other-products"
+                    onclick="window.location.href='?page=show_products&category_id=<?= $category['id'] ?>'">Tous nos
+                    produits<i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
     <?php endforeach; ?>
