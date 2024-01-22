@@ -1,6 +1,5 @@
 <h3>Page de création de compte</h3>
 <div class="container">
-
     <form action="" method="post" class="form">
         <label for="firstname">
             Prénom:
