@@ -14,7 +14,7 @@ class MenuManager extends Manager {
             $response->execute([
                 'name' => $data->getName(),
                 'price' => $data->getPrice(),
-                'is_hidden' => $data->getIsHidden()
+                'is_hidden' => (int) $data->getIsHidden()
             ]);
         }
 

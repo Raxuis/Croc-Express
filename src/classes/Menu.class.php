@@ -4,7 +4,7 @@ class Menu {
     private int $id;
     private string $name;
     private int $price;
-    private bool|null $isHidden;
+    private bool $isHidden;
 
     public function __construct(array $data)
     {
@@ -51,13 +51,13 @@ class Menu {
         $this->price = $price;
     }
 
-    public function getIsHidden(): ?bool
+    public function getIsHidden(): bool
     {
         return $this->isHidden;
     }
 
-    public function setIsHidden(?bool $isHidden): void
+    public function setIsHidden(bool $isHidden): void
     {
-        $this->isHidden = $isHidden;
+        $this->isHidden = (int) $isHidden;
     }
 }

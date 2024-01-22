@@ -6,8 +6,8 @@ class Order {
     private int $price;
     private int|null $couponId;
     private int|null $addressId;
-    private bool|null $isInDelivery;
-    private bool|null $isValidated;
+    private bool $isInDelivery;
+    private bool $isValidated;
 
     public function __construct(array $data)
     {
@@ -74,23 +74,23 @@ class Order {
         $this->addressId = $addressId;
     }
 
-    public function getIsInDelivery(): bool|null
+    public function getIsInDelivery(): bool
     {
         return $this->isInDelivery;
     }
 
-    public function setIsInDelivery(bool|null $isInDelivery): void
+    public function setIsInDelivery(bool $isInDelivery): void
     {
-        $this->isInDelivery = $isInDelivery;
+        $this->isInDelivery = (int) $isInDelivery;
     }
 
-    public function getIsValidated(): bool|null
+    public function getIsValidated(): bool
     {
         return $this->isValidated;
     }
 
-    public function setIsValidated(bool|null $isValidated): void
+    public function setIsValidated(bool $isValidated): void
     {
-        $this->isValidated = $isValidated;
+        $this->isValidated = (int) $isValidated;
     }
 }

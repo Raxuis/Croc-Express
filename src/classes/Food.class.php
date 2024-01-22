@@ -6,7 +6,7 @@ class Food {
     private int $protein;
     private int $carbohydrate;
     private int $weight;
-    private bool|null $isHidden;
+    private bool $isHidden;
 
     public function __construct(array $props)
     {
@@ -89,14 +89,14 @@ class Food {
         $this->weight = $weight;
     }
 
-    public function getIsHidden(): ?bool
+    public function getIsHidden(): bool
     {
         return $this->isHidden;
     }
 
-    public function setIsHidden(?bool $isHidden): void
+    public function setIsHidden(bool $isHidden): void
     {
-        $this->isHidden = $isHidden;
+        $this->isHidden = (int) $isHidden;
     }
 
 

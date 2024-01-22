@@ -18,7 +18,7 @@ class FoodManager extends Manager {
                 'protein' => $data->getProtein(),
                 'carbohydrate' => $data->getCarbohydrate(),
                 'weight' => $data->getWeight(),
-                'is_hidden' => $data->getIsHidden()
+                'is_hidden' => (int) $data->getIsHidden()
             ]);
         }
 

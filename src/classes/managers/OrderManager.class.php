@@ -17,8 +17,8 @@ class OrderManager extends Manager {
                 'price' => $data->getPrice(),
                 'coupon_id' => $data->getCouponId(),
                 'address_id' => $data->getAddressId(),
-                'is_in_delivery' => $data->getIsInDelivery(),
-                'is_validated' => $data->getIsValidated()
+                'is_in_delivery' => (int) $data->getIsInDelivery(),
+                'is_validated' => (int) $data->getIsValidated()
             ]);
         }
 

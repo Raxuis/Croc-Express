@@ -5,7 +5,7 @@ class User {
     private string $lastname;
     private string $email;
     private string $password;
-    private bool|null $isAdmin;
+    private bool $isAdmin;
     private string $createdAt;
 
     public function __construct(array $props)
@@ -80,14 +80,14 @@ class User {
         $this->password = $password;
     }
 
-    public function getIsAdmin(): bool|null
+    public function getIsAdmin(): bool
     {
         return $this->isAdmin;
     }
 
-    public function setIsAdmin(bool|null $is_admin): void
+    public function setIsAdmin(bool $is_admin): void
     {
-        $this->isAdmin = $is_admin;
+        $this->isAdmin = (int) $is_admin;
     }
 
     public function getCreatedAt(): string

@@ -19,7 +19,7 @@ class UserManager extends Manager
                 'lastname' => $data->getLastname(),
                 'email' => $data->getEmail(),
                 'password' => $data->getPassword(),
-                'is_admin' => $data->getIsAdmin(),
+                'is_admin' => (int) $data->getIsAdmin(),
             ]);
         }
 

@@ -10,12 +10,14 @@ class CategoryManager extends Manager
     public function createOne(object $data): int
     {
         if ($data instanceof Category) {
+            echo $data->getIsHidden();
+
             $query = "INSERT INTO categories (name, description, is_hidden) VALUES (:name, :description, :is_hidden)";
             $response = $this->bdd->prepare($query);
             $response->execute([
                 'name' => $data->getName(),
                 'description' => $data->getDescription(),
-                'is_hidden' => $data->getIsHidden()
+                'is_hidden' => (int) $data->getIsHidden()
             ]);
         }
 

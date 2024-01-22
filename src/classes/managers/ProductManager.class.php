@@ -19,7 +19,7 @@ class ProductManager extends Manager {
                 'price' => $data->getPrice(),
                 'buyingPrice' => $data->getBuyingPrice(),
                 'categoryId' => $data->getCategoryId(),
-                'isHidden' => $data->getIsHidden(),
+                'isHidden' => (int) $data->getIsHidden(),
             ]);
         }
 

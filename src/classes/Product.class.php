@@ -8,7 +8,7 @@ class Product
     private int $price;
     private int $buyingPrice;
     private int $categoryId;
-    private bool|null $isHidden;
+    private bool $isHidden;
 
     public function __construct(array $props)
     {
@@ -91,14 +91,14 @@ class Product
         $this->categoryId = $category_id;
     }
 
-    public function getIsHidden(): bool|null
+    public function getIsHidden(): bool
     {
         return $this->isHidden;
     }
 
-    public function setIsHidden(bool|null $is_hidden): void
+    public function setIsHidden(bool $is_hidden): void
     {
-        $this->isHidden = $is_hidden;
+        $this->isHidden = (int) $is_hidden;
     }
 
 

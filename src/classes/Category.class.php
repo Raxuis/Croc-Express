@@ -5,7 +5,7 @@ class Category {
     private int $id;
     private string $name;
     private string $description;
-    private bool|null $isHidden;
+    private bool $isHidden;
 
     public function __construct(array $data)
     {
@@ -18,6 +18,7 @@ class Category {
             $method = "set" . ucfirst($key);
             if (method_exists($this, $method)) {
                 $this->$method($value);
+
             }
         }
     }
@@ -52,13 +53,13 @@ class Category {
         $this->description = $description;
     }
 
-    public function getIsHidden(): bool|null
+    public function getIsHidden(): bool
     {
         return $this->isHidden;
     }
 
-    public function setIsHidden(bool|null $isHidden): void
+    public function setIsHidden(bool $isHidden): void
     {
-        $this->isHidden = $isHidden;
+        $this->isHidden = (int) $isHidden;
     }
 }
