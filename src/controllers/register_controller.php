@@ -2,8 +2,7 @@
 require '../src/views/register.php';
 require '../src/classes/Verify.class.php';
 if (!empty($_POST)) {
-    $verif = new Verify();
-    if ($userManager->getOneByEmail($_POST['email']) == null && $verif->verifyPassword($_POST['password']) && $verif->verifyFirstname($_POST['firstname']) && $verif->verifyLastname($_POST['lastname']) && $verif->verifyEmail($_POST['email'])) {
+    if ($userManager->getOneByEmail($_POST['email']) == null && Verify::verifyPassword($_POST['password']) && Verify::verifyFirstname($_POST['firstname']) && Verify::verifyLastname($_POST['lastname']) && Verify::verifyEmail($_POST['email'])) {
         $_SESSION['status'] = "success";
         $_SESSION['message'] = "Vous êtes maintenant connecté";
         $user = new User([
