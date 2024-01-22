@@ -1,7 +1,7 @@
 <?php
-require "Manager.class.php";
 
-class ProductManager extends Manager {
+class ProductManager extends Manager
+{
 
     public function __construct(PDO $database_connection, string $table)
     {
@@ -30,5 +30,14 @@ class ProductManager extends Manager {
     public function editOne(object $data): void
     {
         // TODO: Implement editOne() method.
+    }
+    public function getProductsByCategoryId(int $category_id): array
+    {
+        $query = "SELECT p.* FROM products as p INNER JOIN categories as c ON p.category_id = c.id WHERE c.id = :category_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'category_id' => $category_id
+        ]);
+        return $response->fetchAll(PDO::FETCH_ASSOC);
     }
 }

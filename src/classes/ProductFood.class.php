@@ -1,5 +1,6 @@
 <?php
-class ProductFood {
+class ProductFood
+{
 
     private int $id;
     private int $productId;
