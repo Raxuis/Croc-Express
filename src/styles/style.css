@@ -325,13 +325,9 @@ select {
     background-color: transparent;
 }
 
-.second-carousel-arrows {
+.carousel-arrows {
     color: #FFF;
 }
-
-/* .second-carousel-arrows {
-    color: #f97111;
-} */
 
 .slide-arrow-prev {
     left: 2px;

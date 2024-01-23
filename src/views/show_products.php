@@ -8,11 +8,11 @@ if (isset($products)) { ?>
                     <?php if (count($images) > 1) { ?>
                         <section class="slider-wrapper">
                             <button class="slide-arrow slide-arrow-prev">
-                                <i class="fa-solid fa-arrow-left second-carousel-arrows" id="arrow-left<?= $product['id'] ?>"></i>
+                                <i class="fa-solid fa-arrow-left carousel-arrows" id="arrow-left<?= $product['id'] ?>"></i>
                             </button>
 
                             <button class="slide-arrow slide-arrow-next">
-                                <i class="fa-solid fa-arrow-right second-carousel-arrows" id="arrow-right<?= $product['id'] ?>"></i>
+                                <i class="fa-solid fa-arrow-right carousel-arrows" id="arrow-right<?= $product['id'] ?>"></i>
                             </button>
 
                             <ul class="slides-container" id="slides-container-<?= $product['id'] ?>">
@@ -41,7 +41,7 @@ if (isset($products)) { ?>
                     <p>
                         <?= $product['price'] ?> €
                     </p>
-                    <button type="button" class="add-cart">Ajouter au panier</button>
+                    <button type="button" class="add-cart" id="<?= 'button-' . $product['id'] ?>">Ajouter au panier</button>
                 </div>
             </div>
         <?php } ?>
@@ -49,10 +49,12 @@ if (isset($products)) { ?>
     </div>
 <?php } ?>
 <script src="<?= PATH_PRIVATE . 'scripts/carousel.js' ?>"></script>
+<script src="<?= PATH_PRIVATE . 'scripts/cartManagement.js' ?>"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         <?php foreach ($products as $product) { ?>
             initializeSlider("slides-container-<?= $product['id'] ?>", "slide-<?= $product['id'] ?>", "arrow-left<?= $product['id'] ?>", "arrow-right<?= $product['id'] ?>");
+            initializeCart("<?= $product['id'] ?>", 'button-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
         <?php } ?>
     });
 </script>
