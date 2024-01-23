@@ -81,4 +81,4 @@ if (!empty($_POST)) {
     }
 }
 
-require '../src/views/admin_edit_product.php';
+require PATH_VIEWS . 'admin_edit_product.php';

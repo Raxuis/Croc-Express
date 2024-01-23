@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION["user_id"])) {
+if (!isset($_SESSION["user_id"])) {
     header('location: index.php');
     exit(0);
 }
@@ -15,4 +15,4 @@ if (!empty($_POST)) {
     }
 }
 
-require '../src/views/contact.php';
+require PATH_VIEWS . 'contact.php';

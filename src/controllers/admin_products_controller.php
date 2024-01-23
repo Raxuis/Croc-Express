@@ -13,4 +13,4 @@ if (isset($_POST['show_hide'])) {
     $productManager->deleteOne($_POST['id']);
 }
 
-require '../src/views/admin_products.php';
+require PATH_VIEWS . 'admin_products.php';

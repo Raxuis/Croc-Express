@@ -16,4 +16,4 @@
         </div>
     <?php endforeach; ?>
 </div>
-<script src="../src/scripts/carousel.js"></script>
+<script src="<?= PATH_SCRIPTS . 'scripts/carousel.js' ?>"></script>

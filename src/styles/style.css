@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-:root {
-    font-family: "Work Sans", sans-serif;
-}
+
 
 * {
     margin: 0;
     padding: 0;
     color: #FFF;
+    font-family: "Work Sans", sans-serif;
 }
 
 button {
@@ -31,21 +30,27 @@ main {
     flex-wrap: wrap;
 }
 
-.card {
+.card,
+.card-products {
+    position: relative;
     background-color: #1f2937;
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    padding: 2rem;
+    padding: 1rem 2rem 1rem 2rem;
     width: 25em;
     margin: 1rem 1rem 4rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-height: 40%;
 }
 
-.card img {
+.card-products {
+    height: 50vh;
+}
+
+.card img,
+.card-products img {
     width: 100%;
     border-radius: 10px;
 }
@@ -60,6 +65,26 @@ main {
     flex-direction: column;
     gap: 10px;
 }
+
+.add-cart {
+    position: absolute;
+    color: #FFF;
+    background-color: #f97111;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    font-size: 1em;
+}
+
+.add-cart:hover {
+    color: #f97111;
+    background-color: #FFF;
+}
+
 
 #copyrights {
     font-size: 0.8em;
@@ -259,8 +284,6 @@ select {
     width: 100%;
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
     overflow: scroll;
     scroll-behavior: smooth;
 }
@@ -271,7 +294,7 @@ select {
     align-items: center;
 }
 
-.slide img {
+.card-header img {
     max-height: 30vh;
     width: 100%;
     object-fit: contain;
@@ -297,18 +320,18 @@ select {
     margin: auto;
     height: 4rem;
     border: none;
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
     background-color: transparent;
 }
 
-.first-carousel-arrows {
-    color: #000;
+.second-carousel-arrows {
+    color: #FFF;
 }
 
-.second-carousel-arrows {
+/* .second-carousel-arrows {
     color: #f97111;
-}
+} */
 
 .slide-arrow-prev {
     left: 2px;
@@ -346,6 +369,18 @@ td {
 }
 
 @media (max-width: 768px) {
+    nav {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        width: 100%;
+
+    }
+
+    body {
+        margin-top: 20vh;
+    }
+
     .burger-menu {
         display: block;
         position: fixed;
@@ -402,4 +437,8 @@ td {
     .form {
         width: 70%;
     }
+}
+
+.card-products {
+    padding-bottom: 5%;
 }

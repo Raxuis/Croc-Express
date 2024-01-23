@@ -22,4 +22,4 @@ if (!empty($_POST)) {
         }
     }
 }
-require '../src/views/login.php';
+require PATH_VIEWS . 'login.php';
