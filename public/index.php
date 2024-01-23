@@ -1,6 +1,6 @@
 <?php
 global $bdd;
-
+require "../config/config.php";
 require "../src/core/DBconnection.php";
 require "../src/classes/managers/UserManager.class.php";
 require "../src/classes/User.class.php";
