@@ -7,4 +7,5 @@ $productImageManager = new ProductImageManager($bdd, 'product_image');
 if (!empty($_GET['category_id']) && is_numeric($_GET['category_id'])) {
     $products = $productsManager->getProductsByCategoryId($_GET['category_id'], true);
 }
+
 require PATH_VIEWS . 'show_products.php';

@@ -1,23 +1,21 @@
-function getCart(cart) {
-    const cartValue = parseInt(cart.innerHTML) || 0;
-    return cartValue;
-}
-function updateCartValue(cart) {
-    cart.innerHTML = getCart(cart) + 1;
+function updateCartValue(cart, value) {
+    cart.innerHTML = value;
 }
 
-function addToCart(product) {
-    let currentCart = JSON.parse(localStorage.getItem('currentCart'));
-    if (currentCart === null) {
-        currentCart = [];
-    }
-    currentCart.push(product);
-    localStorage.setItem("currentCart", JSON.stringify(currentCart));
+function addToCart(cart, product) {
+    // TODO : Modifier ça
+
+    fetch("../src/controllers/add_to_cart.php?id="+product).then((response) => {
+        // return response.json();
+        response.json().then((data) => {
+            console.log(data);
+            updateCartValue(cart, data.total)
+        });
+    });
 }
 function buttonListener(product, button, cart) {
     button.addEventListener("click", () => {
-        updateCartValue(cart);
-        addToCart(product);
+        addToCart(cart, product);
     });
 }
 

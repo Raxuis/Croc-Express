@@ -65,7 +65,14 @@
                     </div>
                 <?php endif; ?>
                 <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping"></i>
-                        <sup class="commands">0</sup>
+                        <?php
+                        $total = 0;
+                        if (isset($_SESSION['cart'])) {
+                            foreach ($_SESSION['cart'] as $key => $value) {
+                                $total += $value;
+                            }
+                        } ?>
+                        <sup class="commands"><?= $total ?></sup>
                     </a></li>
             </ul>
 
@@ -92,13 +99,6 @@
         unset($_SESSION['status']);
         unset($_SESSION['message']);
         ?>
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const currentCart = JSON.parse(localStorage.getItem('currentCart')) || [];
-            const cartItemCount = currentCart.length;
-            document.getElementsByClassName('commands')[0].textContent = cartItemCount;
-        });
     </script>
 </body>
 
