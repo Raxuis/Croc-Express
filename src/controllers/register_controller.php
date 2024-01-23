@@ -1,6 +1,6 @@
 <?php
-require '../src/views/register.php';
-require '../src/classes/Verify.class.php';
+require PATH_VIEWS . 'register.php';
+require PATH_CLASSES . 'Verify.class.php';
 if (!empty($_POST)) {
     if ($userManager->getOneByEmail($_POST['email']) == null && Verify::verifyPassword($_POST['password']) && Verify::verifyFirstname($_POST['firstname']) && Verify::verifyLastname($_POST['lastname']) && Verify::verifyEmail($_POST['email'])) {
         $_SESSION['status'] = "success";

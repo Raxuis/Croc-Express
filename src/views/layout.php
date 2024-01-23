@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Croc Express</title>
-    <link rel="stylesheet" href="../src/styles/style.css">
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?= PATH_PRIVATE . 'styles/style.css' ?>">
+    <link rel="shortcut icon" href="<?= BASE_PATH . 'assets/favicon.ico' ?>" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -71,7 +71,7 @@
         </nav>
     </header>
     <main>
-        <?php require '../src/controllers/' . $route . '_controller.php'; ?>
+        <?php require PATH_TO_PRIVATE . 'controllers/' . $route . '_controller.php'; ?>
     </main>
     <footer>
         <div id="footer-container">
@@ -86,7 +86,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
         integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../src/scripts/burgermenu.js"></script>
+    <script src="<?= PATH_SCRIPTS . 'burgermenu.js' ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         <?php if (!empty($_SESSION['status'])) { ?>

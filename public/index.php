@@ -1,14 +1,15 @@
 <?php
 global $bdd;
 require "../config/config.php";
-require "../src/core/DBconnection.php";
-require "../src/classes/managers/UserManager.class.php";
-require "../src/classes/User.class.php";
+require PATH_TO_PRIVATE . "core/DBconnection.php";
+require PATH_TO_PRIVATE . 'classes/managers/UserManager.class.php';
+require PATH_TO_PRIVATE . 'classes/User.class.php';
 
 session_start();
 if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     session_destroy();
-    header('Location:../public/index.php');
+    header("Location: " . BASE_PATH);
+
 }
 $availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food', 'admin_add_product', 'admin_edit_product', 'admin_add_menu', 'contact', 'admin_messages', 'admin_products'];
 $route = 'homepage';
@@ -21,5 +22,4 @@ require "tests.temp.php";
 $userManager = new UserManager($bdd, "users");
 $foodManager = new FoodManager($bdd, "foods");
 $productManager = new ProductManager($bdd, "products");
-
-require '../src/views/layout.php';
+require PATH_VIEWS . 'layout.php';

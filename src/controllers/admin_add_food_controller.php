@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION["is_admin"])) {
+if (!isset($_SESSION["is_admin"])) {
     header('location: index.php');
     exit(0);
 }
@@ -13,4 +13,4 @@ if (!empty($_POST)) {
     }
 }
 
-require '../src/views/admin_add_food.php';
+require PATH_VIEWS . 'admin_add_food.php';

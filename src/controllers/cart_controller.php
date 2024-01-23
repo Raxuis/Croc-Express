@@ -1,2 +1,2 @@
 <?php
-require '../src/views/cart.php';
+require PATH_VIEWS . 'cart.php';
