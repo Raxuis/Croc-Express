@@ -35,7 +35,7 @@ if (!empty($_POST)) {
                 $targetFile = $targetDir . basename($_FILES['image']['name'][$key]);
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'][$key], $targetFile)) {
-                    $productPicture = $targetFile;
+                    $productPicture = basename($_FILES['image']['name'][$key]);
 
                     $image = new ProductImage([
                         'productId' => $productId,
