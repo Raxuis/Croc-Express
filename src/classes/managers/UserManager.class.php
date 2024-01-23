@@ -29,7 +29,15 @@ class UserManager extends Manager
 
     public function editOne(object $user): void
     {
-        echo "editUser";
+        $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email, password = :password WHERE id = :id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'firstname' => $user->getFirstName(),
+            'lastname' => $user->getLastname(),
+            'email' => $user->getEmail(),
+            'password' => $user->getPassword(),
+            'id' => $user->getId(),
+        ]);
     }
     public function getOneByEmail(string $email): array
     {

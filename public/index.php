@@ -17,6 +17,7 @@ if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];
 }
 
+
 // NE PAS SUPPRIMER : TESTS POUR VERIFIER QUE L'ARCHITECTURE BDD FONCTIONNE
 require "tests.temp.php";
 $userManager = new UserManager($bdd, "users");
