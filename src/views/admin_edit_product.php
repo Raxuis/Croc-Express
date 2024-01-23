@@ -5,12 +5,17 @@
         <input type="text" name="name" placeholder="Nom du produit" value="<?= $product["name"] ?>">
         <textarea type="text" name="description" placeholder="Description"><?= $product["description"] ?></textarea>
         <input type="number" name="price" placeholder="Prix de vente" value="<?= $product["price"] ?>">
-        <input type="number" name="buyingPrice" placeholder="Coût de production" value="<?= $product["buying_price"] ?>">
+        <input type="number" name="buyingPrice" placeholder="Coût de production"
+               value="<?= $product["buying_price"] ?>">
 
         <select name="categoryId" id="categoryId">
             <option value="">-- Sélectionnez une catégorie --</option>
             <?php foreach ($categories as $category) { ?>
-                <option value="<?= $category["id"] ?>">
+                <?php if ($category["id"] === $product["category_id"]) { ?>
+                    <option value="<?= $category["id"] ?>" selected>
+                <?php } else { ?>
+                    <option value="<?= $category["id"] ?>">
+                <?php } ?>
                     <?= $category["name"] ?>
                 </option>
             <?php } ?>
@@ -18,15 +23,32 @@
 
         <select name="foodList[]" id="foodList" multiple>
             <option value="">-- Sélectionnez des aliments --</option>
-            <?php foreach ($allFood as $food) { ?>
-                <option value="<?= $food["id"] ?>">
-                    <?= $food["name"] ?>
+            <?php foreach ($allFood as $food) {
+                $foodSelected = false;
+                ?>
+                <?php foreach ($allFoodInProduct as $item) {
+                    if ($item["id"] === $food["id"]) {
+                        $foodSelected = true;
+                    }
+                }
+
+                if ($foodSelected) { ?>
+                    <option value="<?= $food["id"] ?>" selected>
+                <?php } else { ?>
+                    <option value="<?= $food["id"] ?>">
+                <?php } ?>
+
+                <?= $food["name"] ?>
                 </option>
             <?php } ?>
         </select>
         <div class="hidden">
             <label for="isHidden">Produit caché du public</label>
-            <input type="checkbox" name="isHidden">
+            <?php if ($product["is_hidden"]) { ?>
+                <input type="checkbox" name="isHidden" checked>
+            <?php } else { ?>
+                <input type="checkbox" name="isHidden">
+            <?php } ?>
         </div>
         <div class="file">
             <label for="image">Ajouter une image</label>
