@@ -2,17 +2,17 @@
 if (isset($products)) { ?>
     <div class="container">
         <?php foreach ($products as $product) { ?>
-            <div class="card">
+            <div class="card-products">
                 <?php $images = $productImageManager->getImagesByProductId($product['id']); ?>
                 <div class="card-header">
                     <?php if (count($images) > 1) { ?>
                         <section class="slider-wrapper">
                             <button class="slide-arrow slide-arrow-prev">
-                                <i class="fa-solid fa-arrow-left first-carousel-arrows" id="arrow-left<?= $product['id'] ?>"></i>
+                                <i class="fa-solid fa-arrow-left second-carousel-arrows" id="arrow-left<?= $product['id'] ?>"></i>
                             </button>
 
                             <button class="slide-arrow slide-arrow-next">
-                                <i class="fa-solid fa-arrow-right first-carousel-arrows" id="arrow-right<?= $product['id'] ?>"></i>
+                                <i class="fa-solid fa-arrow-right second-carousel-arrows" id="arrow-right<?= $product['id'] ?>"></i>
                             </button>
 
                             <ul class="slides-container" id="slides-container-<?= $product['id'] ?>">
@@ -30,17 +30,18 @@ if (isset($products)) { ?>
                             <img src="<?= PATH_IMAGES . $image['image'] ?>" alt="product_<?= $product['id'] ?>">
                         <?php } ?>
                     <?php } ?>
-                    <div class="card-body">
-                        <h3>
-                            <?= $product['name'] ?>
-                        </h3>
-                        <p>
-                            <?= $product['description'] ?>
-                        </p>
-                        <p>
-                            <?= $product['price'] ?> €
-                        </p>
-                    </div>
+                </div>
+                <div class="card-body">
+                    <h3>
+                        <?= $product['name'] ?>
+                    </h3>
+                    <p>
+                        <?= $product['description'] ?>
+                    </p>
+                    <p>
+                        <?= $product['price'] ?> €
+                    </p>
+                    <button type="button" class="add-cart">Ajouter au panier</button>
                 </div>
             </div>
         <?php } ?>
