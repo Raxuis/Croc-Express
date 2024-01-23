@@ -5,9 +5,8 @@ if (!isset($_SESSION["is_admin"])) {
     exit(0);
 }
 
-print_r($_POST);
-
 $product = $productManager->getOne($_POST['id']);
+$allFoodInProduct = $productFoodManager->getAllFoodOfProduct($_POST['id']);
 
 $categoriesManager = new CategoryManager($bdd, "categories");
 $categories = $categoriesManager->getAll();

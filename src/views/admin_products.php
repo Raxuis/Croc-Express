@@ -16,10 +16,7 @@
         <?php
 
         $food = $productFoodManager->getAllFoodOfProduct($product['id']);
-        print_r($food);
-
         $sales = $orderProductManager->getProductSales($product['id']);
-        print_r($sales);
 
         ?>
         <tr>
