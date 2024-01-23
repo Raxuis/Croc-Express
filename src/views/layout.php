@@ -30,7 +30,7 @@
                                 <li><a href="?page=admin&action=turnover" class="nav-links">Chiffres d'affaire</a></li>
                                 <li><a href="?page=admin&action=bestseller" class="nav-links">Meilleures ventes</a></li>
                                 <li><a href="?page=admin_add_category" class="nav-links">Catégories</a></li>
-                                <li><a href="?page=admin_add_product" class="nav-links">Produits</a></li>
+                                <li><a href="?page=admin_products" class="nav-links">Produits</a></li>
                                 <li><a href="?page=admin_add_food" class="nav-links">Aliments</a></li>
                                 <li><a href="?page=admin_messages" class="nav-links">Messages</a></li>
                             </ul>

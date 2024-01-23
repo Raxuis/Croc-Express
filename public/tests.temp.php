@@ -64,13 +64,13 @@ $productFoodManager = new ProductFoodManager($bdd, "products_foods");
 //]);
 //$couponManager->createOne($coupon);
 
-/* $categoryManager = new CategoryManager($bdd, "categories");
-$category = new Category([
-    'name' => "TEST",
-    'description' => 'TEST',
-    'isHidden' => false
-]);
-$categoryManager->createOne($category); */
+$categoryManager = new CategoryManager($bdd, "categories");
+//$category = new Category([
+//    'name' => "Burgers",
+//    'description' => 'Nos délicieux burgers',
+//    'isHidden' => false
+//]);
+//$categoryManager->createOne($category);
 
 $messageManager = new MessageManager($bdd, "messages");
 //$message = new Message([
@@ -117,7 +117,7 @@ $menuManager = new MenuManager($bdd, "menus");
 //]);
 //$productImageManager->createOne($productImage);
 
-//$orderProductManager = new OrderProductManager($bdd, "orders_products");
+$orderProductManager = new OrderProductManager($bdd, "orders_products");
 //$orderProduct = new OrderProduct([
 //    'orderId' => 1,
 //    'productId' => 1,

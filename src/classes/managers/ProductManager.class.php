@@ -40,4 +40,13 @@ class ProductManager extends Manager
         ]);
         return $response->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function toggleHide(int $product_id): void
+    {
+        $query = "UPDATE products SET is_hidden = !is_hidden WHERE id = :product_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'product_id' => $product_id
+        ]);
+    }
 }

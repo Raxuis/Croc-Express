@@ -1,5 +1,6 @@
 <?php
 global $bdd;
+
 require "../src/core/DBconnection.php";
 require "../src/classes/managers/UserManager.class.php";
 require "../src/classes/User.class.php";
@@ -9,7 +10,7 @@ if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     session_destroy();
     header('Location:../public/index.php');
 }
-$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food', 'admin_add_product', 'admin_add_menu', 'contact', 'admin_messages'];
+$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food', 'admin_add_product', 'admin_edit_product', 'admin_add_menu', 'contact', 'admin_messages', 'admin_products'];
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];

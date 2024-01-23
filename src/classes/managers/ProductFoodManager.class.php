@@ -27,4 +27,13 @@ class ProductFoodManager extends Manager
         // TODO: Implement editOne() method.
         echo "Editing to implement";
     }
+
+    public function getAllFoodOfProduct(int $product_id) {
+        $query = "SELECT * FROM " . $this->table . " WHERE product_id=:product_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'product_id' => $product_id
+        ]);
+        return $response->fetchAll();
+    }
 }
