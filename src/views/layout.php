@@ -39,12 +39,12 @@
                             </ul>
                         </li>
                     <?php endif; ?>
-                    <li class="dropdown-main"><a href="?page=profile" class="nav-links">
+                    <li class="dropdown-main"><a href="?page=edit_profile" class="nav-links">
                             <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'Anonymous' ?><i
                                 class="fa-solid fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="?page=profile&action=profile" class="nav-links">Profil</a></li>
+                            <li><a href="?page=edit_profile" class="nav-links">Profil</a></li>
                             <li><a href="?page=profile&action=commands" class="nav-links">Commandes</a></li>
                             <li><a href="?page=disconnect" class="nav-links">Se déconnecter</a></li>
                         </ul>
