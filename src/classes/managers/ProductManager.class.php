@@ -43,9 +43,14 @@ class ProductManager extends Manager
         ]);
 
     }
-    public function getProductsByCategoryId(int $category_id): array
+    public function getProductsByCategoryId(int $category_id, bool $onlyNotHidden=false): array
     {
-        $query = "SELECT p.* FROM products as p INNER JOIN categories as c ON p.category_id = c.id WHERE c.id = :category_id";
+        if ($onlyNotHidden) {
+            $query = "SELECT p.* FROM products as p INNER JOIN categories as c ON p.category_id = c.id WHERE c.id = :category_id AND NOT p.is_hidden";
+        } else {
+           $query = "SELECT p.* FROM products as p INNER JOIN categories as c ON p.category_id = c.id WHERE c.id = :category_id";
+        }
+
         $response = $this->bdd->prepare($query);
         $response->execute([
             'category_id' => $category_id

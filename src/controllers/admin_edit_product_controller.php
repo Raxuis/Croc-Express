@@ -56,27 +56,29 @@ if (!empty($_POST)) {
             }
         }
 
-        foreach ($_FILES["image"]["name"] as $key => $value) {
-            if ($_FILES['image']['error'][$key] === 0) {
-                $targetDir = '../public/assets/product_images/';
-                $targetFile = $targetDir . basename($_FILES['image']['name'][$key]);
 
-                if (move_uploaded_file($_FILES['image']['tmp_name'][$key], $targetFile)) {
-                    $productPicture = basename($_FILES['image']['name'][$key]);
 
-                    $image = new ProductImage([
-                        'productId' => $_POST["id"],
-                        'image' => $productPicture
-                    ]);
-                    $productImageManager->createOne($image);
-                    echo "Image ajoutée avec succès";
-                }
-            }
-        }
+//        foreach ($_FILES["image"]["name"] as $key => $value) {
+//            if ($_FILES['image']['error'][$key] === 0) {
+//                $targetDir = '../public/assets/product_images/';
+//                $targetFile = $targetDir . basename($_FILES['image']['name'][$key]);
+//
+//                if (move_uploaded_file($_FILES['image']['tmp_name'][$key], $targetFile)) {
+//                    $productPicture = $targetFile;
+//
+//                    $image = new ProductImage([
+//                        'productId' => $productId,
+//                        'image' => $productPicture
+//                    ]);
+//                    $productImageManager->createOne($image);
+//                    echo "Image ajoutée avec succès";
+//                }
+//            }
+//        }
 
-        header('location: index.php?page=admin_products');
-        exit;
+            header('location: index.php?page=admin_products');
+            exit;
     }
 }
 
-require PATH_VIEWS . 'admin_edit_product.php';
+require '../src/views/admin_edit_product.php';
