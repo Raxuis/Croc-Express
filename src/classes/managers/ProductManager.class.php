@@ -30,6 +30,18 @@ class ProductManager extends Manager
     public function editOne(object $data): void
     {
         // TODO: Implement editOne() method.
+        $query = "UPDATE products SET name = :name, description = :description, price = :price, buying_price = :buyingPrice, category_id = :categoryId, is_hidden = :isHidden WHERE id = :id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'name' => $data->getName(),
+            'description' => $data->getDescription(),
+            'price' => $data->getPrice(),
+            'buyingPrice' => $data->getBuyingPrice(),
+            'categoryId' => $data->getCategoryId(),
+            'isHidden' => (int) $data->getIsHidden(),
+            'id' => $data->getId(),
+        ]);
+
     }
     public function getProductsByCategoryId(int $category_id): array
     {

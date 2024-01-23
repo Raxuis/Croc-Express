@@ -2,6 +2,7 @@
 <div class="container">
     <form action="" method="post" class="form" enctype='multipart/form-data'>
 
+        <input type="hidden" name="id" value="<?= $product["id"] ?>">
         <input type="text" name="name" placeholder="Nom du produit" value="<?= $product["name"] ?>">
         <textarea type="text" name="description" placeholder="Description"><?= $product["description"] ?></textarea>
         <input type="number" name="price" placeholder="Prix de vente" value="<?= $product["price"] ?>">
@@ -23,25 +24,25 @@
 
         <select name="foodList[]" id="foodList" multiple>
             <option value="">-- Sélectionnez des aliments --</option>
-            <?php foreach ($allFood as $food) {
-                $foodSelected = false;
-                ?>
-                <?php foreach ($allFoodInProduct as $item) {
-                    if ($item["id"] === $food["id"]) {
+
+            <?php foreach ($allFood as $food) { ?>
+                <?php $foodSelected = false;
+                foreach ($allFoodInProduct as $item) {
+                    if ($item["food_id"] === $food["id"]) {
                         $foodSelected = true;
                     }
                 }
-
                 if ($foodSelected) { ?>
                     <option value="<?= $food["id"] ?>" selected>
                 <?php } else { ?>
                     <option value="<?= $food["id"] ?>">
                 <?php } ?>
 
-                <?= $food["name"] ?>
+                    <?= $food["name"] ?>
                 </option>
             <?php } ?>
         </select>
+
         <div class="hidden">
             <label for="isHidden">Produit caché du public</label>
             <?php if ($product["is_hidden"]) { ?>
@@ -52,10 +53,10 @@
         </div>
         <div class="file">
             <label for="image">Ajouter une image</label>
-            <input type="file" name="image[]" id="image" multiple>
+            <input type="file" name="image[]" id="image" value="" multiple>
         </div>
 
-        <button type="submit" class="submit">Ajouter ce produit</button>
+        <button type="submit" class="submit">Modifier ce produit</button>
 
     </form>
 </div>

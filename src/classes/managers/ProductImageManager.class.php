@@ -37,4 +37,13 @@ class ProductImageManager extends Manager
         ]);
         return $response->fetchAll();
     }
+
+    public function getAllImagesOfProduct(int $product_id) {
+        $query = "SELECT * FROM " . $this->table . " WHERE product_id=:product_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'product_id' => $product_id
+        ]);
+        return $response->fetchAll();
+    }
 }

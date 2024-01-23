@@ -110,7 +110,7 @@ $menuManager = new MenuManager($bdd, "menus");
 //]);
 //$orderManager->createOne($order);
 
-//$productImageManager = new ProductImageManager($bdd, "products_images");
+$productImageManager = new ProductImageManager($bdd, "products_images");
 //$productImage = new ProductImage([
 //    'productId' => 1,
 //    'image' => "image.png"

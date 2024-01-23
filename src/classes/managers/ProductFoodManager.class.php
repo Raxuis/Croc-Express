@@ -24,8 +24,13 @@ class ProductFoodManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Editing to implement";
+        $query = "UPDATE products_foods SET product_id = :product_id, food_id = :food_id WHERE id = :id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'product_id' => $data->getProductId(),
+            'food_id' => $data->getFoodId(),
+            'id' => $data->getId()
+        ]);
     }
 
     public function getAllFoodOfProduct(int $product_id) {
