@@ -11,7 +11,7 @@ if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     header("Location: " . BASE_PATH);
 
 }
-$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food', 'admin_add_product', 'admin_edit_product', 'admin_add_menu', 'contact', 'admin_messages', 'admin_products'];
+$availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'admin_add_food', 'admin_add_product', 'admin_edit_product', 'admin_add_menu', 'contact', 'admin_messages', 'admin_products', 'edit_profile'];
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];
