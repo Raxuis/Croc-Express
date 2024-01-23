@@ -57,7 +57,8 @@
                     <li><a href="?page=login" class="nav-links not-logged">Se connecter</a></li>
                     <li><a href="?page=register" class="nav-links not-logged">S'inscrire</a></li>
                     <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping"></i>
-                            <sup class="commands">0</sup>
+                            <sup class="commands">0
+                            </sup>
                         </a></li>
                     <div class="burger-menu">
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -95,6 +96,13 @@
         unset($_SESSION['status']);
         unset($_SESSION['message']);
         ?>
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentCart = JSON.parse(localStorage.getItem('currentCart')) || [];
+            const cartItemCount = currentCart.length;
+            document.getElementsByClassName('commands')[0].textContent = cartItemCount;
+        });
     </script>
 </body>
 
