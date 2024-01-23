@@ -50,9 +50,6 @@
                         </ul>
                     </li>
                     <li><a href="?page=contact" class="nav-links">Contactez-nous</a></li>
-                    <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping"></i>
-                            <sup class="commands">0</sup>
-                        </a></li>
                     <div class="burger-menu">
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                             <i class="fa-solid fa-bars" id="burger-icon"></i>
@@ -61,16 +58,15 @@
                 <?php else: ?>
                     <li><a href="?page=login" class="nav-links not-logged">Se connecter</a></li>
                     <li><a href="?page=register" class="nav-links not-logged">S'inscrire</a></li>
-                    <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping"></i>
-                            <sup class="commands">0</sup>
-                        </a></li>
                     <div class="burger-menu">
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                             <i class="fa-solid fa-bars" id="burger-icon"></i>
                         </a>
                     </div>
                 <?php endif; ?>
-
+                <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping"></i>
+                        <sup class="commands">0</sup>
+                    </a></li>
             </ul>
 
         </nav>
@@ -101,7 +97,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const currentCart = JSON.parse(localStorage.getItem('currentCart')) || [];
             const cartItemCount = currentCart.length;
-            document.getElementsById('cart')[0].textContent = cartItemCount;
+            document.getElementsByClassName('commands')[0].textContent = cartItemCount;
         });
     </script>
 </body>
