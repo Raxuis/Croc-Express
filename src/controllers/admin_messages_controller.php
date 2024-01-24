@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_SESSION["is_admin"])) {
-    header('location: index.php');
+    header("location: index.php");
     exit(0);
 }
 
