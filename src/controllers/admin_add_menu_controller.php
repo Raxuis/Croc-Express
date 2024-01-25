@@ -8,7 +8,7 @@ if (!isset($_SESSION["is_admin"])) {
 $allProducts = $productManager->getAll();
 
 if (!empty($_POST)) {
-    if (isset($_POST['name']) && isset($_POST['price']) && isset($_POST['productList'])) {
+    if (!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['productList'])) {
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
         $menu = new Menu($_POST);
         $menuId = $menuManager->createOne($menu);

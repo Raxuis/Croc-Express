@@ -4,8 +4,8 @@
 
         <input type="text" name="name" placeholder="Nom du produit">
         <textarea type="text" name="description" placeholder="Description"></textarea>
-        <input type="number" name="price" placeholder="Prix de vente">
-        <input type="number" name="buyingPrice" placeholder="Coût de production">
+        <input type="number" min="1" name="price" placeholder="Prix de vente">
+        <input type="number" min="1" name="buyingPrice" placeholder="Coût de production">
 
         <select name="categoryId" id="categoryId">
             <option value="">-- Sélectionnez une catégorie --</option>

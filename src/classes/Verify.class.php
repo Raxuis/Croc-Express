@@ -19,7 +19,6 @@ class Verify
         if (!empty($data)) {
             return true;
         }
-        echo 'Veuillez renseigner votre prénom';
         return false;
     }
 
@@ -28,7 +27,6 @@ class Verify
         if (!empty($data)) {
             return true;
         }
-        echo 'Veuillez renseigner votre nom';
         return false;
     }
 

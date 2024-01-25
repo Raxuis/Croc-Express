@@ -9,9 +9,11 @@ if (!empty($_POST)) {
     if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['userId']) && isset($_POST['ip'])) {
         $message = new Message($_POST);
         $messageManager->createOne($message);
-        echo "Message sent";
+        $_SESSION['status'] = "success";
+        $_SESSION['message'] = "Vous avez créé un compte avec succès";
     } else {
-        echo "Missing parameters";
+        $_SESSION['status'] = "error";
+        $_SESSION['message'] = "Vous devez remplir tous les champs";
     }
 }
 

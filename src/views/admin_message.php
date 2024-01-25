@@ -20,7 +20,7 @@
                 <?= $message['title'] ?>
             </td>
             <td>
-                <?= $message['content'] ?>
+                <?= htmlspecialchars($message['content']) ?>
             </td>
         </tr>
     <?php } ?>

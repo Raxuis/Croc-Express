@@ -5,18 +5,18 @@
         <input type="hidden" name="id" value="<?= $product["id"] ?>">
         <input type="text" name="name" placeholder="Nom du produit" value="<?= $product["name"] ?>">
         <textarea type="text" name="description" placeholder="Description"><?= $product["description"] ?></textarea>
-        <input type="number" name="price" placeholder="Prix de vente" value="<?= $product["price"] ?>">
-        <input type="number" name="buyingPrice" placeholder="Coût de production"
-               value="<?= $product["buying_price"] ?>">
+        <input type="number" min="1" name="price" placeholder="Prix de vente" value="<?= $product["price"] ?>">
+        <input type="number" min="1" name="buyingPrice" placeholder="Coût de production"
+            value="<?= $product["buying_price"] ?>">
 
         <select name="categoryId" id="categoryId">
             <option value="">-- Sélectionnez une catégorie --</option>
             <?php foreach ($categories as $category) { ?>
                 <?php if ($category["id"] === $product["category_id"]) { ?>
                     <option value="<?= $category["id"] ?>" selected>
-                <?php } else { ?>
+                    <?php } else { ?>
                     <option value="<?= $category["id"] ?>">
-                <?php } ?>
+                    <?php } ?>
                     <?= $category["name"] ?>
                 </option>
             <?php } ?>
@@ -34,9 +34,9 @@
                 }
                 if ($foodSelected) { ?>
                     <option value="<?= $food["id"] ?>" selected>
-                <?php } else { ?>
+                    <?php } else { ?>
                     <option value="<?= $food["id"] ?>">
-                <?php } ?>
+                    <?php } ?>
 
                     <?= $food["name"] ?>
                 </option>
