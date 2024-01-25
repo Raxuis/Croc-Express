@@ -17,7 +17,7 @@
             $product = $productsManager->getOne($key);
             $productImage = $productImageManager->getImagesByProductId($key);
             $productsInCart[] = $product
-            ?>
+                ?>
             <tr id="<?= 'item-' . $product['id'] ?>">
                 <td class="td-images">
                     <img src="<?= PATH_IMAGES . $productImage[0]['image'] ?>" alt="" class='cart-images'>
@@ -35,8 +35,10 @@
                     <?= $product['price'] * $_SESSION["cart"][$product['id']] ?>
                 </td>
                 <td>
-                    <button class="remove-cart" data-action="remove" id="<?= 'button-remove-' . $product['id'] ?>"><i class="fa-solid fa-circle-minus"></i></button>
-                    <button class="add-cart" data-action="add" id="<?= 'button-add-' . $product['id'] ?>"><i class="fa-solid fa-circle-plus"></i></button>
+                    <button class="remove-cart" data-action="remove" id="<?= 'button-remove-' . $product['id'] ?>"><i
+                            class="fa-solid fa-circle-minus"></i></button>
+                    <button class="add-cart" data-action="add" id="<?= 'button-add-' . $product['id'] ?>"><i
+                            class="fa-solid fa-circle-plus"></i></button>
                 </td>
             </tr>
         <?php } ?>
@@ -62,7 +64,7 @@
             <td>Total</td>
             <td id="total-price"></td>
             <td>
-                <button type="button" class="submit" id='pay'>Payer</button>
+                <button type="button" class="submit pay">Payer</button>
             </td>
         </tr>
     </table>

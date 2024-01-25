@@ -440,6 +440,16 @@ thead th {
     text-transform: uppercase;
 }
 
+thead th a {
+    color: #f6720d;
+    text-decoration: none;
+    transition: transform .3s ease-out;
+}
+
+thead th a:hover {
+    transform: translate(0, -5px);
+}
+
 .fa-circle-minus,
 .fa-circle-plus,
 .fa-bag-shopping {
