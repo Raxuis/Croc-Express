@@ -406,7 +406,7 @@ td i {
 }
 
 #table-cart {
-    margin-bottom: 3rem;
+    margin-bottom: 10vh;
 }
 
 thead th {
@@ -507,12 +507,16 @@ thead th {
 
     table #pay {
         width: 100%;
-        padding: 2px;
+        padding: 5px;
         font-weight: 400;
     }
 
     td,
     thead th {
+        padding: 5px;
+    }
+
+    td i {
         padding: 5px;
     }
 }
