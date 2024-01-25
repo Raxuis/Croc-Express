@@ -15,6 +15,12 @@ $availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'a
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];
+    if (strpos($route, 'admin_') === 0) {
+        if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== 1) {
+            header('Location: index.php');
+            exit();
+        }
+    }
 }
 
 
