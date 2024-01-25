@@ -1,4 +1,5 @@
 <?php
+require "../../public/tests.temp.php";
 
 session_start();
 
@@ -12,5 +13,6 @@ foreach ($cart as $key => $value) {
 
 $inDelivery = $_SESSION['inDelivery'] ?? false;
 
+$order = new Order([
 
-
+]);
