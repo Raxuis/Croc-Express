@@ -28,15 +28,15 @@
                 <td>
                     <?= $product['price'] ?>
                 </td>
-                <td>
+                <td id="<?= 'item-quantity-' . $product['id'] ?>">
                     <?= $value ?>
                 </td>
-                <td>
-                    <?= $product['price'] * $value ?>
+                <td id="<?= 'item-total-price-' . $product['id'] ?>" data-price="<?= $product['price'] ?>">
+                    <?= $product['price'] * $_SESSION["cart"][$product['id']] ?>
                 </td>
                 <td>
-                    <button class="remove-cart" id="<?= 'button-remove-' . $product['id'] ?>"><i class="fa-solid fa-circle-minus"></i></button>
-                    <button class="add-cart" id="<?= 'button-add-' . $product['id'] ?>"><i class="fa-solid fa-circle-plus"></i></button>
+                    <button class="remove-cart" data-action="remove" id="<?= 'button-remove-' . $product['id'] ?>"><i class="fa-solid fa-circle-minus"></i></button>
+                    <button class="add-cart" data-action="add" id="<?= 'button-add-' . $product['id'] ?>"><i class="fa-solid fa-circle-plus"></i></button>
                 </td>
             </tr>
         <?php } ?>
@@ -73,7 +73,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         <?php foreach ($productsInCart as $product) { ?>
             initializeCart("<?= $product['id'] ?>", 'button-add-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
-            // TODO: add remove cart function
+            initializeCart("<?= $product['id'] ?>", 'button-remove-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
         <?php } ?>
     });
 </script>

@@ -1,23 +1,34 @@
 function updateCartValue(cart, value) {
-  cart.innerHTML = value;
+    cart.innerHTML = value;
 }
 
-function addToCart(cart, product) {
-  fetch("../src/controllers/add_to_cart.php?id=" + product).then((response) => {
-    response.json().then((data) => {
-      console.log(data);
-      updateCartValue(cart, data.total);
-    });
-  });
+function updateItemValue(item, value) {
+    item.textContent = value;
 }
+
+function updateTotalPriceItemValue(item, value) {
+    let price = item.getAttribute("data-price");
+    item.textContent = value * price;
+}
+
+function updateCart(cart, product, action) {
+    fetch("../src/controllers/cart_manager_controller.php?id=" + product + "&action=" + action).then((response) => {
+        response.json().then((data) => {
+            updateCartValue(cart, data.total);
+            updateItemValue(document.getElementById("item-quantity-" + product), data.itemTotal);
+            updateTotalPriceItemValue(document.getElementById("item-total-price-" + product), data.itemTotal);
+        });
+    });
+}
+
 function buttonListener(product, button, cart) {
-  button.addEventListener("click", () => {
-    addToCart(cart, product);
-  });
+    button.addEventListener("click", () => {
+        updateCart(cart, product, button.getAttribute("data-action"));
+    });
 }
 
 function initializeCart(productId, buttonId, cart) {
-  const product = productId;
-  const button = document.getElementById(buttonId);
-  buttonListener(product, button, cart);
+    const product = productId;
+    const button = document.getElementById(buttonId);
+    buttonListener(product, button, cart);
 }
