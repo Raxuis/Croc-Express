@@ -204,7 +204,7 @@ nav p:hover .fa-caret-down {
 .form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 10px;
     padding: 10px;
@@ -255,7 +255,7 @@ select {
     cursor: pointer;
     background-color: #d01a1a83;
     transition: 0.5s;
-    margin-left: 5px;
+    width: 100%;
 }
 
 .submit:hover {
@@ -461,10 +461,9 @@ thead th a:hover {
 }
 
 .remove-cart i,
-.add-cart i {
+.submit .add-cart i {
     transition: 0.3s;
 }
-
 
 @media (max-width: 768px) {
     nav {
@@ -540,6 +539,8 @@ thead th a:hover {
     }
 
     .form {
+        display: flex;
+        flex-direction: column;
         width: 70%;
     }
 
@@ -565,10 +566,7 @@ thead th a:hover {
     }
 
     td,
-    thead th {
-        padding: 5px;
-    }
-
+    thead th,
     td i {
         padding: 5px;
     }
