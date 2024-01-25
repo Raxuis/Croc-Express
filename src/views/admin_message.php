@@ -17,7 +17,7 @@
                 <?= $currentUser['firstname'] ?>
             </td>
             <td>
-                <?= $message['title'] ?>
+                <?= htmlspecialchars($message['title']) ?>
             </td>
             <td>
                 <?= htmlspecialchars($message['content']) ?>

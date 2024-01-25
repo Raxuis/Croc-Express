@@ -4,13 +4,19 @@ if (!isset($_SESSION["user_id"])) {
     header('location: index.php');
     exit(0);
 }
+$maxTitleLength = 50;
 
 if (!empty($_POST)) {
-    if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['userId']) && isset($_POST['ip'])) {
-        $message = new Message($_POST);
-        $messageManager->createOne($message);
-        $_SESSION['status'] = "success";
-        $_SESSION['message'] = "Vous avez créé un compte avec succès";
+    if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['userId']) && !empty($_POST['ip'])) {
+        if (strlen($_POST['title']) > $maxTitleLength) {
+            $_SESSION['status'] = "error";
+            $_SESSION['message'] = "Votre titre est trop long";
+        } else {
+            $message = new Message($_POST);
+            $messageManager->createOne($message);
+            $_SESSION['status'] = "success";
+            $_SESSION['message'] = "Vous avez bien envoyé votre message";
+        }
     } else {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Vous devez remplir tous les champs";

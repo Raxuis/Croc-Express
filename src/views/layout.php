@@ -52,7 +52,7 @@
                         </li>
                     <?php endif; ?>
                     <li class="dropdown-main"><a href="?page=edit_profile" class="nav-links" title="Edit Profile">
-                            <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'Anonymous' ?><i
+                            <?= isset($_SESSION['name']) ? htmlspecialchars($_SESSION['name']) : 'Anonymous' ?><i
                                 class="fa-solid fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu">
