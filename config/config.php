@@ -3,7 +3,21 @@ define('SERVER', 'localhost');
 define('DATABASE', 'croc_express');
 define('PORT', 3306);
 define('USER', 'root');
-define('PASSWORD', 'root');
+switch (PHP_OS) {
+    case 'WINNT':
+        define('PASSWORD', '');
+        break;
+    case 'Darwin':
+        define('PASSWORD', 'root');
+        break;
+    case 'Linux':
+        define('PASSWORD', '');
+        break;
+    default:
+        define('PASSWORD', '');
+        break;
+}
+;
 define('DNS', 'http://localhost:8888/');
 define('PATH', 'Croc-Express/public/');
 define('BASE_PATH', DNS . PATH);
