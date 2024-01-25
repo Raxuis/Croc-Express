@@ -12,11 +12,12 @@
             </tr>
         </thead>
         <?php $productsInCart = [];
-        foreach ($_SESSION["cart"] as $key => $value) { ?>
-            <?php
-            $product = $productsManager->getOne($key);
-            $productImage = $productImageManager->getImagesByProductId($key);
-            $productsInCart[] = $product
+        if (isset($_SESSION["cart"])) {
+            foreach ($_SESSION["cart"] as $key => $value) { ?>
+                <?php
+                $product = $productsManager->getOne($key);
+                $productImage = $productImageManager->getImagesByProductId($key);
+                $productsInCart[] = $product
                 ?>
             <tr id="<?= 'item-' . $product['id'] ?>">
                 <td class="td-images">
@@ -41,7 +42,8 @@
                             class="fa-solid fa-circle-plus"></i></button>
                 </td>
             </tr>
-        <?php } ?>
+        <?php }
+            }?>
         <tr>
             <td></td>
             <td></td>

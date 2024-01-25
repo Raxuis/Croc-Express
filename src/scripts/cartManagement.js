@@ -13,6 +13,8 @@ function updateTotalPriceItemValue(item, value) {
 
 function updateTotalPriceValue(item, value) {
     item.textContent = value;
+
+
 }
 
 function updateCartTotalValue(cart, value) {

@@ -11,7 +11,6 @@ if (!empty($_GET["action"])) {
             $_GET["id"] => 1
         ];
     } else {
-
         if ($_GET["action"] === "get_all_articles") {
             $productsInCart = [];
             foreach ($_SESSION["cart"] as $key => $value) {
