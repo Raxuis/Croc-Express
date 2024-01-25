@@ -1,6 +1,6 @@
 <h3>Votre panier</h3>
 <div class="container">
-    <table id='table-cart'>
+    <table class='table-cart'>
         <thead>
             <tr>
                 <th></th>
@@ -18,7 +18,7 @@
             $productImage = $productImageManager->getImagesByProductId($key);
             $productsInCart[] = $product
             ?>
-            <tr>
+            <tr id="<?= 'item-' . $product['id'] ?>">
                 <td class="td-images">
                     <img src="<?= PATH_IMAGES . $productImage[0]['image'] ?>" alt="" class='cart-images'>
                 </td>
@@ -60,7 +60,7 @@
             </td>
             <td></td>
             <td>Total</td>
-            <td>1.00</td>
+            <td id="total-price"></td>
             <td>
                 <button type="button" class="submit" id='pay'>Payer</button>
             </td>
@@ -74,6 +74,7 @@
         <?php foreach ($productsInCart as $product) { ?>
             initializeCart("<?= $product['id'] ?>", 'button-add-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
             initializeCart("<?= $product['id'] ?>", 'button-remove-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
+            getTotalCartValue(document.getElementById("total-price"));
         <?php } ?>
     });
 </script>
