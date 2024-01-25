@@ -47,7 +47,7 @@
             <td></td>
             <td></td>
             <td>Livraison</td>
-            <td>0</td>
+            <td id="delivery-price">0</td>
         </tr>
         <tr>
             <td></td>
@@ -58,7 +58,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="checkbox" name="livery"> <label for="livery">Livrer cette commande pour 5€</label>
+                <input type="checkbox" name="livery" id="livery"><label for="livery">Livrer cette commande pour 5€</label>
             </td>
             <td></td>
             <td>Total</td>

@@ -60,3 +60,15 @@ function initializeCart(productId, buttonId, cart) {
     const button = document.getElementById(buttonId);
     buttonListener(product, button, cart);
 }
+
+let livery = document.getElementById("livery");
+livery.addEventListener("change", (event) => {
+    let deliveryPrice = document.getElementById("delivery-price");
+    if(!event.target.checked) {
+        updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) - 5);
+        updateItemValue(deliveryPrice, 0);
+    } else {
+        updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) + 5);
+        updateItemValue(deliveryPrice, 5);
+    }
+});
