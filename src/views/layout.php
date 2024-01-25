@@ -26,8 +26,8 @@
             <ul class="nav-menu">
                 <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true): ?>
                     <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
-                        <li class="dropdown-main"><a href="?page=admin" title="Admin">Administration<i
-                                    class="fa-solid fa-caret-down"></i></a>
+                        <li class="dropdown-main">
+                            <p>Administration<i class="fa-solid fa-caret-down"></i></p>
                             <ul class="dropdown-menu">
                                 <li><a href="?page=admin_deliver" class="nav-links" title="Commands To Deliver">Mes commandes à
                                         livrer</a>

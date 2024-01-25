@@ -53,6 +53,8 @@ main {
 .card-products img {
     width: 100%;
     border-radius: 10px;
+    user-select: none;
+
 }
 
 .card-header {
@@ -118,6 +120,7 @@ nav img {
     margin-left: 5px;
     height: 3.5em;
     cursor: pointer;
+    user-select: none;
     transition: 0.5s;
 }
 
@@ -145,19 +148,28 @@ nav li {
 
 nav a,
 nav i,
+nav p,
 sup {
     text-decoration: none;
     color: #788c82;
     transition: 0.5s;
+    cursor: pointer;
+    user-select: none;
 }
 
 nav a:hover,
+nav p:hover,
 nav i:hover,
 nav sup:hover {
     color: #FFF;
 }
 
 nav a:hover .fa-caret-down {
+    transform: rotate(180deg);
+    color: #FFF;
+}
+
+nav p:hover .fa-caret-down {
     transform: rotate(180deg);
     color: #FFF;
 }
@@ -250,11 +262,10 @@ select {
     color: #d01a1a83;
 }
 
-.other-products {
+.orange-button {
     display: flex;
     padding: 10px;
     border-radius: 5px;
-    width: 50%;
     background-color: #f97111;
     font-size: 1em;
     justify-content: center;
@@ -262,23 +273,24 @@ select {
     font-weight: 600;
 }
 
-.other-products i {
+.orange-button i {
     margin-left: 20px;
     transition: 0.5s;
 }
 
-.other-products:hover i {
+.orange-button:hover i {
     transform: translate(5px);
     color: #f97111;
 }
 
-.other-products:hover {
+.orange-button:hover {
     background-color: #FFF;
     color: #f97111;
 }
 
 .slider-wrapper {
     position: relative;
+    user-select: none;
     overflow: hidden;
 }
 
@@ -286,6 +298,7 @@ select {
     width: 100%;
     display: flex;
     list-style: none;
+    user-select: none;
     overflow: scroll;
     scroll-behavior: smooth;
 }
@@ -293,6 +306,7 @@ select {
 .slide {
     flex: 1 0 100%;
     display: flex;
+    user-select: none;
     align-items: center;
 }
 
@@ -300,6 +314,7 @@ select {
     max-height: 30vh;
     width: 100%;
     object-fit: contain;
+    user-select: none;
 }
 
 .slides-container {
@@ -316,6 +331,7 @@ select {
 }
 
 .slide-arrow {
+    user-select: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -328,6 +344,7 @@ select {
 }
 
 .carousel-arrows {
+    user-select: none;
     color: #FFF;
 }
 
@@ -341,6 +358,7 @@ select {
 
 .burger-menu {
     display: none;
+    user-select: none;
     cursor: pointer;
 }
 
@@ -368,12 +386,17 @@ tr {
     width: 10%;
 }
 
-#pay {
-    width: 80%;
+.pay {
     padding: 10px;
     font-size: 18px;
     font-weight: 500;
     margin: 0;
+}
+
+#delete-edit {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
 }
 
 .cart-images {
@@ -407,7 +430,7 @@ td i {
     padding: 10px;
 }
 
-#table-cart {
+.table-cart {
     margin-bottom: 10vh;
 }
 
@@ -507,6 +530,7 @@ thead th {
     .td-images img {
         object-fit: cover;
         width: 2rem;
+
     }
 
     table * {
@@ -514,11 +538,11 @@ thead th {
     }
 
     thead *,
-    table #pay {
+    table .pay {
         font-size: 0.8em;
     }
 
-    table #pay {
+    table .pay {
         width: 100%;
         padding: 5px;
         font-weight: 400;

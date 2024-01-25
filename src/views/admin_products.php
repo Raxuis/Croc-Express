@@ -1,16 +1,16 @@
 <h3>Produits</h3>
 
-<table>
+<table class='table-cart'>
     <tr>
-        <td><b>ID</b></td>
-        <td><b>Nom</b></td>
-        <td><b>Prix de vente</b></td>
-        <td><b>Prix d'achat</b></td>
-        <td><b>Calories</b></td>
-        <td><b>Aliments</b></td>
-        <td><b>Ventes</b></td>
-        <td><b>Publier</b></td>
-        <td><b><a href="?page=admin_add_product" title="Add product admin">Nouveau produit</a></b></td>
+        <td>ID</td>
+        <td>Nom</td>
+        <td>Prix de vente</td>
+        <td>Prix d'achat</td>
+        <td>Calories</td>
+        <td>Aliments</td>
+        <td>Ventes</td>
+        <td>Publier</td>
+        <td><a href="?page=admin_add_product" title="Add product admin">Nouveau produit</a></td>
     </tr>
     <?php foreach ($allProducts as $product) { ?>
         <?php
@@ -44,19 +44,19 @@
             <td>
                 <form method="post">
                     <input type="hidden" name="id" value="<?= $product['id'] ?>">
-                    <button name="show_hide" type="submit">
+                    <button name="show_hide" type="submit" class="submit pay orange-button">
                         <?= $product['is_hidden'] ? "Afficher" : "Masquer" ?>
                     </button>
                 </form>
             </td>
-            <td>
+            <td id="delete-edit">
                 <form method="post" action="?page=admin_edit_product">
                     <input type="hidden" name="id" value="<?= $product['id'] ?>">
-                    <button type="submit">Modifier</button>
+                    <button type="submit" class="submit pay orange-button">Modifier</button>
                 </form>
                 <form method="post">
                     <input type="hidden" name="id" value="<?= $product['id'] ?>">
-                    <button name="delete" type="submit">Supprimer</button>
+                    <button name="delete" type="submit" class="submit pay orange-button">Supprimer</button>
                 </form>
             </td>
         </tr>

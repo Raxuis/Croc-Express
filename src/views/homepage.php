@@ -9,7 +9,7 @@
                 <p>
                     <?= $category['description'] ?>
                 </p>
-                <button class="other-products"
+                <button class="orange-button"
                     onclick="window.location.href='?page=show_products&category_id=<?= $category['id'] ?>'">Tous nos
                     produits<i class="fa-solid fa-arrow-right"></i></button>
             </div>
