@@ -1,4 +1,4 @@
-<h3>Votre panier</h3>
+<h3>Mon panier</h3>
 <div class="container">
     <table class='table-cart'>
         <thead>
@@ -18,32 +18,32 @@
                 $product = $productsManager->getOne($key);
                 $productImage = $productImageManager->getImagesByProductId($key);
                 $productsInCart[] = $product
-                ?>
-            <tr id="<?= 'item-' . $product['id'] ?>">
-                <td class="td-images">
-                    <img src="<?= PATH_IMAGES . $productImage[0]['image'] ?>" alt="" class='cart-images'>
-                </td>
-                <td>
-                    <?= $product['name'] ?>
-                </td>
-                <td>
-                    <?= $product['price'] ?>
-                </td>
-                <td id="<?= 'item-quantity-' . $product['id'] ?>">
-                    <?= $value ?>
-                </td>
-                <td id="<?= 'item-total-price-' . $product['id'] ?>" data-price="<?= $product['price'] ?>">
-                    <?= $product['price'] * $_SESSION["cart"][$product['id']] ?>
-                </td>
-                <td>
-                    <button class="remove-cart" data-action="remove" id="<?= 'button-remove-' . $product['id'] ?>"><i
-                            class="fa-solid fa-circle-minus"></i></button>
-                    <button class="add-cart" data-action="add" id="<?= 'button-add-' . $product['id'] ?>"><i
-                            class="fa-solid fa-circle-plus"></i></button>
-                </td>
-            </tr>
-        <?php }
-            }?>
+                    ?>
+                <tr id="<?= 'item-' . $product['id'] ?>">
+                    <td class="td-images">
+                        <img src="<?= PATH_IMAGES . $productImage[0]['image'] ?>" alt="" class='cart-images'>
+                    </td>
+                    <td>
+                        <?= $product['name'] ?>
+                    </td>
+                    <td>
+                        <?= $product['price'] ?>
+                    </td>
+                    <td id="<?= 'item-quantity-' . $product['id'] ?>">
+                        <?= $value ?>
+                    </td>
+                    <td id="<?= 'item-total-price-' . $product['id'] ?>" data-price="<?= $product['price'] ?>">
+                        <?= $product['price'] * $_SESSION["cart"][$product['id']] ?>
+                    </td>
+                    <td>
+                        <button class="remove-cart" data-action="remove" id="<?= 'button-remove-' . $product['id'] ?>"><i
+                                class="fa-solid fa-circle-minus"></i></button>
+                        <button class="add-cart" data-action="add" id="<?= 'button-add-' . $product['id'] ?>"><i
+                                class="fa-solid fa-circle-plus"></i></button>
+                    </td>
+                </tr>
+            <?php }
+        } ?>
         <tr>
             <td></td>
             <td></td>
@@ -60,7 +60,8 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="checkbox" name="livery" id="livery"><label for="livery">Livrer cette commande pour 5€</label>
+                <input type="checkbox" name="livery" id="livery"><label for="livery">Livrer cette commande pour
+                    5€</label>
             </td>
             <td></td>
             <td>Total</td>

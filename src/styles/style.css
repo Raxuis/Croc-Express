@@ -46,7 +46,7 @@ main {
 }
 
 .card-products {
-    height: 50vh;
+    height: 60vh;
 }
 
 .card img,
@@ -106,6 +106,7 @@ footer {
     width: 100%;
     padding: 10px;
     text-align: center;
+    font-size: 1.2em;
 }
 
 nav {
@@ -430,9 +431,6 @@ td i {
     padding: 10px;
 }
 
-.table-cart {
-    margin-bottom: 10vh;
-}
 
 thead th {
     padding: 10px;
@@ -443,11 +441,12 @@ thead th {
 thead th a {
     color: #f6720d;
     text-decoration: none;
+    display: inline-block;
     transition: transform .3s ease-out;
 }
 
 thead th a:hover {
-    transform: translate(0, -5px);
+    transform: translate(0, -2px);
 }
 
 .fa-circle-minus,
@@ -473,11 +472,18 @@ thead th a:hover {
         z-index: 2;
         top: 0;
         width: 100%;
-
     }
 
     body {
         margin-top: 20vh;
+    }
+
+    .container {
+        margin-bottom: 10vh;
+    }
+
+    .add-cart-button {
+        font-size: 0.8em;
     }
 
     .burger-menu {

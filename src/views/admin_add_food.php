@@ -1,4 +1,4 @@
-<h3>Ajouter un ingrédient</h3>
+<h3>Aliments</h3>
 <div class="container">
     <form action="" method="post" class="form">
         <input type="text" name="name" placeholder="Nom de l'ingrédient">
