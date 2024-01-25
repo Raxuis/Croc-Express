@@ -77,6 +77,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         <?php foreach ($productsInCart as $product) { ?>
+            initializeDelivery();
             initializeCart("<?= $product['id'] ?>", "<?= $product['price'] ?>", 'button-add-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
             initializeCart("<?= $product['id'] ?>", "<?= $product['price'] ?>", 'button-remove-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
             getTotalCartValue(document.getElementById("total-price"));
