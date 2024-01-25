@@ -412,6 +412,10 @@ tr {
     padding-bottom: 5%;
 }
 
+span * {
+    color: #000;
+}
+
 table {
     border: 1px solid white;
     margin: 40px auto;
