@@ -82,7 +82,7 @@
                         $total = 0;
                         if (isset($_SESSION['cart'])) {
                             foreach ($_SESSION['cart'] as $key => $value) {
-                                $total += $value;
+                                $total += $value["quantity"];
                             }
                         } ?>
                         <sup class="commands">

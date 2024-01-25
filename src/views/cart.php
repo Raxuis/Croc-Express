@@ -30,10 +30,10 @@
                         <?= $product['price'] ?>
                     </td>
                     <td id="<?= 'item-quantity-' . $product['id'] ?>">
-                        <?= $value ?>
+                        <?= $value["quantity"] ?>
                     </td>
                     <td id="<?= 'item-total-price-' . $product['id'] ?>" data-price="<?= $product['price'] ?>">
-                        <?= $product['price'] * $_SESSION["cart"][$product['id']] ?>
+                        <?= $product['price'] * $_SESSION["cart"][$product['id']]["quantity"] ?>
                     </td>
                     <td>
                         <button class="remove-cart" data-action="remove" id="<?= 'button-remove-' . $product['id'] ?>"><i
@@ -65,7 +65,7 @@
             </td>
             <td></td>
             <td>Total</td>
-            <td id="total-price"></td>
+            <td id="total-price">0</td>
             <td>
                 <button type="button" class="submit pay">Payer</button>
             </td>
@@ -77,8 +77,8 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         <?php foreach ($productsInCart as $product) { ?>
-            initializeCart("<?= $product['id'] ?>", 'button-add-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
-            initializeCart("<?= $product['id'] ?>", 'button-remove-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
+            initializeCart("<?= $product['id'] ?>", "<?= $product['price'] ?>", 'button-add-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
+            initializeCart("<?= $product['id'] ?>", "<?= $product['price'] ?>", 'button-remove-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
             getTotalCartValue(document.getElementById("total-price"));
         <?php } ?>
     });

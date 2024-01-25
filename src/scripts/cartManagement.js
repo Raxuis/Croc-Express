@@ -1,3 +1,5 @@
+// { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
+
 function updateCartValue(cart, value) {
     cart.innerHTML = value;
 }
@@ -13,60 +15,71 @@ function updateTotalPriceItemValue(item, value) {
 
 function updateTotalPriceValue(item, value) {
     item.textContent = value;
-
-
 }
 
 function updateCartTotalValue(cart, value) {
+    // fetch("../src/controllers/cart_manager_controller.php?action=set_total_price&total=" + value).then(r =>
+    //     r.json().then(data => {
+    //         console.log(data);
+    //     })
+    // );
     cart.textContent = value;
 }
 
 function getTotalCartValue(cart) {
-    fetch("../src/controllers/cart_manager_controller.php?action=get_all_articles").then((response) => {
+    fetch("../src/controllers/cart_manager_controller.php").then((response) => {
         response.json().then((data) => {
-            let allArticlesId = data;
-            let total = 0;
-            for (let i = 0; i < allArticlesId.length; i++) {
-                let item = document.getElementById("item-total-price-" + allArticlesId[i]);
-                total += parseInt(item.textContent);
-            }
-            updateCartTotalValue(cart, total);
+            updateCartTotalValue(cart, data["totalPrice"]);
         });
     });
 }
 
-function updateCart(cart, product, action) {
-    fetch("../src/controllers/cart_manager_controller.php?id=" + product + "&action=" + action).then((response) => {
+function updateCart(cart, product, price, action) {
+    fetch("../src/controllers/cart_manager_controller.php?id=" + product + "&price=" + price + "&action=" + action).then((response) => {
         response.json().then((data) => {
-            updateCartValue(cart, data.total);
-            updateItemValue(document.getElementById("item-quantity-" + product), data["itemTotal"]);
-            updateTotalPriceItemValue(document.getElementById("item-total-price-" + product), data["itemTotal"]);
-            updateTotalPriceValue(document.getElementById("total-price"), data["totalPrice"]);
-            getTotalCartValue(document.getElementById("total-price"));
 
-            if(!data["cart"].includes(product)) {
-                document.getElementById("item-" + product).remove();
+            // format of data : { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
+
+            for (const itemKey in data["cart"]) {
+                let item = data["cart"][itemKey];
+
+                updateCartValue(cart, item["quantity"]);
+                updateItemValue(document.getElementById("item-quantity-" + product), item["quantity"]);
+                updateTotalPriceItemValue(document.getElementById("item-total-price-" + product), item["quantity"]);
+                updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+                getTotalCartValue(document.getElementById("total-price"));
+
+                if (!data["cart"].includes(product)) {
+                    document.getElementById("item-" + product).remove();
+                    updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+                }
             }
         });
     });
 }
 
-function buttonListener(product, button, cart) {
+function buttonListener(product, price, button, cart) {
     button.addEventListener("click", () => {
-        updateCart(cart, product, button.getAttribute("data-action"));
+        updateCart(cart, product, price, button.getAttribute("data-action"));
     });
 }
 
-function initializeCart(productId, buttonId, cart) {
+function initializeCart(productId, price, buttonId, cart) {
     const product = productId;
     const button = document.getElementById(buttonId);
-    buttonListener(product, button, cart);
+    buttonListener(product, price, button, cart);
 }
+
+// PAYMENT
+function validateOrder() {
+    // TODO: Implement this function
+}
+
 
 let livery = document.getElementById("livery");
 livery.addEventListener("change", (event) => {
     let deliveryPrice = document.getElementById("delivery-price");
-    if(!event.target.checked) {
+    if (!event.target.checked) {
         updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) - 5);
         updateItemValue(deliveryPrice, 0);
     } else {
