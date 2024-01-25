@@ -77,6 +77,19 @@ function initializeCart(productId, price, buttonId, cart, in_cart = true) {
 // PAYMENT
 function validateOrder() {
     // TODO: Implement this function
+    // check if delivery is checked -> if it is, make a form appear to fill in the address
+    // check if the cart is empty
+    // check if the user is logged in
+    // if all is good, redirect to the payment page
+    // else, display an error message
+
+    fetch("../src/controllers/payment_controller.php?action=validate_order").then((response) => {
+        response.json().then((data) => {
+            console.log(data);
+        });
+    });
+
+
 }
 
 function initializePayment() {
@@ -90,12 +103,15 @@ function initializeDelivery() {
     let livery = document.getElementById("livery");
     livery.addEventListener("change", (event) => {
         let deliveryPrice = document.getElementById("delivery-price");
+        let addressForm = document.getElementById("address-form");
         if (!event.target.checked) {
             updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) - 5);
             updateItemValue(deliveryPrice, 0);
+            addressForm.hidden = true
         } else {
             updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) + 5);
             updateItemValue(deliveryPrice, 5);
+            addressForm.hidden = false
         }
     });
 }
