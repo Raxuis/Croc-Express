@@ -1,8 +1,7 @@
 <?php
 require PATH_CLASSES . 'Verify.class.php';
 $userInfos = $userManager->getOne($_SESSION['user_id']);
-var_dump($userInfos);
-echo $userInfos['id'];
+
 if (!empty($_POST)) {
     if (Verify::verifyPassword($_POST['password']) && Verify::verifyFirstname($_POST['firstname']) && Verify::verifyLastname($_POST['lastname']) && Verify::verifyEmail($_POST['email'])) {
         $user = new User([
