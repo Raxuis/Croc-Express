@@ -363,7 +363,7 @@ tr {
 }
 
 .td-images {
-    width: 20%;
+    width: 10%;
 }
 
 #pay {
@@ -387,12 +387,9 @@ tr {
 
 table {
     border: 1px solid white;
-    border-collapse: collapse;
-    font-size: 1rem;
-    text-align: center;
-    vertical-align: middle;
     margin: 40px auto;
-    width: 60%;
+    border-collapse: collapse;
+    width: 80%;
 }
 
 table * {
@@ -400,7 +397,11 @@ table * {
 }
 
 table i {
-    font-size: 1.5rem;
+    font-size: 1.5em;
+}
+
+td i {
+    padding: 10px;
 }
 
 #table-cart {
@@ -487,5 +488,30 @@ thead th {
 
     .form {
         width: 70%;
+    }
+
+    .td-images img {
+        object-fit: cover;
+        width: 2rem;
+    }
+
+    table * {
+        font-size: 0.9em;
+    }
+
+    thead *,
+    table #pay {
+        font-size: 0.8em;
+    }
+
+    table #pay {
+        width: 100%;
+        padding: 2px;
+        font-weight: 400;
+    }
+
+    td,
+    thead th {
+        padding: 5px;
     }
 }

@@ -1,6 +1,5 @@
 <h3>Votre panier</h3>
 <div class="container">
-
     <table id='table-cart'>
         <thead>
             <tr>
@@ -54,10 +53,9 @@
             <td>1.00</td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <input type="checkbox" name="livery"> <label for="livery">Livrer cette commande pour 5€</label>
             </td>
-            <td></td>
             <td></td>
             <td>Total</td>
             <td>1.00</td>
