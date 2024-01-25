@@ -10,7 +10,7 @@
         <td><b>Aliments</b></td>
         <td><b>Ventes</b></td>
         <td><b>Publier</b></td>
-        <td><b><a href="?page=admin_add_product">Nouveau produit</a></b></td>
+        <td><b><a href="?page=admin_add_product" title="Add product admin">Nouveau produit</a></b></td>
     </tr>
     <?php foreach ($allProducts as $product) { ?>
         <?php
@@ -20,17 +20,33 @@
 
         ?>
         <tr>
-            <td><?= $product['id'] ?></td>
-            <td><?= $product['name'] ?></td>
-            <td><?= $product['price'] ?></td>
-            <td><?= $product['buying_price'] ?></td>
-            <td><?= "CALCUL CAL " ?>cal</td>
-            <td><?= count($food) ?></td>
-            <td><?= count($sales) ?></td>
+            <td>
+                <?= $product['id'] ?>
+            </td>
+            <td>
+                <?= $product['name'] ?>
+            </td>
+            <td>
+                <?= $product['price'] ?>
+            </td>
+            <td>
+                <?= $product['buying_price'] ?>
+            </td>
+            <td>
+                <?= "CALCUL CAL " ?>cal
+            </td>
+            <td>
+                <?= count($food) ?>
+            </td>
+            <td>
+                <?= count($sales) ?>
+            </td>
             <td>
                 <form method="post">
                     <input type="hidden" name="id" value="<?= $product['id'] ?>">
-                    <button name="show_hide" type="submit"><?= $product['is_hidden'] ? "Afficher" : "Masquer" ?></button>
+                    <button name="show_hide" type="submit">
+                        <?= $product['is_hidden'] ? "Afficher" : "Masquer" ?>
+                    </button>
                 </form>
             </td>
             <td>
