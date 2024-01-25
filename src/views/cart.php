@@ -11,10 +11,12 @@
                 <th><i class="fa-solid fa-bag-shopping"></i></th>
             </tr>
         </thead>
-        <?php foreach ($_SESSION["cart"] as $key => $value) { ?>
+        <?php $productsInCart = [];
+        foreach ($_SESSION["cart"] as $key => $value) { ?>
             <?php
             $product = $productsManager->getOne($key);
             $productImage = $productImageManager->getImagesByProductId($key);
+            $productsInCart[] = $product
             ?>
             <tr>
                 <td class="td-images">
@@ -33,8 +35,8 @@
                     <?= $product['price'] * $value ?>
                 </td>
                 <td>
-                    <i class="fa-solid fa-circle-minus"></i>
-                    <i class="fa-solid fa-circle-plus"></i>
+                    <button class="remove-cart" id="<?= 'button-remove-' . $product['id'] ?>"><i class="fa-solid fa-circle-minus"></i></button>
+                    <button class="add-cart" id="<?= 'button-add-' . $product['id'] ?>"><i class="fa-solid fa-circle-plus"></i></button>
                 </td>
             </tr>
         <?php } ?>
@@ -65,3 +67,13 @@
         </tr>
     </table>
 </div>
+
+<script src="<?= PATH_PRIVATE . 'scripts/cartManagement.js' ?>"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        <?php foreach ($productsInCart as $product) { ?>
+            initializeCart("<?= $product['id'] ?>", 'button-add-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
+            // TODO: add remove cart function
+        <?php } ?>
+    });
+</script>
