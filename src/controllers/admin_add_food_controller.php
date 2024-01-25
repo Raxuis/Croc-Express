@@ -1,6 +1,7 @@
 <?php
 
 if (!isset($_SESSION["is_admin"])) {
+    ob_end_clean();
     header('location: index.php');
     exit(0);
 }

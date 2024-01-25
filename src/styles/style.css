@@ -41,8 +41,8 @@ main {
     margin: 1rem 1rem 4rem 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: stretch;
 }
 
 .card-products {
@@ -414,6 +414,10 @@ tr {
 
 span * {
     color: #000;
+}
+
+.grey-text {
+    color: #788c82;
 }
 
 table {

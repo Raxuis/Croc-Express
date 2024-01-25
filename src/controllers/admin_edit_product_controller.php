@@ -58,7 +58,7 @@ if (!empty($_POST)) {
 
 
 
-//        foreach ($_FILES["image"]["name"] as $key => $value) {
+        //        foreach ($_FILES["image"]["name"] as $key => $value) {
 //            if ($_FILES['image']['error'][$key] === 0) {
 //                $targetDir = '../public/assets/product_images/';
 //                $targetFile = $targetDir . basename($_FILES['image']['name'][$key]);
@@ -75,9 +75,9 @@ if (!empty($_POST)) {
 //                }
 //            }
 //        }
-
-            header('location: index.php?page=admin_products');
-            exit;
+        ob_end_clean();
+        header('location: index.php?page=admin_products');
+        exit(0);
     }
 }
 

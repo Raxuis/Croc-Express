@@ -3,7 +3,10 @@ if (isset($products)) { ?>
     <div class="container">
         <?php foreach ($products as $product) { ?>
             <div class="card-products">
-                <?php $images = $productImageManager->getImagesByProductId($product['id']); ?>
+                <?php
+                $images = $productImageManager->getImagesByProductId($product['id']);
+                $foods = $productFoodManager->getAllFoodDatasOfProduct($product['id']);
+                ?>
                 <div class="card-header">
                     <?php if (count($images) > 1) { ?>
                         <section class="slider-wrapper">
@@ -41,7 +44,28 @@ if (isset($products)) { ?>
                     <p>
                         <?= $product['price'] ?> €
                     </p>
-                    <button type="button" class="add-cart-button" id="<?= 'button-' . $product['id'] ?>">Ajouter au
+                    <?php if (count($foods) > 0) { ?>
+                        <p class="grey-text">Composition :</p>
+                        <p>
+                            <?php foreach ($foods as $food) { ?>
+                                <?php
+                                $totalCalories += calculateTotalCaloriesPerAliment($food);
+                                $totalWeight += $food["weight"];
+                                $calories = calculateTotalCaloriesPerAliment($food); ?>
+                                <?= $food['name'] ?> -
+                                <?= $food['weight'] ?>g -
+                                <?= $calories ?>cal /
+                                <?= $food['weight'] ?>g <br>
+                            <?php } ?>
+                            Total :
+                            <?= $totalCalories ?> cal /
+                            <?= $totalWeight ?>g
+                        </p>
+                        <?php
+                        $totalCalories = 0;
+                        $totalWeight = 0;
+                        ?>
+                    <?php } ?><button type="button" class="add-cart-button" id="<?= 'button-' . $product['id'] ?>">Ajouter au
                         panier</button>
                 </div>
             </div>
