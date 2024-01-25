@@ -29,12 +29,16 @@
                         <li class="dropdown-main"><a href="?page=admin" title="Admin">Administration<i
                                     class="fa-solid fa-caret-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="?page=admin&action=deliver" class="nav-links" title="">Mes commandes à livrer</a>
+                                <li><a href="?page=admin_deliver" class="nav-links" title="Commands To Deliver">Mes commandes à
+                                        livrer</a>
                                 </li>
-                                <li><a href="?page=admin&action=commands" class="nav-links" title="">Toutes mes commandes</a>
+                                <li><a href="?page=admin_orders" class="nav-links" title="Every Commands">Toutes mes
+                                        commandes</a>
                                 </li>
-                                <li><a href="?page=admin&action=turnover" class="nav-links" title="">Chiffres d'affaire</a></li>
-                                <li><a href="?page=admin&action=bestseller" class="nav-links" title="">Meilleures ventes</a>
+                                <li><a href="?page=admin_turnover" class="nav-links" title="Turnover">Chiffres d'affaire</a>
+                                </li>
+                                <li><a href="?page=admin_bestsellers" class="nav-links" title="Bestsellers">Meilleures
+                                        ventes</a>
                                 </li>
                                 <li><a href="?page=admin_add_category" class="nav-links"
                                         title="Admin Add Category">Catégories</a></li>
@@ -53,7 +57,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="?page=edit_profile" class="nav-links" title="Edit Profile">Profil</a></li>
-                            <li><a href="?page=profile&action=commands" class="nav-links" title="Commands">Commandes</a>
+                            <li><a href="?page=orders" class="nav-links" title="Orders">Commandes</a>
                             </li>
                             <li><a href="?page=disconnect" class="nav-links" title="Log out">Se déconnecter</a></li>
                         </ul>
