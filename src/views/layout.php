@@ -22,49 +22,58 @@
 <body>
     <header>
         <nav>
-            <a href="?page=homepage"><img src="./assets/favicon.ico"></a>
+            <a href="?page=homepage"><img src="./assets/favicon.ico" alt='favicon'></a>
             <ul class="nav-menu">
                 <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true): ?>
                     <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
-                        <li class="dropdown-main"><a href="?page=admin">Administration<i class="fa-solid fa-caret-down"></i></a>
+                        <li class="dropdown-main"><a href="?page=admin" title="Admin">Administration<i
+                                    class="fa-solid fa-caret-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="?page=admin&action=deliver" class="nav-links">Mes commandes à livrer</a></li>
-                                <li><a href="?page=admin&action=commands" class="nav-links">Toutes mes commandes</a></li>
-                                <li><a href="?page=admin&action=turnover" class="nav-links">Chiffres d'affaire</a></li>
-                                <li><a href="?page=admin&action=bestseller" class="nav-links">Meilleures ventes</a></li>
-                                <li><a href="?page=admin_add_category" class="nav-links">Catégories</a></li>
-                                <li><a href="?page=admin_products" class="nav-links">Produits</a></li>
-                                <li><a href="?page=admin_add_food" class="nav-links">Aliments</a></li>
-                                <li><a href="?page=admin_messages" class="nav-links">Messages</a></li>
+                                <li><a href="?page=admin&action=deliver" class="nav-links" title="">Mes commandes à livrer</a>
+                                </li>
+                                <li><a href="?page=admin&action=commands" class="nav-links" title="">Toutes mes commandes</a>
+                                </li>
+                                <li><a href="?page=admin&action=turnover" class="nav-links" title="">Chiffres d'affaire</a></li>
+                                <li><a href="?page=admin&action=bestseller" class="nav-links" title="">Meilleures ventes</a>
+                                </li>
+                                <li><a href="?page=admin_add_category" class="nav-links"
+                                        title="Admin Add Category">Catégories</a></li>
+                                <li><a href="?page=admin_products" class="nav-links" title="Admin Add Product">Produits</a>
+                                </li>
+                                <li><a href="?page=admin_add_food" class="nav-links" title="Admin Add Food">Aliments</a>
+                                </li>
+                                <li><a href="?page=admin_messages" class="nav-links" title="Admin Messages">Messages</a>
+                                </li>
                             </ul>
                         </li>
                     <?php endif; ?>
-                    <li class="dropdown-main"><a href="?page=edit_profile" class="nav-links">
+                    <li class="dropdown-main"><a href="?page=edit_profile" class="nav-links" title="Edit Profile">
                             <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'Anonymous' ?><i
                                 class="fa-solid fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="?page=edit_profile" class="nav-links">Profil</a></li>
-                            <li><a href="?page=profile&action=commands" class="nav-links">Commandes</a></li>
-                            <li><a href="?page=disconnect" class="nav-links">Se déconnecter</a></li>
+                            <li><a href="?page=edit_profile" class="nav-links" title="Edit Profile">Profil</a></li>
+                            <li><a href="?page=profile&action=commands" class="nav-links" title="Commands">Commandes</a>
+                            </li>
+                            <li><a href="?page=disconnect" class="nav-links" title="Log out">Se déconnecter</a></li>
                         </ul>
                     </li>
-                    <li><a href="?page=contact" class="nav-links">Contactez-nous</a></li>
+                    <li><a href="?page=contact" class="nav-links" title="Contact">Contactez-nous</a></li>
                     <div class="burger-menu">
-                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()" title="Burger">
                             <i class="fa-solid fa-bars" id="burger-icon"></i>
                         </a>
                     </div>
                 <?php else: ?>
-                    <li><a href="?page=login" class="nav-links not-logged">Se connecter</a></li>
-                    <li><a href="?page=register" class="nav-links not-logged">S'inscrire</a></li>
+                    <li><a href="?page=login" class="nav-links not-logged" title="Log">Se connecter</a></li>
+                    <li><a href="?page=register" class="nav-links not-logged" title="Register">S'inscrire</a></li>
                     <div class="burger-menu">
-                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()" title="Burger Menu">
                             <i class="fa-solid fa-bars" id="burger-icon"></i>
                         </a>
                     </div>
                 <?php endif; ?>
-                <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping"></i>
+                <li><a href="?page=cart" class="nav-links"><i class="fa-solid fa-cart-shopping" title="Cart"></i>
                         <?php
                         $total = 0;
                         if (isset($_SESSION['cart'])) {
@@ -72,7 +81,9 @@
                                 $total += $value;
                             }
                         } ?>
-                        <sup class="commands"><?= $total ?></sup>
+                        <sup class="commands">
+                            <?= $total ?>
+                        </sup>
                     </a></li>
             </ul>
 

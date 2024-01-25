@@ -66,7 +66,7 @@ main {
     gap: 10px;
 }
 
-.add-cart {
+.add-cart-button {
     position: absolute;
     color: #FFF;
     background-color: #f97111;
@@ -80,7 +80,7 @@ main {
     font-size: 1em;
 }
 
-.add-cart:hover {
+.add-cart-button:hover {
     color: #f97111;
     background-color: #FFF;
 }
@@ -121,7 +121,9 @@ nav img {
     transition: 0.5s;
 }
 
-nav img:hover {
+nav img:hover,
+.remove-cart i:hover,
+.add-cart i:hover {
     transform: scale(1.2)
 }
 
@@ -420,6 +422,17 @@ thead th {
 .fa-bag-shopping {
     color: #f6720d;
 }
+
+.remove-cart,
+.add-cart {
+    background-color: transparent;
+}
+
+.remove-cart i,
+.add-cart i {
+    transition: 0.3s;
+}
+
 
 @media (max-width: 768px) {
     nav {

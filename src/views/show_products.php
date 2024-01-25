@@ -41,7 +41,8 @@ if (isset($products)) { ?>
                     <p>
                         <?= $product['price'] ?> €
                     </p>
-                    <button type="button" class="add-cart" id="<?= 'button-' . $product['id'] ?>">Ajouter au panier</button>
+                    <button type="button" class="add-cart-button" id="<?= 'button-' . $product['id'] ?>">Ajouter au
+                        panier</button>
                 </div>
             </div>
         <?php } ?>
