@@ -31,4 +31,26 @@ class OrderManager extends Manager {
         // TODO: Implement editOne() method.
         echo "Editing to implement";
     }
+
+    public function getOrdersByUserId(int $userId): array
+    {
+        $query = "SELECT * FROM orders WHERE user_id = :user_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'user_id' => $userId
+        ]);
+        $orders = $response->fetchAll(PDO::FETCH_ASSOC);
+        return $orders;
+    }
+
+    public function getCouponOfOrder(int $order_id): array
+    {
+        $query = "SELECT c.* FROM orders as o INNER JOIN coupons as c ON c.id = o.coupon_id WHERE o.id = :order_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'order_id' => $order_id
+        ]);
+        return $response->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
