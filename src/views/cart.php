@@ -1,7 +1,6 @@
 <h3>Mon panier</h3>
 <div class="container">
-    <?php
-    if (!empty($_SESSION["cart"])) { ?>
+    <?php if (!empty($_SESSION["cart"])) { ?>
         <table class='table-cart'>
             <thead>
                 <tr>
@@ -97,8 +96,12 @@
             </div>
 
             <label for="coupon">Coupon de réduction</label><input type="text" name="coupon" id="coupon">
-
-            <button type="submit" class="submit pay">Payer</button>
+            <?php if (isset($_SESSION['logged'])): ?>
+                <button type="submit" class="submit pay">Payer</button>
+            <?php else: ?>
+                <button type="button" class="submit pay" onclick="window.location.href='?page=login'">Se connecter</button>
+                <button type="button" class="submit pay" onclick="window.location.href='?page=register'">S'inscrire</button>
+            <?php endif; ?>
         </form>
     </div>
 <?php } else { ?>
