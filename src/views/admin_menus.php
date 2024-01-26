@@ -1,5 +1,4 @@
 <h3>Gestions des menus à la carte</h3>
-<?= var_dump($_POST) ?>
 <table class='table-cart'>
     <thead>
         <th>ID</th>
@@ -49,6 +48,7 @@
                 </form>
                 <form method="post">
                     <input type="hidden" name="id" value="<?= $menu['id'] ?>">
+                    <?php //TODO : use data-swal-template="#my-template" to delete ?>
                     <button name="delete" type="submit" class="submit pay orange-button" value='true'>Supprimer</button>
                 </form>
             </td>

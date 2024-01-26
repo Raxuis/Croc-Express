@@ -40,8 +40,8 @@
                                 <li><a href="?page=admin_bestsellers" class="nav-links" title="Bestsellers">Meilleures
                                         ventes</a>
                                 </li>
-                                <li><a href="?page=admin_categories" class="nav-links"
-                                        title="Admin Add Category">Catégories</a></li>
+                                <li><a href="?page=admin_categories" class="nav-links" title="Admin Add Category">Catégories</a>
+                                </li>
                                 <li><a href="?page=admin_menus" class="nav-links" title="Admin Menus">Menus</a>
                                 </li>
                                 <li><a href="?page=admin_products" class="nav-links" title="Admin Add Product">Produits</a>
@@ -105,12 +105,34 @@
             <p id="copyrights">© 2024 Raphaël | Benoît, CODA-Orléans. All Rights Reserved</p>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../src/scripts/burgerMenu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../src/scripts/sweetAlert.js"></script>
+    <!-- <script>
+        document.querySelector('button[data-swal-template="#my-template"]').addEventListener('click', function () {
+            Swal.fire({
+                template: '#my-template',
+                allowEscapeKey: false,
+                customClass: {
+                    popup: 'my-popup'
+                },
+                didOpen: function (popup) {
+                    console.log(popup);
+                }
+            }).then(function (result) {
+                if (result.isConfirmed) {
+                    console.log("User clicked Confirm");
+                } else {
+                    console.log("User clicked Denied");
+                }
+            }
+            )
+        });
+    </script> -->
+
     <script>
         <?php if (!empty($_SESSION['status'])) { ?>
             toastr.<?= $_SESSION['status'] ?>("<?= $_SESSION['message'] ?>")

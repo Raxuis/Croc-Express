@@ -20,7 +20,6 @@ if (!empty($_POST)) {
     } else {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Vous devez remplir tous les champs";
-        ob_end_clean();
         header('location: index.php');
         exit(0);
     }

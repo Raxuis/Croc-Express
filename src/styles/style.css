@@ -9,6 +9,10 @@
     font-family: "Work Sans", sans-serif;
 }
 
+.swal2-icon-content {
+    color: #0433ff;
+}
+
 button {
     border: none;
     outline: none;

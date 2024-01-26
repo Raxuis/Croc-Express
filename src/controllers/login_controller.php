@@ -9,10 +9,10 @@ if (!empty($_POST)) {
                 $_SESSION['user_id'] = $userInfos[0]['id'];
                 $_SESSION['is_admin'] = $userInfos[0]['is_admin'];
                 $_SESSION['logged'] = true;
-                ob_end_clean();
-                header('Location:index.php');
                 $_SESSION['status'] = "success";
                 $_SESSION['message'] = "Vous êtes connecté avec succès";
+                header('Location:index.php');
+                exit();
             } else {
                 $_SESSION['status'] = "error";
                 $_SESSION['message'] = "L'adresse e-mail et le mot de passe ne correspondent pas";

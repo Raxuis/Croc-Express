@@ -49,7 +49,6 @@ if (!empty($_POST)) {
                  $productFoodManager->deleteOne($foodInProd["id"]);
              }
          } */
-        ob_end_clean();
         header('location: index.php?page=admin_menus');
         exit(0);
     }

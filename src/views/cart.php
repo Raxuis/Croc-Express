@@ -99,6 +99,8 @@
             <?php if (isset($_SESSION['logged'])): ?>
                 <button type="submit" class="submit pay">Payer</button>
             <?php else: ?>
+                <p>Vous n'êtes pas connecté</p>
+                <p>Veuillez vous connecter ou créer un compte pour payer</p>
                 <button type="button" class="submit pay" onclick="window.location.href='?page=login'">Se connecter</button>
                 <button type="button" class="submit pay" onclick="window.location.href='?page=register'">S'inscrire</button>
             <?php endif; ?>
@@ -106,7 +108,6 @@
     </div>
 <?php } else { ?>
     <?php
-    ob_end_clean();
     header("Location: " . BASE_PATH);
     $_SESSION['status'] = 'error';
     $_SESSION['message'] = 'Votre panier est vide';
