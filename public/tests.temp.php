@@ -89,7 +89,7 @@ $menuManager = new MenuManager($bdd, "menus");
 //]);
 //$menuManager->createOne($menu);
 
-//$addressManager = new AddressManager($bdd, "address");
+$addressManager = new AddressManager($bdd, "address");
 //$address = new Address([
 //    'userId' => 1,
 //    'street' => "Rue de la Paix",
@@ -99,7 +99,7 @@ $menuManager = new MenuManager($bdd, "menus");
 //]);
 //$addressManager->createOne($address);
 
-//$orderManager = new OrderManager($bdd, "orders");
+$orderManager = new OrderManager($bdd, "orders");
 //$order = new Order([
 //    'userId' => 1,
 //    'price' => 25,
