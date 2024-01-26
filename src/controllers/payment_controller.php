@@ -9,7 +9,7 @@ foreach ($cart as $key => $value) {
 $inDelivery = $_SESSION['inDelivery'] ?? false;
 $addressId = null;
 
-if ($inDelivery) {
+if ($_SESSION['inDelivery'] === true) {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $street = $_POST['address'];
@@ -25,6 +25,15 @@ if ($inDelivery) {
         'country' => $country
     ]);
     $addressId = $addressManager->createOne($address);
+}
+
+$orderHaveCoupon = isset($_POST['coupon']);
+if ($orderHaveCoupon) {
+    $coupon = $couponManager->getOneByName($_POST['coupon']);
+
+    if ($coupon) {
+        $totalPrice -= $totalPrice * ($coupon['reduction'] / 100);
+    }
 }
 
 $order = new Order([

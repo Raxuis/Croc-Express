@@ -38,7 +38,7 @@ require "../src/classes/OrderProduct.class.php";
 require "../src/classes/managers/MenuProductManager.class.php";
 require "../src/classes/MenuProduct.class.php";
 
-//$foodManager = new FoodManager($bdd, "foods");
+$foodManager = new FoodManager($bdd, "foods");
 //$food = new Food([
 //    'name' => "Pain",
 //    'lipid' => 5,
@@ -57,7 +57,7 @@ $productFoodManager = new ProductFoodManager($bdd, "products_foods");
 //$productFoodManager->createOne($productFood);
 
 
-//$couponManager = new CouponsManager($bdd, "coupons");
+$couponManager = new CouponsManager($bdd, "coupons");
 //$coupon = new Coupons([
 //    'name' => "TEST",
 //    'reduction' => 10,

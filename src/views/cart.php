@@ -68,34 +68,37 @@
             <td>Total</td>
             <td id="total-price">0</td>
             <td>
-                <form action="?page=payment" method="post">
-                    <button type="submit" class="submit pay">Payer</button>
-                </form>
+                <button type="button" class="submit emptyCart" id="emptyCart">Vider le panier</button>
                 <!--                <button type="button" class="submit pay">Payer</button>-->
             </td>
         </tr>
     </table>
 </div>
-<div id="address-form" hidden>
+
+<div class="container">
     <form action="?page=payment" method="post">
-        <h3>Adresse de livraison</h3>
-        <label for="firstname">Prénom</label>
-        <input type="text" name="firstname" id="firstname" required>
+        <div id="address-form" hidden>
+            <h3>Adresse de livraison</h3>
+            <label for="firstname">Prénom</label>
+            <input type="text" name="firstname" id="firstname">
 
-        <label for="lastname">Nom</label>
-        <input type="text" name="lastname" id="lastname" required>
+            <label for="lastname">Nom</label>
+            <input type="text" name="lastname" id="lastname">
 
-        <label for="address">Rue</label>
-        <input type="text" name="address" id="address" required>
+            <label for="address">Rue</label>
+            <input type="text" name="address" id="address">
 
-        <label for="city">Ville</label>
-        <input type="text" name="city" id="city" required>
+            <label for="city">Ville</label>
+            <input type="text" name="city" id="city">
 
-        <label for="zip">Code postal</label>
-        <input type="text" name="zip" id="zip" required>
+            <label for="zip">Code postal</label>
+            <input type="text" name="zip" id="zip">
 
-        <label for="country">Pays</label>
-        <select id="country" name="country[]" required></select>
+            <label for="country">Pays</label>
+            <select id="country" name="country[]"></select>
+        </div>
+
+        <label for="coupon">Coupon de réduction</label><input type="text" name="coupon" id="coupon">
 
         <button type="submit" class="submit pay">Payer</button>
     </form>
