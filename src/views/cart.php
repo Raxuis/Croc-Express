@@ -75,7 +75,7 @@
                 </td>
             </tr>
         </table>
-        <form action="?page=payment" method="post" class="form">
+        <form action="?page=payment" method="post" class="form" style="margin-bottom : 10vh;">
             <div id="address-form" class="address-hidden">
                 <h3>Adresse de livraison</h3>
                 <label for="firstname">Prénom</label>
