@@ -28,6 +28,11 @@ main {
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+    transition: 0.7s;
+}
+
+.address-hidden {
+    display: none;
 }
 
 .card,
@@ -577,5 +582,9 @@ thead th a:hover {
     thead th,
     td i {
         padding: 5px;
+    }
+
+    .address-form {
+        width: 70%;
     }
 }
