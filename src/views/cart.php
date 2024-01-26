@@ -62,8 +62,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="checkbox" name="livery" id="delivery" <?php if ($_SESSION["inDelivery"] === true) { ?>
-                            checked <?php } ?>>
+                    <input type="checkbox" name="livery" id="delivery">
                     <label for="livery">Livrer cette commande pour
                         5€</label>
                 </td>
@@ -77,7 +76,7 @@
             </tr>
         </table>
         <form action="?page=payment" method="post" class="form">
-            <div id="address-form">
+            <div id="address-form" class="address-hidden">
                 <h3>Adresse de livraison</h3>
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname">
@@ -94,7 +93,7 @@
                 <input type="text" name="zip" id="zip">
 
                 <label for="country">Pays</label>
-                <select id="country" name="country[]"></select>
+                <select id="country" name="country[]" style="width: 100%;"></select>
             </div>
 
             <label for="coupon">Coupon de réduction</label><input type="text" name="coupon" id="coupon">
