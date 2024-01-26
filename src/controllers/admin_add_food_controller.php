@@ -1,11 +1,5 @@
 <?php
 
-if (!isset($_SESSION["is_admin"])) {
-    ob_end_clean();
-    header('location: index.php');
-    exit(0);
-}
-
 if (!empty($_POST)) {
     if (!empty($_POST['name']) && !empty($_POST['lipid']) && !empty($_POST['protein']) && !empty($_POST['carbohydrate']) && !empty($_POST['weight'])) {
         $food = new Food($_POST);

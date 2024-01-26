@@ -1,11 +1,6 @@
 <?php
 
 global $productManager, $productFoodManager, $foodManager, $bdd;
-if (!isset($_SESSION["is_admin"])) {
-    header('location: index.php');
-    exit(0);
-}
-
 $product = $productManager->getOne($_POST['id']);
 $allFoodInProduct = $productFoodManager->getAllFoodOfProduct($_POST['id']);
 $allImages = $productImageManager->getAllImagesOfProduct($_POST['id']);
