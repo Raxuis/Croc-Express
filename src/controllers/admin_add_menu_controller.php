@@ -14,10 +14,11 @@ if (!empty($_POST)) {
             ]);
             $menuProductManager->createOne($menuProduct);
         }
-
-        echo "Product created with id: " . $menuId . "<br>";
+        $_SESSION['status'] = "success";
+        $_SESSION['message'] = "Menu created with id: " . $menuId;
     } else {
-        echo "Missing parameters";
+        $_SESSION['status'] = 'error';
+        $_SESSION['message'] = "Veuillez remplir tous les champs";
     }
 }
 
