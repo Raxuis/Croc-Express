@@ -1,5 +1,6 @@
 <?php
-class OrderProductManager extends Manager {
+class OrderProductManager extends Manager
+{
 
     public function __construct(PDO $database_connection, string $table)
     {
@@ -29,7 +30,8 @@ class OrderProductManager extends Manager {
         echo "Edit to implement";
     }
 
-    public function getProductSales(int $product_id) {
+    public function getProductSales(int $product_id): array
+    {
         $query = "SELECT * FROM " . $this->table . " WHERE product_id=:product_id";
         $response = $this->bdd->prepare($query);
         $response->execute([

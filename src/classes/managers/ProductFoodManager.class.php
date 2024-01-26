@@ -44,7 +44,9 @@ class ProductFoodManager extends Manager
     }
     public function getAllFoodDatasOfProduct(int $product_id): array
     {
-        $query = "SELECT f.* FROM foods as f INNER JOIN products_foods as pf INNER JOIN products as p WHERE pf.product_id = p.id AND pf.food_id = f.id AND p.id =:product_id";
+        $query = "SELECT f.* FROM foods as f 
+        INNER JOIN products_foods as pf ON pf.food_id = f.id 
+        INNER JOIN products as p ON p.id = pf.product_id WHERE p.id =:product_id";
         $response = $this->bdd->prepare($query);
         $response->execute([
             'product_id' => $product_id
