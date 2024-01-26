@@ -30,4 +30,13 @@ class CategoryManager extends Manager
         // TODO: Implement editOne() method.
         echo "Editing to implement";
     }
+
+    public function toggleHide(int $id): void
+    {
+        $query = "UPDATE categories SET is_hidden = NOT is_hidden WHERE id = :id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'id' => $id
+        ]);
+    }
 }

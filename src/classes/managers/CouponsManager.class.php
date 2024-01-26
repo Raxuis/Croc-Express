@@ -9,7 +9,7 @@ class CouponsManager extends Manager
 
     public function createOne(object $data): int
     {
-        if ($data instanceof Coupons) {
+        if ($data instanceof Coupon) {
             $query = "INSERT INTO coupons (name, reduction) VALUES (:name, :reduction)";
             $response = $this->bdd->prepare($query);
             $response->execute([

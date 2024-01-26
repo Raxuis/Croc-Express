@@ -38,6 +38,7 @@ function updateCart(cart, product, price, action, in_cart = true) {
     fetch("../src/controllers/cart_manager_controller.php?id=" + product + "&price=" + price + "&action=" + action).then((response) => {
         response.json().then((data) => {
 
+            console.log(data);
             // format of data : { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
 
             for (const itemKey in data["cart"]) {

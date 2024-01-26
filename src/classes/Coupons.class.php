@@ -1,5 +1,5 @@
 <?php
-class Coupons {
+class Coupon {
 
     private int $id;
     private string $name;
