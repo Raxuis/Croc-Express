@@ -28,7 +28,7 @@ if (isset($products)) { ?>
 
                     <?php } else { ?>
                         <?php if (count($images) === 0) { ?>
-                            <h2>Il n'y a pas de photo pour ce produit</h2>
+                            <h2>Aucune image pour ce produit</h2>
                         <?php } else { ?>
                             <img src="<?= PATH_IMAGES . $image['image'] ?>" alt="product_<?= $product['id'] ?>">
                         <?php } ?>
