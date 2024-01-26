@@ -46,6 +46,8 @@
                                 </li>
                                 <li><a href="?page=admin_add_food" class="nav-links" title="Admin Add Food">Aliments</a>
                                 </li>
+                                <li><a href="?page=admin_coupons" class="nav-links" title="Coupons">Bons de
+                                        Réduction</a></li>
                                 <li><a href="?page=admin_messages" class="nav-links" title="Admin Messages">Messages</a>
                                 </li>
                             </ul>
