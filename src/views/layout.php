@@ -40,7 +40,7 @@
                                 <li><a href="?page=admin_bestsellers" class="nav-links" title="Bestsellers">Meilleures
                                         ventes</a>
                                 </li>
-                                <li><a href="?page=admin_add_category" class="nav-links"
+                                <li><a href="?page=admin_categories" class="nav-links"
                                         title="Admin Add Category">Catégories</a></li>
                                 <li><a href="?page=admin_menus" class="nav-links" title="Admin Menus">Menus</a>
                                 </li>

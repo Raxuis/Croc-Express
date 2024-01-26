@@ -60,7 +60,7 @@ class ProductManager extends Manager
 
     public function toggleHide(int $product_id): void
     {
-        $query = "UPDATE products SET is_hidden = !is_hidden WHERE id = :product_id";
+        $query = "UPDATE products SET is_hidden = NOT is_hidden WHERE id = :product_id";
         $response = $this->bdd->prepare($query);
         $response->execute([
             'product_id' => $product_id
