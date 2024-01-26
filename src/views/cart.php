@@ -93,7 +93,7 @@
                 <input type="text" name="zip" id="zip">
 
                 <label for="country">Pays</label>
-                <select id="country" name="country[]"></select>
+                <select id="country" name="country[]" style="width: 100%;"></select>
             </div>
 
             <label for="coupon">Coupon de réduction</label><input type="text" name="coupon" id="coupon">
