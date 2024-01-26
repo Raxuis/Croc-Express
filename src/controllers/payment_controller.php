@@ -27,8 +27,7 @@ if ($_SESSION['inDelivery'] === true) {
     $addressId = $addressManager->createOne($address);
 }
 
-$orderHaveCoupon = isset($_POST['coupon']);
-if ($orderHaveCoupon) {
+if (!empty($_POST['coupon'])) {
     $coupon = $couponManager->getOneByName($_POST['coupon']);
 
     if ($coupon) {
@@ -49,4 +48,8 @@ $orderManager->createOne($order);
 $_SESSION['cart'] = [];
 $_SESSION['inDelivery'] = false;
 
-require PATH_TO_PRIVATE . 'controllers/homepage_controller.php';
+$_SESSION['status'] = "success";
+$_SESSION['message'] = "Commande validée ! Vous avez payé " . $totalPrice . "€";
+
+header("location: index.php?page=homepage");
+exit;
