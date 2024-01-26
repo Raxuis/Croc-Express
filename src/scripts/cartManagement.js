@@ -119,11 +119,12 @@ function initializeDelivery() {
         if (!event.target.checked) {
             updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) - 5);
             updateItemValue(deliveryPrice, 0);
-            addressForm.hidden = true
+            addressForm.classList.add("address-hidden");
+
         } else {
             updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) + 5);
             updateItemValue(deliveryPrice, 5);
-            addressForm.hidden = false
+            addressForm.classList.remove("address-hidden");
         }
     });
 }
