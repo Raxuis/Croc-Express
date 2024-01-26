@@ -27,6 +27,7 @@ if ($_SESSION['inDelivery'] === true) {
     $addressId = $addressManager->createOne($address);
 }
 
+$coupon = null;
 if (!empty($_POST['coupon'])) {
     $coupon = $couponManager->getOneByName($_POST['coupon']);
 
@@ -38,12 +39,23 @@ if (!empty($_POST['coupon'])) {
 $order = new Order([
     'userId' => $_SESSION['user_id'],
     'price' => $totalPrice,
-    'couponId' => null,
+    'couponId' => $coupon ? $coupon['id'] : null,
     'addressId' => $addressId,
     'isInDelivery' => $inDelivery,
     'isValidated' => true
 ]);
-$orderManager->createOne($order);
+$orderId = $orderManager->createOne($order);
+
+foreach ($cart as $key => $value) {
+    $orderProduct = new OrderProduct([
+        'orderId' => $orderId,
+        'productId' => $key,
+        'price' => $value['totalPrice'],
+        'quantity' => $value['quantity']
+    ]);
+    $orderProductManager->createOne($orderProduct);
+}
+
 
 $_SESSION['cart'] = [];
 $_SESSION['inDelivery'] = false;
