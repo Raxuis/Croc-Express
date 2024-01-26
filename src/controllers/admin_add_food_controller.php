@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_POST)) {
-    if (!empty($_POST['name']) && !empty($_POST['lipid']) && !empty($_POST['protein']) && !empty($_POST['carbohydrate']) && !empty($_POST['weight'])) {
+    if (!empty($_POST['name']) && (!empty($_POST['lipid']) || $_POST['lipid'] >= 0) && (!empty($_POST['protein']) || $_POST['protein'] >= 0) && (!empty($_POST['carbohydrate']) || $_POST['carbohydrate'] >= 0) && !empty($_POST['weight'])) {
         $food = new Food($_POST);
         $foodId = $foodManager->createOne($food);
         $_SESSION['status'] = "success";
