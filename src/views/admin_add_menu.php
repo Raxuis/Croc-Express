@@ -1,25 +1,27 @@
 <h3>Ajouter un menu à la carte</h3>
+<div class="container">
+    <form action="" method="post" class="form">
 
-<form action="" method="post" class="form">
+        <input type="text" name="name" placeholder="Nom du menu">
+        <input type="number" name="price" placeholder="Prix de vente">
 
-    <input type="text" name="name" placeholder="Nom du menu">
-    <input type="number" name="price" placeholder="Prix de vente">
+        <select name="productList[]" id="productList" multiple>
+            <?php foreach ($allProducts as $product) { ?>
+                <option value="<?= $product["id"] ?>">
+                    <?= $product["name"] ?>
+                </option>
+            <?php } ?>
+        </select>
 
-    <select name="productList[]" id="productList" multiple >
-        <?php foreach ($allProducts as $product) { ?>
-            <option value="<?= $product["id"] ?>"><?= $product["name"] ?></option>
-        <?php } ?>
-    </select>
+        <label for="isHidden">Menu caché du public</label>
+        <input type="checkbox" name="isHidden">
 
-    <label for="isHidden">Menu caché du public</label>
-    <input type="checkbox" name="isHidden">
+        <button type="submit" class="submit">Ajouter ce menu</button>
 
-    <button type="submit" class="submit">Ajouter ce menu</button>
-
-</form>
+    </form>
+</div>
 
 <script>
-    // In your Javascript (external .js resource or <script> tag)
     $(document).ready(function () {
         $('#productList').select2();
     });

@@ -1,11 +1,8 @@
 <?php
 
 
-$categoriesManager = new CategoryManager($bdd, "categories");
-$categories = $categoriesManager->getAll();
-$productImageManager = new ProductImageManager($bdd, "images");
-
-$allFood = $foodManager->getAll();
+$menusManager = new MenuManager($bdd, "menus");
+$menus = $menusManager->getAll();
 
 if (!empty($_POST)) {
     if (!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['buyingPrice']) && !empty($_POST['categoryId'])) {
@@ -44,5 +41,4 @@ if (!empty($_POST)) {
         $_SESSION['message'] = "Veuillez remplir tous les champs";
     }
 }
-
-require PATH_VIEWS . 'admin_add_product.php';
+require PATH_VIEWS . 'admin_menus.php';

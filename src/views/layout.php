@@ -42,6 +42,8 @@
                                 </li>
                                 <li><a href="?page=admin_add_category" class="nav-links"
                                         title="Admin Add Category">Catégories</a></li>
+                                <li><a href="?page=admin_menus" class="nav-links" title="Admin Menus">Menus</a>
+                                </li>
                                 <li><a href="?page=admin_products" class="nav-links" title="Admin Add Product">Produits</a>
                                 </li>
                                 <li><a href="?page=admin_add_food" class="nav-links" title="Admin Add Food">Aliments</a>
