@@ -88,8 +88,14 @@ function validateOrder() {
             console.log(data);
         });
     });
+}
 
-
+function setDeliveryStatus() {
+    fetch("../src/controllers/cart_manager_controller.php?action=set_delivery").then((response) => {
+        response.json().then((data) => {
+            console.log(data);
+        });
+    });
 }
 
 function initializePayment() {
@@ -100,10 +106,15 @@ function initializePayment() {
 }
 
 function initializeDelivery() {
-    let livery = document.getElementById("livery");
-    livery.addEventListener("change", (event) => {
+    console.log("init delivery")
+    let delivery = document.getElementById("delivery");
+    delivery.addEventListener("change", (event) => {
+        console.log("delivery");
         let deliveryPrice = document.getElementById("delivery-price");
         let addressForm = document.getElementById("address-form");
+
+        setDeliveryStatus();
+
         if (!event.target.checked) {
             updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) - 5);
             updateItemValue(deliveryPrice, 0);

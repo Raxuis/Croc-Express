@@ -61,43 +61,44 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="checkbox" name="livery" id="livery"><label for="livery">Livrer cette commande pour
+                <input type="checkbox" name="livery" id="delivery"><label for="livery">Livrer cette commande pour
                     5€</label>
             </td>
             <td></td>
             <td>Total</td>
             <td id="total-price">0</td>
             <td>
-                <form action="<?= PATH_TO_PRIVATE . "controllers/payment_controller.php" ?>" method="post">
-                    <button type="submit" class="submit pay">Payer</button>
-                </form>
+                <button type="button" class="submit emptyCart" id="emptyCart">Vider le panier</button>
                 <!--                <button type="button" class="submit pay">Payer</button>-->
             </td>
         </tr>
     </table>
 </div>
-<div id="address-form" hidden>
-    <form action="<?= PATH_TO_PRIVATE . "controllers/payment_controller.php" ?>" method="post">
-        <h3>Adresse de livraison</h3>
-        <label for="firstname">Prénom</label>
-        <input type="text" name="firstname" id="firstname" required>
 
-        <label for="lastname">Nom</label>
-        <input type="text" name="lastname" id="lastname" required>
+<div class="container">
+    <form action="?page=payment" method="post">
+        <div id="address-form" hidden>
+            <h3>Adresse de livraison</h3>
+            <label for="firstname">Prénom</label>
+            <input type="text" name="firstname" id="firstname">
 
-        <label for="address">Adresse</label>
-        <input type="text" name="address" id="address" required>
+            <label for="lastname">Nom</label>
+            <input type="text" name="lastname" id="lastname">
 
-        <label for="city">Ville</label>
-        <input type="text" name="city" id="city" required>
+            <label for="address">Rue</label>
+            <input type="text" name="address" id="address">
 
-        <label for="zip">Code postal</label>
-        <input type="text" name="zip" id="zip" required>
+            <label for="city">Ville</label>
+            <input type="text" name="city" id="city">
 
-        <label for="country">Pays</label>
-        <select id="country" name="country[]" required>
+            <label for="zip">Code postal</label>
+            <input type="text" name="zip" id="zip">
 
-        </select>
+            <label for="country">Pays</label>
+            <select id="country" name="country[]"></select>
+        </div>
+
+        <label for="coupon">Coupon de réduction</label><input type="text" name="coupon" id="coupon">
 
         <button type="submit" class="submit pay">Payer</button>
     </form>

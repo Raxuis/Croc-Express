@@ -38,7 +38,7 @@ require "../src/classes/OrderProduct.class.php";
 require "../src/classes/managers/MenuProductManager.class.php";
 require "../src/classes/MenuProduct.class.php";
 
-//$foodManager = new FoodManager($bdd, "foods");
+$foodManager = new FoodManager($bdd, "foods");
 //$food = new Food([
 //    'name' => "Pain",
 //    'lipid' => 5,
@@ -57,7 +57,7 @@ $productFoodManager = new ProductFoodManager($bdd, "products_foods");
 //$productFoodManager->createOne($productFood);
 
 
-//$couponManager = new CouponsManager($bdd, "coupons");
+$couponManager = new CouponsManager($bdd, "coupons");
 //$coupon = new Coupons([
 //    'name' => "TEST",
 //    'reduction' => 10,
@@ -89,7 +89,7 @@ $menuManager = new MenuManager($bdd, "menus");
 //]);
 //$menuManager->createOne($menu);
 
-//$addressManager = new AddressManager($bdd, "address");
+$addressManager = new AddressManager($bdd, "address");
 //$address = new Address([
 //    'userId' => 1,
 //    'street' => "Rue de la Paix",
@@ -99,7 +99,7 @@ $menuManager = new MenuManager($bdd, "menus");
 //]);
 //$addressManager->createOne($address);
 
-//$orderManager = new OrderManager($bdd, "orders");
+$orderManager = new OrderManager($bdd, "orders");
 //$order = new Order([
 //    'userId' => 1,
 //    'price' => 25,

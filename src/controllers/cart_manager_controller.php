@@ -49,7 +49,7 @@ if (!empty($_GET["action"])) {
         if (isset($_SESSION["inDelivery"])) {
             $_SESSION["inDelivery"] = !$_SESSION["inDelivery"];
         } else {
-            $_SESSION["inDelivery"] = false;
+            $_SESSION["inDelivery"] = true;
         }
     }
 }

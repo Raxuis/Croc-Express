@@ -27,4 +27,14 @@ class CouponsManager extends Manager
         // TODO: Implement editOne() method.
         echo "Editing to implement";
     }
+
+    public function getOneByName(string $coupon): array
+    {
+        $query = "SELECT * FROM coupons WHERE name = :name";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'name' => $coupon
+        ]);
+        return $response->fetch(PDO::FETCH_ASSOC);
+    }
 }
