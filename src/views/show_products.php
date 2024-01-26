@@ -49,11 +49,12 @@ if (isset($products)) { ?>
                         <p>
                             <?php foreach ($foods as $food) { ?>
                                 <?php
-                                $totalCalories += calculateTotalCaloriesPerAliment($food);
-                                $calories = calculateTotalCaloriesPerAliment($food); ?>
+
+                                $calories = calculateTotalCaloriesPerAliment($food);
+                                $totalCalories += $calories * ($food["weight"] / 100); ?>
                                 <?= $food['name'] . '-' ?>
                                 <?= $food['weight'] . 'g -' ?>
-                                <?= $calories . ' cal' ?> <br>
+                                <?= $calories . ' cal/100g' ?> <br>
                             <?php } ?>
                             Total :
                             <?= $totalCalories . ' cal' ?>

@@ -8,9 +8,9 @@ $totalCalories = 0;
 if (!empty($_GET['category_id']) && is_numeric($_GET['category_id'])) {
     $products = $productsManager->getProductsByCategoryId($_GET['category_id'], true);
 }
-function calculateCalories($grams, $caloriesPerGram)
+function calculateCalories($grams, $caloriesPer100g)
 {
-    return $grams * $caloriesPerGram;
+    return $grams * $caloriesPer100g;
 }
 function calculateTotalCaloriesPerAliment($data)
 {
