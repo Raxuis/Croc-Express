@@ -34,7 +34,7 @@ function getTotalCartValue(cart) {
     });
 }
 
-function updateCart(cart, product, price, action) {
+function updateCart(cart, product, price, action, in_cart = true) {
     fetch("../src/controllers/cart_manager_controller.php?id=" + product + "&price=" + price + "&action=" + action).then((response) => {
         response.json().then((data) => {
 
@@ -44,46 +44,74 @@ function updateCart(cart, product, price, action) {
                 let item = data["cart"][itemKey];
 
                 updateCartValue(cart, item["quantity"]);
-                updateItemValue(document.getElementById("item-quantity-" + product), item["quantity"]);
-                updateTotalPriceItemValue(document.getElementById("item-total-price-" + product), item["quantity"]);
-                updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
-                getTotalCartValue(document.getElementById("total-price"));
 
-                if (!data["cart"].includes(product)) {
-                    document.getElementById("item-" + product).remove();
+                if (in_cart) {
+                    updateItemValue(document.getElementById("item-quantity-" + product), item["quantity"]);
+                    updateTotalPriceItemValue(document.getElementById("item-total-price-" + product), item["quantity"]);
                     updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+                    getTotalCartValue(document.getElementById("total-price"));
+
+                    if (!Object.keys(data["cart"]).includes(product)) {
+                        document.getElementById("item-" + product).remove();
+                        updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+                    }
                 }
             }
         });
     });
 }
 
-function buttonListener(product, price, button, cart) {
+function buttonListener(product, price, button, cart, in_cart = true) {
     button.addEventListener("click", () => {
-        updateCart(cart, product, price, button.getAttribute("data-action"));
+        let action = button.getAttribute("data-action") ? button.getAttribute("data-action") : "add";
+        updateCart(cart, product, price, action, in_cart);
     });
 }
 
-function initializeCart(productId, price, buttonId, cart) {
+function initializeCart(productId, price, buttonId, cart, in_cart = true) {
     const product = productId;
     const button = document.getElementById(buttonId);
-    buttonListener(product, price, button, cart);
+    buttonListener(product, price, button, cart, in_cart);
 }
 
 // PAYMENT
 function validateOrder() {
     // TODO: Implement this function
+    // check if delivery is checked -> if it is, make a form appear to fill in the address
+    // check if the cart is empty
+    // check if the user is logged in
+    // if all is good, redirect to the payment page
+    // else, display an error message
+
+    fetch("../src/controllers/payment_controller.php?action=validate_order").then((response) => {
+        response.json().then((data) => {
+            console.log(data);
+        });
+    });
+
+
 }
 
+function initializePayment() {
+    let paymentButton = document.getElementById("payment-button");
+    paymentButton.addEventListener("click", () => {
+        validateOrder();
+    });
+}
 
-let livery = document.getElementById("livery");
-livery.addEventListener("change", (event) => {
-    let deliveryPrice = document.getElementById("delivery-price");
-    if (!event.target.checked) {
-        updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) - 5);
-        updateItemValue(deliveryPrice, 0);
-    } else {
-        updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) + 5);
-        updateItemValue(deliveryPrice, 5);
-    }
-});
+function initializeDelivery() {
+    let livery = document.getElementById("livery");
+    livery.addEventListener("change", (event) => {
+        let deliveryPrice = document.getElementById("delivery-price");
+        let addressForm = document.getElementById("address-form");
+        if (!event.target.checked) {
+            updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) - 5);
+            updateItemValue(deliveryPrice, 0);
+            addressForm.hidden = true
+        } else {
+            updateTotalPriceValue(document.getElementById("total-price"), parseInt(document.getElementById("total-price").textContent) + 5);
+            updateItemValue(deliveryPrice, 5);
+            addressForm.hidden = false
+        }
+    });
+}

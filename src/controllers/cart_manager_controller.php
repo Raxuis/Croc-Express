@@ -24,6 +24,14 @@ if (!empty($_GET["action"])) {
             ];
         }
     } else if ($_GET["action"] === "remove" && !empty($_GET["price"])) {
+
+        if (empty($_SESSION["cart"][$_GET["id"]])) {
+            $_SESSION["cart"][$_GET["id"]] = [
+                "quantity" => 0,
+                "totalPrice" => 0
+            ];
+        }
+
         if ($_SESSION["cart"][$_GET["id"]]["quantity"] > 1) {
             $_SESSION["cart"][$_GET["id"]] = [
                 "quantity" => $_SESSION["cart"][$_GET["id"]]["quantity"] - 1,
