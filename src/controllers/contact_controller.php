@@ -1,6 +1,7 @@
 <?php
 
 if (!isset($_SESSION["user_id"])) {
+    ob_clean();
     header('location: index.php');
     exit(0);
 }
@@ -20,6 +21,7 @@ if (!empty($_POST)) {
     } else {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Vous devez remplir tous les champs";
+        ob_clean();
         header('location: index.php');
         exit(0);
     }

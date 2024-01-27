@@ -6,6 +6,15 @@ if (isset($_POST['delete']) && $_POST['delete'] === 'true') {
     $menusManager->deleteOne($id);
     $_SESSION['status'] = 'success';
     $_SESSION['message'] = 'Menu supprimé avec succès';
+    ob_clean();
+    header('Location:?page=admin_menus');
+    exit();
+}
+if (isset($_POST['show_hide'])) {
+    $menusManager->toggleHide($_POST['id']);
+    $_SESSION['status'] = 'success';
+    $_SESSION['message'] = 'Menu modifié avec succès';
+    ob_clean();
     header('Location:?page=admin_menus');
     exit();
 }

@@ -62,6 +62,6 @@ $_SESSION['inDelivery'] = false;
 
 $_SESSION['status'] = "success";
 $_SESSION['message'] = "Commande validée ! Vous avez payé " . $totalPrice . "€";
-
+ob_clean();
 header("location: index.php?page=homepage");
 exit;

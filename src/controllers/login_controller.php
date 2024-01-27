@@ -11,6 +11,7 @@ if (!empty($_POST)) {
                 $_SESSION['logged'] = true;
                 $_SESSION['status'] = "success";
                 $_SESSION['message'] = "Vous êtes connecté avec succès";
+                ob_clean();
                 header('Location:index.php');
                 exit();
             } else {

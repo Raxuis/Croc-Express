@@ -1,7 +1,7 @@
 <?php
 
-if(!empty($_POST)) {
-    if(!empty($_POST['name']) && !empty($_POST['reduction'])) {
+if (!empty($_POST)) {
+    if (!empty($_POST['name']) && !empty($_POST['reduction'])) {
         $coupon = new Coupon($_POST);
         $couponId = $couponManager->createOne($coupon);
         $_SESSION['status'] = "success";
@@ -10,7 +10,7 @@ if(!empty($_POST)) {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Veuillez remplir tous les champs";
     }
-
+    ob_clean();
     header("location: index.php?page=admin_coupons");
     exit;
 }

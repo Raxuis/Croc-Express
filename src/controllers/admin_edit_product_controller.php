@@ -70,6 +70,7 @@ if (!empty($_POST)) {
 //                }
 //            }
 //        }
+        ob_clean();
         header('location: index.php?page=admin_products');
         exit(0);
     }

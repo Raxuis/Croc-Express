@@ -41,4 +41,12 @@ class MenuManager extends Manager
         ]);
         return $response->fetchAll();
     }
+    public function toggleHide(int $id): void
+    {
+        $query = "UPDATE menus SET is_hidden = NOT is_hidden WHERE id = :id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'id' => $id
+        ]);
+    }
 }
