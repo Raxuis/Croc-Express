@@ -1,54 +1,50 @@
 <?php
-
 global $productManager, $productFoodManager, $foodManager, $bdd;
 $menuManager = new MenuManager($bdd, 'menus');
 $menu = $menuManager->getOne($_POST['id']);
-$products = $productManager->getAll();
-$allFoodInProduct = $productFoodManager->getAllFoodOfProduct($_POST['id']);
-
+$products = $menuManager->getAllProductsFromMenu($menu['id']);
 $categoriesManager = new CategoryManager($bdd, "categories");
 $categories = $categoriesManager->getAll();
-
 $menuProductManager = new MenuProductManager($bdd, "menus_products");
 
 if (!empty($_POST)) {
-    echo 'belek';
-    print_r($_POST);
     if (isset($_POST['name']) && isset($_POST['price']) && isset($_POST['productList'])) {
-        echo 'tg';
         if ($_POST["productList"] === "") {
             $_SESSION['status'] = 'error';
             $_SESSION['message'] = "Veuillez sélectionner une catégorie";
+            ob_clean();
+            header('Location:?page=admin_menus');
+            exit();
         }
 
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
-
-        if (count($allFoodInProduct) === 0) {
+        if (empty($products)) {
             foreach ($_POST["productList"] as $item) {
-                $menu = new Menu([
-                    'productId' => $_POST["id"],
-                    'foodId' => $item
+                $product = new MenuProduct([
+                    'menuId' => $_POST["id"],
+                    'productId' => $item
                 ]);
-                $menuProductManager->createOne($menu);
+                $menuProductManager->createOne($product);
             }
         }
 
         foreach ($_POST["productList"] as $item) {
-            echo $item . "<br>";
-            if (!in_array($item, $allFoodInProduct)) {
-                $menu = new Menu([
-                    'productId' => $_POST["id"],
-                    'foodId' => $item
+            if (!in_array($item, $products)) {
+                $product = new MenuProduct([
+                    'menuId' => $_POST["id"],
+                    'productId' => $item
                 ]);
-                $menuProductManager->createOne($menu);
+                $menuProductManager->createOne($product);
             }
         }
 
-        /*  foreach ($allFoodInProduct as $foodInProd) {
-             if (!in_array($foodInProd, $_POST["productList"])) {
-                 $productFoodManager->deleteOne($foodInProd["id"]);
-             }
-         } */
+        // Delete unused products
+        foreach ($products as $product) {
+            if (!in_array($product["productId"], $_POST["productList"])) {
+                $menuProductManager->deleteOne($product["id"]);
+            }
+        }
+
         ob_clean();
         header('location: index.php?page=admin_menus');
         exit(0);
