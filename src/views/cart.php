@@ -75,6 +75,9 @@
             </tr>
         </table>
         <form action="?page=payment" method="post" class="form" style="margin-bottom : 10vh;">
+
+            <input type="hidden" name="token" value="<?= $_SESSION['token']?>" />
+
             <div id="address-form" class="address-hidden">
                 <h3>Adresse de livraison</h3>
                 <label for="firstname">Prénom</label>

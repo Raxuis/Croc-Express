@@ -18,7 +18,7 @@
                 <?= $coupon['name'] ?>
             </td>
             <td>
-                <?= $coupon['reduction'] ?>
+                <?= $coupon['reduction'] . "%" ?>
             </td>
             <td id="delete-edit">
                 <form method="post" action="?page=admin_edit_coupon">

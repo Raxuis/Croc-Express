@@ -7,7 +7,7 @@ if (isset($_POST['name'])) {
 
     $_SESSION['status'] = "success";
     $_SESSION['message'] = "La catégorie a bien été ajoutée";
-    ob_clean();
+//    ob_clean();
     header('Location: ?page=admin_categories');
     exit;
 }

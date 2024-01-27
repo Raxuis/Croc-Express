@@ -28,7 +28,7 @@ class CouponsManager extends Manager
         echo "Editing to implement";
     }
 
-    public function getOneByName(string $coupon): array
+    public function getOneByName(string $coupon): array|bool
     {
         $query = "SELECT * FROM coupons WHERE name = :name";
         $response = $this->bdd->prepare($query);

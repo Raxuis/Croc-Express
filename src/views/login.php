@@ -1,6 +1,7 @@
 <h3>Page de connexion</h3>
 <div class="container">
     <form action="" method="post" class="form">
+        <input type="hidden" name="token" value="<?= $_SESSION['token']?>" />
         <label for="email">Entrez votre email : </label>
         <input type="email" id="email" name="email" autofocus placeholder="Email" id="email" required />
 

@@ -1,6 +1,7 @@
 <h3>Page de création de compte</h3>
 <div class="container">
     <form action="" method="post" class="form">
+        <input type="hidden" name="token" value="<?= $_SESSION['token']?>" />
         <label for="firstname">
             Prénom:
         </label>

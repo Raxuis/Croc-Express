@@ -34,7 +34,7 @@ class OrderManager extends Manager {
 
     public function getOrdersByUserId(int $userId): array
     {
-        $query = "SELECT * FROM orders WHERE user_id = :user_id";
+        $query = "SELECT * FROM orders WHERE user_id = :user_id ORDER BY created_at DESC";
         $response = $this->bdd->prepare($query);
         $response->execute([
             'user_id' => $userId

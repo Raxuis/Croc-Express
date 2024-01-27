@@ -1,6 +1,7 @@
 <h3>Page de modification de profil</h3>
 <div class="container">
     <form action="" method="post" class="form">
+        <input type="hidden" name="token" value="<?= $_SESSION['token']?>" />
         <label for="firstname">Prénom : </label>
         <input type="text" class="form-control" id="firstname" name="firstname"
             value="<?= htmlspecialchars($userInfos['firstname']) ?>">

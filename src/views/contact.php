@@ -2,6 +2,7 @@
 <div class="container">
     <form action="" method="post" class="form">
 
+        <input type="hidden" name="token" value="<?= $_SESSION['token']?>" />
         <label for="title">Titre de votre message</label>
         <input type="text" name="title" placeholder="Titre">
 
