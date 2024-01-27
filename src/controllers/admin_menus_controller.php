@@ -12,8 +12,8 @@ if (isset($_POST['delete']) && $_POST['delete'] === 'true') {
 }
 if (isset($_POST['show_hide'])) {
     $menusManager->toggleHide($_POST['id']);
-    $_SESSION['status'] = 'success';
-    $_SESSION['message'] = 'Menu modifié avec succès';
+    $_SESSION['status'] = 'info';
+    $_SESSION['message'] = 'Visibilité du menu modifiée avec succès';
     ob_clean();
     header('Location:?page=admin_menus');
     exit();
