@@ -17,6 +17,7 @@
 
         $food = $productFoodManager->getAllFoodOfProduct($product['id']);
         $sales = $orderProductManager->getProductSales($product['id']);
+        $foods = $productFoodManager->getAllFoodDatasOfProduct($product['id']);
 
         ?>
         <tr>
@@ -33,8 +34,16 @@
                 <?= $product['buying_price'] ?>
             </td>
             <td>
-                <?= "CALCUL CAL " ?>cal
+                <?php foreach ($foods as $food) { ?>
+                    <?php
+                    $calories = calculateTotalCaloriesPerAliment($food);
+                    $totalCalories += $calories * ($food["weight"] / 100); ?>
+                <?php } ?>
+                <?= $totalCalories ?>
             </td>
+            <?php
+            $totalCalories = 0;
+            ?>
             <td>
                 <?= count($food) ?>
             </td>

@@ -33,7 +33,8 @@ if (!empty($_POST)) {
                         'image' => $productPicture
                     ]);
                     $productImageManager->createOne($image);
-                    echo "Image ajoutée avec succès";
+                    $_SESSION['status'] = 'success';
+                    $_SESSION['message'] = 'Image ajoutée avec succès';
                 }
             }
         }

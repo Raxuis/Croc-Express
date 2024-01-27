@@ -1,4 +1,5 @@
 <?php
+$totalCalories = 0;
 
 if (isset($_POST['show_hide'])) {
     $productManager->toggleHide($_POST['id']);
@@ -12,5 +13,16 @@ if (isset($_POST['show_hide'])) {
 }
 
 $allProducts = $productManager->getAll();
-
+function calculateCalories($grams, $caloriesPer100g)
+{
+    return $grams * $caloriesPer100g;
+}
+function calculateTotalCaloriesPerAliment($data)
+{
+    $lipidCalories = calculateCalories($data["lipid"], 9);
+    $carboCalories = calculateCalories($data["carbohydrate"], 4);
+    $proteinCalories = calculateCalories($data["protein"], 4);
+    $totalCalories = $lipidCalories + $carboCalories + $proteinCalories;
+    return $totalCalories;
+}
 require PATH_VIEWS . 'admin_products.php';
