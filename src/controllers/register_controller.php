@@ -2,7 +2,7 @@
 require PATH_VIEWS . 'register.php';
 require PATH_CLASSES . 'Verify.class.php';
 
-if(isset($_SESSION["user_id"])){
+if (isset($_SESSION["user_id"])) {
     header('Location: index.php');
     exit();
 }
@@ -21,6 +21,9 @@ if (!empty($_POST)) {
             ]);
 
             $userId = $userManager->createOne($user);
+        } else {
+            $_SESSION['status'] = "error";
+            $_SESSION['message'] = "Les données saisies sont invalides ou un compte existe déjà avec cette email";
         }
     }
 }

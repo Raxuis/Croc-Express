@@ -47,7 +47,7 @@ main {
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 1rem 2rem 1rem 2rem;
     width: 25em;
-    margin: 1rem 1rem 4rem 1rem;
+    margin: 1rem 1rem 3rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -482,6 +482,27 @@ thead th a:hover {
     transition: 0.3s;
 }
 
+#homepage-container {
+    padding-top: 1em;
+    justify-content: flex-start;
+}
+
+
+.row-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-title {
+    font-size: 1.2em;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #f6720d;
+}
+
 @media (max-width: 768px) {
     nav {
         position: fixed;
@@ -590,5 +611,9 @@ thead th a:hover {
 
     .address-form {
         width: 70%;
+    }
+
+    .card {
+        width: 20em;
     }
 }
