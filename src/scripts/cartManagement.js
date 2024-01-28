@@ -132,3 +132,19 @@ function initializeDelivery() {
         }
     });
 }
+
+function initializeEmptyCart() {
+    let emptyCartButton = document.getElementById("emptyCart");
+    emptyCartButton.addEventListener("click", () => {
+        fetch("../src/controllers/cart_manager_controller.php?action=clear").then((response) => {
+            response.json().then((data) => {
+                let itemsEle = document.getElementsByClassName("items-list");
+                for (const itemEle of itemsEle) {
+                    itemEle.remove()
+                }
+                window.location.href = "?page=homepage";
+
+            });
+        });
+    });
+}

@@ -19,7 +19,7 @@
                 $productImage = $productImageManager->getImagesByProductId($key);
                 $productsInCart[] = $product
                     ?>
-                <tr id="<?= 'item-' . $product['id'] ?>">
+                <tr class="items-list" id="<?= 'item-' . $product['id'] ?>">
                     <td class="td-images">
                         <img src="<?= PATH_IMAGES . $productImage[0]['image'] ?>" alt="" class='cart-images'>
                     </td>
@@ -127,5 +127,6 @@
             initializeCart("<?= $product['id'] ?>", "<?= $product['price'] ?>", 'button-remove-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0]);
             getTotalCartValue(document.getElementById("total-price"));
         <?php } ?>
+        initializeEmptyCart();
     });
 </script>

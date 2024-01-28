@@ -51,21 +51,28 @@ if (!empty($_GET["action"])) {
         } else {
             $_SESSION["inDelivery"] = true;
         }
+    } else if ($_GET["action"] === "clear") {
+        unset($_SESSION["cart"]);
+        unset($_SESSION["inDelivery"]);
     }
 }
 
 $totalPrice = 0;
-foreach ($_SESSION["cart"] as $key => $value) {
-    $totalPrice += $value["totalPrice"];
-}
-if (isset($_SESSION["inDelivery"]) && $_SESSION["inDelivery"] === true) {
-    $totalPrice += 5;
-}
+if (isset($_SESSION["cart"])) {
+    foreach ($_SESSION["cart"] as $key => $value) {
+        $totalPrice += $value["totalPrice"];
+    }
+    if (isset($_SESSION["inDelivery"]) && $_SESSION["inDelivery"] === true) {
+        $totalPrice += 5;
+    }
 
-$cartData = [
-    "cart" => $_SESSION["cart"],
-    "inDelivery" => $_SESSION["inDelivery"] ?? false,
-    "totalPrice" => $totalPrice
-];
+    $cartData = [
+        "cart" => $_SESSION["cart"],
+        "inDelivery" => $_SESSION["inDelivery"] ?? false,
+        "totalPrice" => $totalPrice
+    ];
+} else {
+    $cartData = [];
+}
 
 echo json_encode($cartData);
