@@ -76,7 +76,7 @@ if (isset($products)) { ?>
     document.addEventListener("DOMContentLoaded", function () {
         <?php foreach ($products as $product) { ?>
             initializeSlider("slides-container-<?= $product['id'] ?>", "slide-<?= $product['id'] ?>", "arrow-left<?= $product['id'] ?>", "arrow-right<?= $product['id'] ?>");
-            initializeCart("<?= $product['id'] ?>", <?= $product['price'] ?>, 'button-<?= $product['id'] ?>', document.getElementsByClassName("commands")[0], false);
+            initializeCart("<?= $product['id'] ?>", <?= $product['price'] ?>, 'button-<?= $product['id'] ?>', document.getElementById("cart-quantity"), false);
         <?php } ?>
     });
 </script>

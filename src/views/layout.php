@@ -88,8 +88,9 @@
                             foreach ($_SESSION['cart'] as $key => $value) {
                                 $total += $value["quantity"];
                             }
-                        } ?>
-                        <sup class="commands">
+                        }
+                        ?>
+                        <sup class="commands" id="cart-quantity">
                             <?= $total ?>
                         </sup>
                     </a></li>

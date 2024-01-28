@@ -1,7 +1,7 @@
 // { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
 
 function updateCartValue(cart, value) {
-    cart.innerHTML = value;
+    cart.textContent = parseInt(cart.textContent) + value;
 }
 
 function updateItemValue(item, value) {
@@ -37,17 +37,16 @@ function getTotalCartValue(cart) {
 function updateCart(cart, product, price, action, in_cart = true) {
     fetch("../src/controllers/cart_manager_controller.php?id=" + product + "&price=" + price + "&action=" + action).then((response) => {
         response.json().then((data) => {
-
-            console.log(data);
             // format of data : { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
 
+            cart.textContent = 0;
             for (const itemKey in data["cart"]) {
                 let item = data["cart"][itemKey];
 
                 updateCartValue(cart, item["quantity"]);
 
                 if (in_cart) {
-                    updateItemValue(document.getElementById("item-quantity-" + product), item["quantity"]);
+                    updateItemValue(document.getElementById("item-quantity-" + itemKey), item["quantity"]);
                     updateTotalPriceItemValue(document.getElementById("item-total-price-" + product), item["quantity"]);
                     updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
                     getTotalCartValue(document.getElementById("total-price"));
@@ -57,6 +56,12 @@ function updateCart(cart, product, price, action, in_cart = true) {
                         updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
                     }
                 }
+            }
+
+            // si panier vide -> redirection vers la page d'accueil
+            console.log(data["cart"])
+            if (data["cart"].length === 0) {
+                window.location.href = "?page=homepage";
             }
         });
     });
@@ -107,7 +112,6 @@ function initializePayment() {
 }
 
 function initializeDelivery() {
-    console.log("init delivery")
     let delivery = document.getElementById("delivery");
     delivery.addEventListener("change", (event) => {
         console.log("delivery");
