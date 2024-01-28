@@ -126,6 +126,17 @@ nav {
     background-color: #19242a;
 }
 
+nav a[href="?page=homepage"] {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+nav a[href="?page=homepage"]:hover {
+    color: #f97111;
+}
+
 nav img {
     margin-left: 5px;
     height: 3.5em;

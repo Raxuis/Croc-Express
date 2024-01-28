@@ -22,7 +22,7 @@
 <body>
     <header>
         <nav>
-            <a href="?page=homepage"><img src="./assets/favicon.ico" alt='favicon'></a>
+            <a href="?page=homepage"><img src="./assets/favicon.ico" alt='favicon'>Croc Express</a>
             <ul class="nav-menu">
                 <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true): ?>
                     <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
