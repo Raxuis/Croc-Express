@@ -45,11 +45,11 @@
                             <li><a href="?page=admin_categories" class="nav-links"
                                    title="Admin Add Category">Catégories</a>
                             </li>
-                            <li><a href="?page=admin_menus" class="nav-links" title="Admin Menus">Menus</a>
+                            <li><a href="?page=admin_menus" class="nav-links" title="Admin Menus manage">Menus</a>
                             </li>
-                            <li><a href="?page=admin_products" class="nav-links" title="Admin Add Product">Produits</a>
+                            <li><a href="?page=admin_products" class="nav-links" title="Admin Product manage">Produits</a>
                             </li>
-                            <li><a href="?page=admin_add_food" class="nav-links" title="Admin Add Food">Aliments</a>
+                            <li><a href="?page=admin_food" class="nav-links" title="Admin Food manage">Aliments</a>
                             </li>
                             <li><a href="?page=admin_coupons" class="nav-links" title="Coupons">Bons de
                                     Réduction</a></li>
