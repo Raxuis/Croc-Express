@@ -8,7 +8,6 @@
         <input type="number" min="1" name="buyingPrice" placeholder="Coût de production">
 
         <select name="categoryId" id="categoryId">
-            <option value="">-- Sélectionnez une catégorie --</option>
             <?php foreach ($categories as $category) { ?>
                 <option value="<?= $category["id"] ?>">
                     <?= $category["name"] ?>
