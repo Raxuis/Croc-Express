@@ -25,8 +25,16 @@ class MenuManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Editing to implement";
+        $query = "UPDATE menus SET name = :name, price = :price, is_hidden = :isHidden WHERE id = :id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'name' => $data->getName(),
+            'price' => $data->getPrice(),
+            'isHidden' => (int) $data->getIsHidden(),
+            'id' => $data->getId(),
+        ]);
+
+
     }
     public function getAllProductsFromMenu(int $data): array
     {

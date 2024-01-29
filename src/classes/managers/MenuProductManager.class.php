@@ -1,5 +1,7 @@
 <?php
-class MenuProductManager extends Manager {
+
+class MenuProductManager extends Manager
+{
 
     public function __construct(PDO $database_connection, string $table)
     {
@@ -24,6 +26,15 @@ class MenuProductManager extends Manager {
     public function editOne(object $data): void
     {
         // TODO: Implement editOne() method.
-        echo "Edit to implement";
+    }
+
+    public function deleteOneByProductId(int $product_id, int $menu_id): void
+    {
+        $query = "DELETE FROM " . $this->table . " WHERE menu_id = :menu_id AND product_id = :product_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'menu_id' => $menu_id,
+            'product_id' => $product_id
+        ]);
     }
 }
