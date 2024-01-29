@@ -1,5 +1,5 @@
 <h3>Page d'accueil</h3>
-<div class="container" id='homepage-container'>
+<div id='homepage-container'>
     <div class="row">
         <h4 class="row-title">Nos catégories</h4>
         <div class="row-body">
