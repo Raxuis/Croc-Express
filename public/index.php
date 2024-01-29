@@ -2,8 +2,7 @@
 global $bdd;
 require "../config/config.php";
 require PATH_TO_PRIVATE . "core/DBconnection.php";
-require PATH_TO_PRIVATE . 'classes/managers/UserManager.class.php';
-require PATH_TO_PRIVATE . 'classes/User.class.php';
+
 
 session_start();
 ob_start();
@@ -13,8 +12,6 @@ if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     header("Location: " . BASE_PATH);
     exit();
 }
-
-//$_SESSION['cart'] = [];
 
 if (!isset($_SESSION['token'])) {
     $_SESSION['token'] = md5(uniqid(mt_rand(), true));
@@ -33,10 +30,6 @@ if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     }
 }
 
+require "imports.php";
 
-// NE PAS SUPPRIMER : TESTS POUR VERIFIER QUE L'ARCHITECTURE BDD FONCTIONNE
-require "tests.temp.php";
-$userManager = new UserManager($bdd, "users");
-$foodManager = new FoodManager($bdd, "foods");
-$productManager = new ProductManager($bdd, "products");
 require PATH_VIEWS . 'layout.php';

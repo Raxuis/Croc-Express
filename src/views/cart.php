@@ -12,43 +12,6 @@
             <th><i class="fa-solid fa-bag-shopping"></i></th>
         </tr>
         </thead>
-        <!--            --><?php //$productsInCart = [];
-        //            foreach ($_SESSION["cart"] as $key => $value) { ?>
-        <!--                --><?php
-        //                $product = $productsManager->getOne($key);
-        //                $productImage = $productImageManager->getImagesByProductId($key);
-        //                $productsInCart[] = $product
-        //                    ?>
-        <!--                <tr class="items-list" id="--><?php //= 'item-' . $product['id'] ?><!--">-->
-        <!--                    <td class="td-images">-->
-        <!--                        <img src="-->
-        <?php //= PATH_IMAGES . $productImage[0]['image'] ?><!--" alt="" class='cart-images'>-->
-        <!--                    </td>-->
-        <!--                    <td>-->
-        <!--                        --><?php //= $product['name'] ?>
-        <!--                    </td>-->
-        <!--                    <td>-->
-        <!--                        --><?php //= $product['price'] . '€' ?>
-        <!--                    </td>-->
-        <!--                    <td id="--><?php //= 'item-quantity-' . $product['id'] ?><!--">-->
-        <!--                        --><?php //= $value["quantity"] ?>
-        <!--                    </td>-->
-        <!--                    <td id="--><?php //= 'item-total-price-' . $product['id'] ?><!--" data-price="-->
-        <?php //= $product['price'] ?><!--">-->
-        <!--                        --><?php //= $product['price'] * $_SESSION["cart"][$product['id']]["quantity"] ?>
-        <!--                    </td>-->
-        <!--                    <td>-->
-        <!--                        <button class="remove-cart" data-action="remove" id="-->
-        <?php //= 'button-remove-' . $product['id'] ?><!--">-->
-        <!--                            <i class="fa-solid fa-circle-minus"></i></button>-->
-        <!--                        <button class="add-cart" data-action="add" id="-->
-        <?php //= 'button-add-' . $product['id'] ?><!--"><i-->
-        <!--                                class="fa-solid fa-circle-plus"></i></button>-->
-        <!--                    </td>-->
-        <!--                </tr>-->
-        <!---->
-        <!--            --><?php //} ?>
-
         <?php $dataInCart = [];
         foreach ($_SESSION["cart"] as $type => $items) {
             foreach ($items as $id => $value) { ?>
