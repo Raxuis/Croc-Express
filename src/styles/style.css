@@ -56,6 +56,20 @@ main {
     align-items: stretch;
 }
 
+.products-menu {
+    position: absolute;
+    color: #FFF;
+    background-color: #f97111;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    font-size: 1em;
+    top: 10px;
+    right: 10px;
+}
+
 .card-orders {
     width: 30em;
 }
@@ -300,17 +314,20 @@ select {
     font-weight: 600;
 }
 
-.orange-button i {
+.orange-button i,
+.products-menu i {
     margin-left: 20px;
     transition: 0.5s;
 }
 
-.orange-button:hover i {
+.orange-button:hover i,
+.products-menu:hover i {
     transform: translate(5px);
     color: #f97111;
 }
 
-.orange-button:hover {
+.orange-button:hover,
+.products-menu:hover {
     background-color: #FFF;
     color: #f97111;
 }
