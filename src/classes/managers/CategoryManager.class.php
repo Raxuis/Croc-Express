@@ -27,8 +27,7 @@ class CategoryManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Editing to implement";
+        return;
     }
 
     public function toggleHide(int $id): void

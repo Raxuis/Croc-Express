@@ -44,9 +44,4 @@ abstract class Manager
         $response = $this->bdd->query($query);
         return $response->fetchColumn();
     }
-
-    public function exists(int $id)
-    {
-        echo "exists";
-    }
 }

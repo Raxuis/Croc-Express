@@ -25,9 +25,9 @@ class ProductImageManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Edit to implement";
+        return;
     }
+
     public function getImagesByProductId(int $product_id): array
     {
         $query = "SELECT DISTINCT i.* FROM products_images as i INNER JOIN products as p WHERE i.product_id = :product_id";
@@ -38,7 +38,8 @@ class ProductImageManager extends Manager
         return $response->fetchAll();
     }
 
-    public function getAllImagesOfProduct(int $product_id) {
+    public function getAllImagesOfProduct(int $product_id)
+    {
         $query = "SELECT * FROM " . $this->table . " WHERE product_id=:product_id";
         $response = $this->bdd->prepare($query);
         $response->execute([

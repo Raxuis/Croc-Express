@@ -28,6 +28,6 @@ class FoodManager extends Manager {
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
+        return;
     }
 }

@@ -7,16 +7,24 @@
         <input type="number" min="1" name="price" placeholder="Prix de vente" value="<?= $menu["price"] ?>">
 
         <select name="productList[]" id="productList" multiple="multiple">
-            <?php foreach ($products as $product) { ?>
-                <?php if ($product["id"] === $product["category_id"]) { ?>
+            <?php foreach ($allProducts as $product) { ?>
+                <?php $productSelected = false;
+                foreach ($products as $item) {
+                    if ($item["id"] === $product["id"]) {
+                        $productSelected = true;
+                    }
+                }
+                if ($productSelected) { ?>
                     <option value="<?= $product["id"] ?>" selected>
                     <?php } else { ?>
                     <option value="<?= $product["id"] ?>">
                     <?php } ?>
+
                     <?= $product["name"] ?>
                 </option>
             <?php } ?>
         </select>
+
         <div class="hidden">
             <label for="isHidden">Menu caché du public</label>
             <?php if ($menu["is_hidden"]) { ?>

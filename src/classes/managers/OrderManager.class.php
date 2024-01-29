@@ -10,7 +10,8 @@ class OrderManager extends Manager {
     public function createOne(object $data): int
     {
         if ($data instanceof Order) {
-            $query = "INSERT INTO orders (user_id, price, coupon_id, address_id, is_in_delivery, is_validated) VALUES (:user_id, :price, :coupon_id, :address_id, :is_in_delivery, :is_validated)";
+            $query = "INSERT INTO orders (user_id, price, coupon_id, address_id, is_in_delivery, is_validated)
+                    VALUES (:user_id, :price, :coupon_id, :address_id, :is_in_delivery, :is_validated)";
             $response = $this->bdd->prepare($query);
             $response->execute([
                 'user_id' => $data->getUserId(),
@@ -28,8 +29,7 @@ class OrderManager extends Manager {
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Editing to implement";
+        return;
     }
 
     public function getOrdersByUserId(int $userId): array

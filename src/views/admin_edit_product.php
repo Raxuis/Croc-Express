@@ -10,7 +10,6 @@
             value="<?= $product["buying_price"] ?>">
 
         <select name="categoryId" id="categoryId">
-            <option value="">-- Sélectionnez une catégorie --</option>
             <?php foreach ($categories as $category) { ?>
                 <?php if ($category["id"] === $product["category_id"]) { ?>
                     <option value="<?= $category["id"] ?>" selected>
@@ -23,8 +22,6 @@
         </select>
 
         <select name="foodList[]" id="foodList" multiple>
-            <option value="">-- Sélectionnez des aliments --</option>
-
             <?php foreach ($allFood as $food) { ?>
                 <?php $foodSelected = false;
                 foreach ($allFoodInProduct as $item) {

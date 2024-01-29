@@ -14,7 +14,9 @@ $allFood = $foodManager->getAll();
 if (!empty($_POST)) {
     if (isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price']) && isset($_POST['buyingPrice']) && isset($_POST['categoryId'])) {
         if ($_POST["categoryId"] === "") {
-            echo "Veuillez sélectionner une catégorie";
+            $_SESSION['status'] = "error";
+            $_SESSION['message'] = "Veuillez sélectionner une catégorie";
+            header("Location: ?page=admin_products");
             exit;
         }
 
@@ -23,6 +25,13 @@ if (!empty($_POST)) {
         $dbProduct = $productManager->getOne($_POST["id"]);
         $productObject = new Product($_POST);
         $productManager->editOne($productObject);
+
+        if(count($_POST["foodList"]) < 3) {
+            $_SESSION['status'] = "error";
+            $_SESSION['message'] = "Le produit doit avoir au moins 3 ingrédients";
+            header("Location: ?page=admin_products");
+            exit;
+        }
 
         if (count($allFoodInProduct) === 0) {
             foreach ($_POST["foodList"] as $item) {
@@ -50,8 +59,6 @@ if (!empty($_POST)) {
                 $productFoodManager->deleteOne($foodInProd["id"]);
             }
         }
-
-
 
         //        foreach ($_FILES["image"]["name"] as $key => $value) {
 //            if ($_FILES['image']['error'][$key] === 0) {

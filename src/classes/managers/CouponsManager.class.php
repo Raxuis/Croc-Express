@@ -24,8 +24,7 @@ class CouponsManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Editing to implement";
+        return;
     }
 
     public function getOneByName(string $coupon): array|bool

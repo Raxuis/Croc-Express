@@ -10,7 +10,9 @@
             value="<?= htmlspecialchars($userInfos['lastname']) ?>">
         <label for="email">Email : </label>
         <input type="email" id="email" name="email" value="<?= htmlspecialchars($userInfos['email']) ?>">
-        <label for="password">Modifier votre mot de passe : </label </form>
+        <label for="password">Ancien mot de passe : </label >
+        <input type="password" id="password-old" name="password_old">
+        <label for="password">Modifier votre mot de passe : </label>
         <input type="password" id="password" name="password">
         <label for="password-confirmation">Mot de passe de confirmation : </label>
         <input type="password" id="password-confirmation" name="password_confirmation">

@@ -42,6 +42,7 @@ class ProductFoodManager extends Manager
         ]);
         return $response->fetchAll();
     }
+
     public function getAllFoodDatasOfProduct(int $product_id): array
     {
         $query = "SELECT f.* FROM foods as f 
