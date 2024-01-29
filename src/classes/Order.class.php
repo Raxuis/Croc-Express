@@ -7,7 +7,7 @@ class Order {
     private int|null $couponId;
     private int|null $addressId;
     private bool $isInDelivery;
-    private bool $isValidated;
+    private string $validatedAt;
 
     public function __construct(array $data)
     {
@@ -84,13 +84,13 @@ class Order {
         $this->isInDelivery = (int) $isInDelivery;
     }
 
-    public function getIsValidated(): bool
+    public function getValidatedAt(): string
     {
-        return $this->isValidated;
+        return $this->validatedAt;
     }
 
-    public function setIsValidated(bool $isValidated): void
+    public function setValidatedAt(string $validatedAt): void
     {
-        $this->isValidated = (int) $isValidated;
+        $this->validatedAt = $validatedAt;
     }
 }
