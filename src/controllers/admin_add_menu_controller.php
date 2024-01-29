@@ -15,7 +15,7 @@ if (!empty($_POST)) {
             $menuProductManager->createOne($menuProduct);
         }
         $_SESSION['status'] = "success";
-        $_SESSION['message'] = "Menu created with id: " . $menuId;
+        $_SESSION['message'] = "Menu créé avec l'id " . $menuId;
     } else {
         $_SESSION['status'] = 'error';
         $_SESSION['message'] = "Veuillez remplir tous les champs";

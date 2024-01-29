@@ -22,16 +22,17 @@
             <div class="card-body">
                 <table class='table-cart'>
                     <thead>
-                        <tr>
-                            <th></th>
-                            <th>Produit</th>
-                            <th>Prix Unitaire</th>
-                            <th>Quantité</th>
-                            <th>Prix Total</th>
-                        </tr>
+                    <tr>
+                        <th></th>
+                        <th>Produit</th>
+                        <th>Prix Unitaire</th>
+                        <th>Quantité</th>
+                        <th>Prix Total</th>
+                    </tr>
                     </thead>
                     <?php
                     $products = $orderProductManager->getProductsOfOrder($order['id']);
+
                     $productsIds = [];
                     foreach ($products as $product) {
                         if (!in_array($product['id'], $productsIds)) {
@@ -43,7 +44,11 @@
                         ?>
                         <tr>
                             <td class="td-images">
-                                <img src="<?= PATH_IMAGES . $product['image'] ?>" alt="" class='cart-images'>
+                                <?php if ($product['type'] == 'product') { ?>
+                                    <img src="<?= PATH_IMAGES . $product['image'] ?>" alt="" class='cart-images'>
+                                <?php } else { ?>
+                                    <span>Menu</span>
+                                <?php } ?>
                             </td>
                             <td>
                                 <?= $product['name'] ?>
@@ -64,7 +69,7 @@
                     <?= $coupon ? $coupon["name"] . " (-" . $coupon["reduction"] . "%)" : "Aucun code utilisé" ?>
                 </p>
                 <a href="index.php?page=orders&order_id=<?= $order['id'] ?>">Plus d'informations<i
-                        class="fa-solid fa-circle-info"></i></a>
+                            class="fa-solid fa-circle-info"></i></a>
             </div>
         </div>
     <?php } ?>

@@ -42,11 +42,16 @@
                             } else {
                                 continue;
                             }
-
                             ?>
                             <tr>
                                 <td class="td-images">
-                                    <img src="<?= PATH_IMAGES . $product['image'] ?>" alt="" class='cart-images'>
+                                    <?php if ($product['type'] === "product") { ?>
+                                        <a href="index.php?page=product&id=<?= $product['id'] ?>">
+                                            <img src="<?= PATH_IMAGES . $product['image'] ?>" alt="" class='cart-images'>
+                                        </a>
+                                    <?php } else { ?>
+                                        <p>Menu</p>
+                                    <?php } ?>
                                 </td>
                                 <td>
                                     <?= $product['name'] ?>

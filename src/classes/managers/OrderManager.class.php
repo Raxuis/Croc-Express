@@ -19,7 +19,7 @@ class OrderManager extends Manager
                 'price' => $data->getPrice(),
                 'coupon_id' => $data->getCouponId(),
                 'address_id' => $data->getAddressId(),
-                'is_in_delivery' => (int) $data->getIsInDelivery(),
+                'is_in_delivery' => (int)$data->getIsInDelivery(),
                 'validated_at' => null
             ]);
         }
@@ -53,6 +53,7 @@ class OrderManager extends Manager
         ]);
         return $response->fetchAll(PDO::FETCH_ASSOC);
     }
+
     public function markDelivered(int $order_id): void
     {
         $query = "UPDATE orders 
@@ -63,5 +64,14 @@ class OrderManager extends Manager
             'order_id' => $order_id
         ]);
     }
+
+    public function getAll(): array|null
+    {
+        $query = "SELECT * FROM " . $this->table . " ORDER BY created_at DESC";
+        $response = $this->bdd->prepare($query);
+        $response->execute();
+        return $response->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 
 }

@@ -86,8 +86,10 @@
                         <?php
                         $total = 0;
                         if (isset($_SESSION['cart'])) {
-                            foreach ($_SESSION['cart'] as $key => $value) {
-                                $total += $value["quantity"];
+                            foreach ($_SESSION['cart'] as $type => $items) {
+                                foreach ($items as $id => $item) {
+                                    $total += $item['quantity'];
+                                }
                             }
                         }
                         ?>

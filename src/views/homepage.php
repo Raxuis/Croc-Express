@@ -46,7 +46,7 @@
                                 onclick="window.location.href='?page=show_products&menu_id=<?= $menu['id'] ?>'">Tous les
                                 produits<i class="fa-solid fa-arrow-right"></i></button>
                             <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>"
-                                data-action="add">Ajouter au panier<i class="fa-solid fa-cart-plus"></i></button>
+                                data-action="add" data-type="menu">Ajouter au panier<i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 <?php } ?>
@@ -60,7 +60,7 @@
         <?php if (!empty($menus)) {
             foreach ($menus as $menu) {
                 if (!$menu["is_hidden"]) { ?>
-                    initializeCart("<?= $menu['id'] ?>", <?= $menu['price'] ?>, 'button-<?= $menu['id'] ?>', document.getElementById("cart-quantity"), false);
+                    initializeCart("<?= $menu['id'] ?>", <?= $menu['price'] ?>, 'button-<?= $menu['id'] ?>', false);
                 <?php }
             }
         } ?>

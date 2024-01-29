@@ -12,6 +12,7 @@ class OrderProduct {
     private int $productId;
     private int $price;
     private int $quantity;
+    private string $type;
 
 
     public function __construct(array $data)
@@ -77,5 +78,15 @@ class OrderProduct {
     public function setQuantity(int $quantity): void
     {
         $this->quantity = $quantity;
+    }
+
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): void
+    {
+        $this->type = $type;
     }
 }

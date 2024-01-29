@@ -14,6 +14,8 @@ if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     exit();
 }
 
+//$_SESSION['cart'] = [];
+
 if (!isset($_SESSION['token'])) {
     $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 }

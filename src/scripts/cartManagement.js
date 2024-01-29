@@ -1,16 +1,16 @@
 // { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
 
-function updateCartValue(cart, value) {
-    cart.textContent = parseInt(cart.textContent) + value;
+function updateCartValue(value) {
+    let cartEle = document.getElementById("cart-quantity");
+    cartEle.textContent = parseInt(cartEle.textContent) + value;
 }
 
 function updateItemValue(item, value) {
     item.textContent = value;
 }
 
-function updateTotalPriceItemValue(item, value) {
-    let price = item.getAttribute("data-price");
-    item.textContent = value * price;
+function updateTotalPriceItemValue(item, value, price) {
+    item.textContent = value * parseInt(price);
 }
 
 function updateTotalPriceValue(item, value) {
@@ -34,32 +34,43 @@ function getTotalCartValue(cart) {
     });
 }
 
-function updateCart(cart, product, price, action, in_cart = true) {
-    fetch("../src/controllers/cart_manager_controller.php?id=" + product + "&price=" + price + "&action=" + action).then((response) => {
+function updateCart(productId, price, action, type, in_cart = true) {
+    let cartEle = document.getElementById("cart-quantity");
+
+    console.log(productId, price, action, type, in_cart)
+    fetch("../src/controllers/cart_manager_controller.php?id=" + productId + "&price=" + price + "&action=" + action + "&type=" + type).then((response) => {
         response.json().then((data) => {
             // format of data : { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
 
-            cart.textContent = 0;
-            for (const itemKey in data["cart"]) {
-                let item = data["cart"][itemKey];
+            cartEle.textContent = 0;
+            for (const itemType in data["cart"]) {
+                for (const itemId in data["cart"][itemType]) {
+                    if (itemType === type) {
+                        let item = data["cart"][itemType][itemId];
 
-                updateCartValue(cart, item["quantity"]);
+                        updateCartValue(item["quantity"]);
 
-                if (in_cart) {
-                    updateItemValue(document.getElementById("item-quantity-" + itemKey), item["quantity"]);
-                    updateTotalPriceItemValue(document.getElementById("item-total-price-" + product), item["quantity"]);
-                    updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
-                    getTotalCartValue(document.getElementById("total-price"));
+                        if (itemId === productId) {
+                            if (in_cart) {
+                                updateItemValue(document.getElementById("item-quantity-" + type + "-" + itemId), item["quantity"]);
+                                updateTotalPriceItemValue(document.getElementById("item-total-price-" + type + "-" + productId), item["quantity"], price);
+                                updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+                                getTotalCartValue(document.getElementById("total-price"));
 
-                    if (!Object.keys(data["cart"]).includes(product)) {
-                        document.getElementById("item-" + product).remove();
-                        updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+                                if (item["quantity"] === 0) {
+                                    // TODO: Réparer le bug de suppression d'un produit du panier
+                                    console.log("ici")
+
+                                    document.getElementById("item-" + type + "-" + productId).remove();
+                                    updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+                                }
+                            }
+                        }
                     }
                 }
             }
 
             // si panier vide -> redirection vers la page d'accueil
-            console.log(data["cart"])
             if (data["cart"].length === 0) {
                 window.location.href = "?page=homepage";
             }
@@ -67,18 +78,17 @@ function updateCart(cart, product, price, action, in_cart = true) {
     });
 }
 
-function buttonListener(product, price, button, cart, in_cart = true) {
+function buttonListener(product, price, button, in_cart = true) {
     button.addEventListener("click", () => {
         let action = button.getAttribute("data-action") ? button.getAttribute("data-action") : "add";
-        updateCart(cart, product, price, action, in_cart);
+        let type = button.getAttribute("data-type") ? button.getAttribute("data-type") : "product";
+        updateCart(product, price, action, type, in_cart);
     });
 }
 
-function initializeCart(productId, price, buttonId, cart, in_cart = true) {
-    const product = productId;
+function initializeCart(productId, price, buttonId, in_cart = true) {
     const button = document.getElementById(buttonId);
-    console.log(button, buttonId)
-    buttonListener(product, price, button, cart, in_cart);
+    buttonListener(productId, price, button, in_cart);
 }
 
 // PAYMENT
