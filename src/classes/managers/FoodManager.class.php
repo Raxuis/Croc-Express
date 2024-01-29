@@ -28,6 +28,17 @@ class FoodManager extends Manager {
 
     public function editOne(object $data): void
     {
-        return;
+        if ($data instanceof Food) {
+            $query = "UPDATE foods SET name = :name, lipid = :lipid, protein = :protein, carbohydrate = :carbohydrate, weight = :weight WHERE id = :id";
+            $response = $this->bdd->prepare($query);
+            $response->execute([
+                'id' => $data->getId(),
+                'name' => $data->getName(),
+                'lipid' => $data->getLipid(),
+                'protein' => $data->getProtein(),
+                'carbohydrate' => $data->getCarbohydrate(),
+                'weight' => $data->getWeight(),
+            ]);
+        }
     }
 }

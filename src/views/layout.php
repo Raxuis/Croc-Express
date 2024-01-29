@@ -49,7 +49,7 @@
                             </li>
                             <li><a href="?page=admin_products" class="nav-links" title="Admin Product manage">Produits</a>
                             </li>
-                            <li><a href="?page=admin_food" class="nav-links" title="Admin Food manage">Aliments</a>
+                            <li><a href="?page=admin_food" class="nav-links" title="Admin Food manage">Ingrédients</a>
                             </li>
                             <li><a href="?page=admin_coupons" class="nav-links" title="Coupons">Bons de
                                     Réduction</a></li>
