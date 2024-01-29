@@ -58,9 +58,11 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         <?php if (!empty($menus)) {
-            foreach ($menus as $menu) { ?>
+            foreach ($menus as $menu) {
+                if (!$menu["is_hidden"]) {?>
                 initializeCart("<?= $menu['id'] ?>", <?= $menu['price'] ?>, 'button-<?= $menu['id'] ?>', document.getElementById("cart-quantity"), false);
             <?php }
+            }
         } ?>
     });
 </script>
