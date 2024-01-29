@@ -27,7 +27,16 @@ class CategoryManager extends Manager
 
     public function editOne(object $data): void
     {
-        return;
+        if ($data instanceof Category) {
+            $query = "UPDATE categories SET name = :name, description = :description, is_hidden = :is_hidden WHERE id = :id";
+            $response = $this->bdd->prepare($query);
+            $response->execute([
+                'name' => $data->getName(),
+                'description' => $data->getDescription(),
+                'is_hidden' => (int) $data->getIsHidden(),
+                'id' => $data->getId()
+            ]);
+        }
     }
 
     public function toggleHide(int $id): void
