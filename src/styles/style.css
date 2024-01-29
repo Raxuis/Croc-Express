@@ -39,8 +39,10 @@ main {
     display: none;
 }
 
+
 .card,
-.card-products {
+.card-products,
+.card-orders {
     position: relative;
     background-color: #1f2937;
     border-radius: 10px;
@@ -52,6 +54,10 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: stretch;
+}
+
+.card-orders {
+    width: 30em;
 }
 
 .card-products {
