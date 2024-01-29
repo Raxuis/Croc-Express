@@ -33,6 +33,7 @@ main {
     gap: 10px;
     flex-wrap: wrap;
     transition: 0.7s;
+    padding-bottom: 10vh;
 }
 
 .address-hidden {
@@ -567,10 +568,10 @@ thead th a:hover {
     color: #f6720d;
 }
 
-canvas{
+canvas {
 
-  width:800px !important;
-  height:400px !important;
+    width: 800px !important;
+    height: 400px !important;
 
 }
 
