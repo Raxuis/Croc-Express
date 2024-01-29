@@ -38,15 +38,15 @@
                             $i = 0;
                             foreach ($menuProducts as $menuProduct) { ?>
                                 <?php /* $productImage = $productImageManager->getImagesByProductId($menuProduct); */?>
-                                <?php echo ('Produit  ' . $i + 1 . ' : ' . $menuProduct['name']);
+                                <?php echo ('Produit  ' . $i + 1 . ' : ' . $menuProduct['name'] . '<br>');
                                 $i++; ?>
 
                             <?php } ?>
                             <button class="orange-button"
                                 onclick="window.location.href='?page=show_products&menu_id=<?= $menu['id'] ?>'">Tous les
                                 produits<i class="fa-solid fa-arrow-right"></i></button>
-                            <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>" data-action="add">Ajouter au panier<i
-                                    class="fa-solid fa-cart-plus"></i></button>
+                            <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>"
+                                data-action="add">Ajouter au panier<i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 <?php } ?>
@@ -59,9 +59,9 @@
     document.addEventListener("DOMContentLoaded", function () {
         <?php if (!empty($menus)) {
             foreach ($menus as $menu) {
-                if (!$menu["is_hidden"]) {?>
-                initializeCart("<?= $menu['id'] ?>", <?= $menu['price'] ?>, 'button-<?= $menu['id'] ?>', document.getElementById("cart-quantity"), false);
-            <?php }
+                if (!$menu["is_hidden"]) { ?>
+                    initializeCart("<?= $menu['id'] ?>", <?= $menu['price'] ?>, 'button-<?= $menu['id'] ?>', document.getElementById("cart-quantity"), false);
+                <?php }
             }
         } ?>
     });
