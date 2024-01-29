@@ -43,7 +43,7 @@ class OrderProductManager extends Manager
 
     public function getProductsOfOrder(int $order_id): array
     {
-        $query = "SELECT p.id, p.name, p.price, pi.image, op.price as total_price, o.is_in_delivery, op.quantity
+        $query = "SELECT p.id, p.name, p.price, p.buying_price, pi.image, op.price as total_price, o.is_in_delivery, op.quantity
             FROM products as p
             INNER JOIN products_images as pi ON pi.product_id = p.id
             INNER JOIN orders_products as op ON op.product_id = p.id

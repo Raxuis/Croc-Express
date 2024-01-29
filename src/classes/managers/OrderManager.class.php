@@ -10,8 +10,8 @@ class OrderManager extends Manager {
     public function createOne(object $data): int
     {
         if ($data instanceof Order) {
-            $query = "INSERT INTO orders (user_id, price, coupon_id, address_id, is_in_delivery, is_validated)
-                    VALUES (:user_id, :price, :coupon_id, :address_id, :is_in_delivery, :is_validated)";
+            $query = "INSERT INTO orders (user_id, price, coupon_id, address_id, is_in_delivery, validated_at)
+                    VALUES (:user_id, :price, :coupon_id, :address_id, :is_in_delivery, :validated_at)";
             $response = $this->bdd->prepare($query);
             $response->execute([
                 'user_id' => $data->getUserId(),
@@ -19,7 +19,7 @@ class OrderManager extends Manager {
                 'coupon_id' => $data->getCouponId(),
                 'address_id' => $data->getAddressId(),
                 'is_in_delivery' => (int) $data->getIsInDelivery(),
-                'is_validated' => (int) $data->getIsValidated()
+                'validated_at' => null
             ]);
         }
 

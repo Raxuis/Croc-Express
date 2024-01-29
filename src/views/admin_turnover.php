@@ -1,4 +1,8 @@
-<h3>Chiffres d'affaire</h3>
+<h3>Finances</h3>
+
+<p>Chiffre d'affaires total : <?= $totalPrice ?>€</p>
+<p>Bénéfices total : <?= $totalBenef ?>€</p>
+
 <div class="chart" style="margin-bottom: 10vh">
     <canvas id="myChart"></canvas>
 </div>
@@ -6,6 +10,8 @@
 <script>
     let date = <?php echo $date; ?>;
     let price = <?php echo $price; ?>;
+    let benef = <?php echo $benef; ?>;
+
     let ctx = document.getElementById('myChart').getContext('2d');
     let labels = Array.isArray(date) ? date.map(date => new Date(date).getDate()) : [];
 
@@ -15,8 +21,8 @@
             labels: labels,
             datasets: [
                 {
-                    label: 'Price',
-                    data: price,
+                    label: "Chiffre d'affaires",
+                    data: price.length >= 7 ? price.slice(-7) : price,
                     borderColor: '#FFFFFF',
                     borderWidth: 1,
                     fill: false,
@@ -25,6 +31,18 @@
                     pointBorderColor: '#FFFFFF',
                     pointHoverBackgroundColor: '#FFFFFF',
                     pointHoverBorderColor: '#FFFFFF',
+                },
+                {
+                    label: "Bénéfice",
+                    data: benef.length >= 7 ? benef.slice(-7) : benef,
+                    borderColor: '#ffc74d',
+                    borderWidth: 1,
+                    fill: false,
+                    pointBackgroundColor: '#ffc74d',
+                    backgroundColor: '#ffc74d',
+                    pointBorderColor: '#ffc74d',
+                    pointHoverBackgroundColor: '#ffc74d',
+                    pointHoverBorderColor: '#ffc74d',
                 }
             ],
         },
@@ -38,7 +56,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Chiffres d\'affaire'
+                    text: 'Résultats financiers des 7 derniers jours'
                 }
             },
             scales: {
@@ -51,3 +69,4 @@
         }
     });
 </script>
+
