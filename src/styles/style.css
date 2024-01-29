@@ -46,7 +46,7 @@ main {
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 1rem 2rem 1rem 2rem;
-    width: 25em;
+    width: 20em;
     margin: 1rem 1rem 3rem 1rem;
     display: flex;
     flex-direction: column;
@@ -502,6 +502,7 @@ thead th a:hover {
 .row-body {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .row-title {
@@ -622,9 +623,5 @@ thead th a:hover {
 
     .address-form {
         width: 70%;
-    }
-
-    .card {
-        width: 20em;
     }
 }
