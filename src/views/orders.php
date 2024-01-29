@@ -23,7 +23,6 @@
                     </p>
                 </div>
                 <div class="card-body">
-                    <h3>Produits</h3>
                     <table class='table-cart'>
                         <thead>
                             <tr>
@@ -95,7 +94,6 @@
                 </p>
             </div>
             <div class="card-body">
-                <h3>Produits : </h3>
                 <table class='table-cart'>
                     <thead>
                         <tr>
