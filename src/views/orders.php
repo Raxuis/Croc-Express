@@ -1,5 +1,6 @@
-<h3>Mes commandes</h3>
-
+<?php if (!isset($_POST['getPdf'])) { ?>
+    <h3>Mes commandes</h3>
+<?php } ?>
 <div class="container">
     <?php if (!isset($_GET['order_id'])) { ?>
         <?php foreach ($orders as $order) {
@@ -94,7 +95,7 @@
                 </p>
             </div>
             <div class="card-body">
-                <h3>Produits</h3>
+                <h3>Produits : </h3>
                 <table class='table-cart'>
                     <thead>
                         <tr>
