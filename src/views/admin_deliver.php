@@ -4,9 +4,9 @@
         <thead>
             <tr>
                 <th>Référence</th>
-                <th>Commandé le</th>
+                <th>Commandée le</th>
                 <th>Livrable</th>
-                <th>Livré le</th>
+                <th>Livrée le</th>
                 <th>Tax</th>
                 <th>Prix</th>
                 <!-- <th>Consulter</th>
@@ -22,15 +22,21 @@
                     <?= $order['created_at'] ?>
                 </td>
                 <td>
-                    <?= $order['is_in_delivery'] ? 'Oui' : 'Non' ?>
+                    <?= $order['address_id'] && $order['is_in_delivery'] ? 'Oui' : 'Non' ?>
                 </td>
                 <td>
-                    <?php if ($order['is_in_delivery']): ?>
+                    <?php if ($order['address_id'] && $order['is_in_delivery']) { ?>
                         <form method="post" action=''>
                             <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
-                            <button type="button" class="submit pay">Test</button>
+                            <button type="submit" name="mark-delivered" class="submit pay">
+                                Marquer Livrée
+                            </button>
                         </form>
-                    <?php endif ?>
+                    <?php } else if ($order['address_id'] && !$order['is_in_delivery']) { ?>
+                        <?= $order['validated_at'] ?>
+                    <?php } else { ?>
+                            Commande non faite pour être livrée
+                    <?php } ?>
                 </td>
                 <td>
                     1€

@@ -1,6 +1,7 @@
 <?php
 
-class OrderManager extends Manager {
+class OrderManager extends Manager
+{
 
     public function __construct(PDO $database_connection, string $table)
     {
@@ -51,6 +52,16 @@ class OrderManager extends Manager {
             'order_id' => $order_id
         ]);
         return $response->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function markDelivered(int $order_id): void
+    {
+        $query = "UPDATE orders 
+        SET is_in_delivery = 0, validated_at = NOW() 
+        WHERE id = :order_id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'order_id' => $order_id
+        ]);
     }
 
 }
