@@ -5,7 +5,7 @@ if (!isset($_SESSION["user_id"])) {
     exit(0);
 }
 
-if (!empty($_POST)) {
+if (!empty($_POST) && !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['address'] && !empty($_POST['city']) && !empty($_POST['zip']) && !empty($_POST['country']))) {
     if (isset($_POST['token']) && $_POST['token'] == $_SESSION['token']) {
         $cart = $_SESSION['cart'];
         $totalPrice = 0;
@@ -80,4 +80,10 @@ if (!empty($_POST)) {
         header("location: index.php?page=homepage");
         exit;
     }
+} else {
+    $_SESSION['status'] = "error";
+    $_SESSION['message'] = "Veuillez remplir tous les champs";
+    ob_clean();
+    header("location: index.php?page=cart");
+    exit;
 }
