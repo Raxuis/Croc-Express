@@ -28,7 +28,6 @@ class AddressManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Editing to implement";
+        return;
     }
 }

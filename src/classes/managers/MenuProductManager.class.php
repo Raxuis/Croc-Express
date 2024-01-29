@@ -25,7 +25,7 @@ class MenuProductManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
+        return;
     }
 
     public function deleteOneByProductId(int $product_id, int $menu_id): void

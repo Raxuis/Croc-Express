@@ -43,7 +43,13 @@ class OrderProductManager extends Manager
 
     public function getProductsOfOrder(int $order_id): array
     {
-        $query = "SELECT f.id, f.name, f.price, pi.image, pf.price as total_price, p.is_in_delivery, pf.quantity FROM products as f INNER JOIN products_images as pi ON pi.product_id = f.id INNER JOIN orders_products as pf ON pf.product_id = f.id INNER JOIN orders as p ON p.id = pf.order_id WHERE p.id = :order_id;";
+        $query = "SELECT p.id, p.name, p.price, pi.image, op.price as total_price, o.is_in_delivery, op.quantity
+            FROM products as p
+            INNER JOIN products_images as pi ON pi.product_id = p.id
+            INNER JOIN orders_products as op ON op.product_id = p.id
+            INNER JOIN orders as o ON o.id = op.order_id
+            WHERE o.id = :order_id;";
+
         $response = $this->bdd->prepare($query);
         $response->execute([
             'order_id' => $order_id
