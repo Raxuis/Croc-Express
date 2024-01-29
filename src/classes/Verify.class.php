@@ -2,15 +2,15 @@
 
 class Verify
 {
-    public static function verifyPassword($data): bool
+    public static function verifyPassword($password, $passwordConfirmation): bool
     {
-        if (strcmp($_POST['password'], $_POST['password_confirmation']) === 0) {
-            if (strlen($data) >= 8) {
+        if (strcmp($password, $passwordConfirmation) === 0) {
+            if (strlen($password) >= 8) {
                 return true;
             }
         }
 
-        echo "Mot de passe incorrect : 8 caractères minimum";
+//        echo "Mot de passe incorrect : 8 caractères minimum";
         return false;
     }
 
