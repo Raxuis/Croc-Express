@@ -135,7 +135,7 @@ footer {
     width: 100%;
     padding: 10px;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 nav {
@@ -187,8 +187,10 @@ nav li {
     font-synthesis: none;
 }
 
-nav a,
+a,
 nav i,
+.fa-circle-info,
+.fa-backward,
 nav p,
 sup {
     text-decoration: none;
@@ -198,7 +200,12 @@ sup {
     user-select: none;
 }
 
-nav a:hover,
+#pdf {
+    font-size: 1em;
+    padding: 10px;
+}
+
+a:hover,
 nav p:hover,
 nav i:hover,
 nav sup:hover {
@@ -208,6 +215,24 @@ nav sup:hover {
 nav a:hover .fa-caret-down {
     transform: rotate(180deg);
     color: #FFF;
+}
+
+.fa-circle-info {
+    padding-left: 5px;
+}
+
+.fa-backward {
+    padding-right: 5px;
+}
+
+a:hover .fa-circle-info {
+    transform: translate(+10px);
+    color: #f97111;
+}
+
+a:hover .fa-backward {
+    transform: translate(-10px);
+    color: #f97111;
 }
 
 nav p:hover .fa-caret-down {
@@ -239,6 +264,10 @@ nav p:hover .fa-caret-down {
     margin-left: -50px;
     gap: 5px;
     z-index: 1;
+}
+
+#order {
+    width: 80%;
 }
 
 .form {
