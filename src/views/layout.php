@@ -61,7 +61,7 @@
                                 class="fa-solid fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="?page=edit_profile" class="nav-links" title="Edit Profile">Profil</a></li>
+                            <li><a href="?page=edit_profile" class="nav-links" title="Edit Profile">Modifier mon profil</a></li>
                             <li><a href="?page=orders" class="nav-links" title="Orders">Commandes</a>
                             </li>
                             <li><a href="?page=disconnect" class="nav-links" title="Log out">Se déconnecter</a></li>

@@ -44,8 +44,8 @@
                             <?php } ?>
                             <button class="orange-button"
                                 onclick="window.location.href='?page=show_products&menu_id=<?= $menu['id'] ?>'">Tous les
-                                produits<i class="fa-solid fa-arrow-right"></i></button><button type="button"
-                                class="orange-button" id="<?= 'button-' . $menu['id'] ?>">Ajouter au panier<i
+                                produits<i class="fa-solid fa-arrow-right"></i></button>
+                            <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>" data-action="add">Ajouter au panier<i
                                     class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>

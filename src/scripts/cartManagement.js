@@ -77,6 +77,7 @@ function buttonListener(product, price, button, cart, in_cart = true) {
 function initializeCart(productId, price, buttonId, cart, in_cart = true) {
     const product = productId;
     const button = document.getElementById(buttonId);
+    console.log(button, buttonId)
     buttonListener(product, price, button, cart, in_cart);
 }
 
