@@ -567,6 +567,18 @@ thead th a:hover {
     color: #f6720d;
 }
 
+canvas{
+
+  width:800px !important;
+  height:400px !important;
+
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 768px) {
     nav {
         position: fixed;

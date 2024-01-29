@@ -8,17 +8,16 @@
 </div>
 
 <script>
-    let date = <?php echo $date; ?>;
-    let price = <?php echo $price; ?>;
-    let benef = <?php echo $benef; ?>;
+    let date = <?= $date; ?>;
+    let price = <?= $price; ?>;
+    let benef = <?= $benef; ?>;
 
     let ctx = document.getElementById('myChart').getContext('2d');
-    let labels = Array.isArray(date) ? date.map(date => new Date(date).getDate()) : [];
 
     let myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: labels,
+            labels: date,
             datasets: [
                 {
                     label: "Chiffre d'affaires",

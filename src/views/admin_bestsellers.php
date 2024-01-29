@@ -1,20 +1,35 @@
-<h3>Meilleures ventes sur 7 jours</h3>
-<div class="chart">
-    <canvas id="myChart" style="background-color: transparent; color: white;"></canvas>
+<h3>Ventes des produits</h3>
+
+<p>Total des ventes : <?= count($orders) ?> </p>
+
+<div class="chart" style="margin-bottom: 10vh">
+    <canvas id="myChart"></canvas>
 </div>
 
 <script>
-    let datas = <?php echo $orders; ?>;
+    let productsSold = <?= $productSold; ?>;
+    let quantitySold = <?= $quantitySold; ?>;
+
     let ctx = document.getElementById('myChart').getContext('2d');
+
     let myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            datasets: [{
-                label: 'Sales Data',
-                data: datas,
-                borderWidth: 1,
-                fill: false,
-            }],
+            labels: productsSold,
+            datasets: [
+                {
+                    label: "Ventes",
+                    data: quantitySold,
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1,
+                    fill: false,
+                    pointBackgroundColor: '#FFFFFF',
+                    backgroundColor: '#FFFFFF',
+                    pointBorderColor: '#FFFFFF',
+                    pointHoverBackgroundColor: '#FFFFFF',
+                    pointHoverBorderColor: '#FFFFFF',
+                }
+            ],
         },
         options: {
             responsive: true,
@@ -26,7 +41,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Chart.js Line Chart - Multi Axis'
+                    text: 'Meilleurs ventes les 7 derniers jours'
                 }
             },
             scales: {
@@ -35,16 +50,8 @@
                     display: true,
                     position: 'left',
                 },
-                y1: {
-                    type: 'linear',
-                    display: true,
-                    position: 'right',
-                    grid: {
-                        drawOnChartArea: false,
-                    },
-                },
-            }
+            },
         }
     });
-
 </script>
+

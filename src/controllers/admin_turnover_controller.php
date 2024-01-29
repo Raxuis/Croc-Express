@@ -6,7 +6,7 @@ $price = [];
 $benef = [];
 foreach ($orders as $order) {
     $products = $orderProductManager->getProductsOfOrder($order['id']);
-    $dateOfOrder = date("d/m/y", strtotime($order['created_at']));
+    $dateOfOrder = date("d-m-Y", strtotime($order['created_at']));
 
     if (!in_array($dateOfOrder, $date)) {
         $date[] = $dateOfOrder;
@@ -33,6 +33,6 @@ $totalPrice = array_sum($price);
 $totalBenef = array_sum($benef);
 
 $date = json_encode($date);
-$price = json_encode($price);
-$benef = json_encode($benef);
+$price = json_encode(array_values($price));
+$benef = json_encode(array_values($benef));
 require PATH_VIEWS . 'admin_turnover.php';
