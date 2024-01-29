@@ -23,4 +23,4 @@ foreach ($orders as $order) {
 $productSold = json_encode(array_keys($quantitySold));
 $quantitySold = json_encode(array_values($quantitySold));
 
-require PATH_VIEWS . 'admin_bestsellers.php';
+require PATH_VIEWS . 'admin/admin_bestsellers.php';

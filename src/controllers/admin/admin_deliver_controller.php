@@ -7,4 +7,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mark-delivered'])) {
     header('Location:?page=admin_deliver');
     exit;
 }
-require PATH_VIEWS . 'admin_deliver.php';
+require PATH_VIEWS . 'admin/admin_deliver.php';

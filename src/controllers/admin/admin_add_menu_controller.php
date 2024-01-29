@@ -22,4 +22,4 @@ if (!empty($_POST)) {
     }
 }
 
-require PATH_VIEWS . 'admin_add_menu.php';
+require PATH_VIEWS . 'admin/admin_add_menu.php';

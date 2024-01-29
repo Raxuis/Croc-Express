@@ -25,4 +25,4 @@ function calculateTotalCaloriesPerAliment($data)
     $totalCalories = $lipidCalories + $carboCalories + $proteinCalories;
     return $totalCalories;
 }
-require PATH_VIEWS . 'admin_products.php';
+require PATH_VIEWS . 'admin/admin_products.php';

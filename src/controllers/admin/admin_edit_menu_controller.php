@@ -67,4 +67,4 @@ if (!empty($_POST)) {
     }
 }
 
-require '../src/views/admin_edit_menu.php';
+require PATH_VIEWS . 'admin/admin_edit_menu.php';

@@ -35,4 +35,4 @@ $totalBenef = array_sum($benef);
 $date = json_encode($date);
 $price = json_encode(array_values($price));
 $benef = json_encode(array_values($benef));
-require PATH_VIEWS . 'admin_turnover.php';
+require PATH_VIEWS . 'admin/admin_turnover.php';

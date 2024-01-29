@@ -15,4 +15,4 @@ if (!empty($_POST)) {
     exit;
 }
 
-require PATH_VIEWS . 'admin_add_coupon.php';
+require PATH_VIEWS . 'admin/admin_add_coupon.php';

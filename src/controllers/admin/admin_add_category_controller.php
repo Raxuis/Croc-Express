@@ -12,4 +12,4 @@ if (isset($_POST['name'])) {
     exit;
 }
 
-require PATH_VIEWS . 'admin_add_category.php';
+require PATH_VIEWS . 'admin/admin_add_category.php';

@@ -55,4 +55,4 @@ if (!empty($_POST)) {
     }
 }
 
-require PATH_VIEWS . 'admin_add_product.php';
+require PATH_VIEWS . 'admin/admin_add_product.php';

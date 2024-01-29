@@ -14,4 +14,4 @@ if (isset($_POST['show_hide'])) {
 
 $allCategories = $categoryManager->getAll();
 
-require PATH_VIEWS . 'admin_categories.php';
+require PATH_VIEWS . 'admin/admin_categories.php';

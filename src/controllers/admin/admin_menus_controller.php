@@ -18,4 +18,4 @@ if (isset($_POST['show_hide'])) {
     header('Location:?page=admin_menus');
     exit();
 }
-require PATH_VIEWS . 'admin_menus.php';
+require PATH_VIEWS . 'admin/admin_menus.php';

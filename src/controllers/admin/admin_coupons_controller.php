@@ -9,4 +9,4 @@ if (isset($_POST['delete'])) {
 
 $allCoupons = $couponManager->getAll();
 
-require PATH_VIEWS . 'admin_coupons.php';
+require PATH_VIEWS . 'admin/admin_coupons.php';
