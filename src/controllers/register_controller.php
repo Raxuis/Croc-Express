@@ -9,7 +9,7 @@ if (isset($_SESSION["user_id"])) {
 
 if (!empty($_POST)) {
     if (isset($_POST['token']) && $_POST['token'] == $_SESSION['token']) {
-        if ($userManager->getOneByEmail($_POST['email']) == null && Verify::verifyPassword($_POST['password'], $_POST['password-confirmation']) && Verify::verifyFirstname($_POST['firstname']) && Verify::verifyLastname($_POST['lastname']) && Verify::verifyEmail($_POST['email'])) {
+        if ($userManager->getOneByEmail($_POST['email']) == null && Verify::verifyPassword($_POST['password'], $_POST['password_confirmation']) && Verify::verifyFirstname($_POST['firstname']) && Verify::verifyLastname($_POST['lastname']) && Verify::verifyEmail($_POST['email'])) {
             $_SESSION['status'] = "success";
             $_SESSION['message'] = "Vous avez créé un compte avec succès";
             $user = new User([

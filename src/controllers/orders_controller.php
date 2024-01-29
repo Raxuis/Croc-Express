@@ -1,5 +1,6 @@
 <?php
 require '../vendor/autoload.php';
+
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
@@ -16,6 +17,12 @@ if (isset($_GET['page'])) {
     } else if ($_GET['page'] == 'orders' && isset($_GET['order_id'])) {
         $order = $orderManager->getOne($_GET['order_id']);
         $products = $orderProductManager->getProductsOfOrder($order['id']);
+
+        if ($order["user_id"] !== $_SESSION["user_id"]) {
+            header('Location:index.php');
+            exit();
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['getPdf'])) {
             try {
                 ob_start();
