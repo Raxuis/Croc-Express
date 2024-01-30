@@ -41,11 +41,11 @@ function updateCart(productId, price, action, type, in_cart = true) {
             cartEle.textContent = 0;
             for (const itemType in data["cart"]) {
                 for (const itemId in data["cart"][itemType]) {
+
+                    let item = data["cart"][itemType][itemId];
+                    updateCartValue(item["quantity"]);
+
                     if (itemType === type) {
-                        let item = data["cart"][itemType][itemId];
-
-                        updateCartValue(item["quantity"]);
-
                         if (itemId === productId) {
                             if (in_cart) {
                                 updateItemValue(document.getElementById("item-quantity-" + type + "-" + itemId), item["quantity"]);
