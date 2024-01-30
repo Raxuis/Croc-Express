@@ -5,7 +5,7 @@ if (!empty($_POST)) {
         $food = new Food($_POST);
         $foodId = $foodManager->createOne($food);
         $_SESSION['status'] = "success";
-        $_SESSION['message'] = "Food created with id: " . $foodId;
+        $_SESSION['message'] = "Aliment créé avec l'id: " . $foodId;
     } else {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Veuillez remplir tous les champs";

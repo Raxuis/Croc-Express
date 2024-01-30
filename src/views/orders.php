@@ -26,7 +26,12 @@
                     <table class='table-cart'>
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>
+                                    <form method='post' action='?page=orders&order_id=<?= $order['id'] ?>'>
+                                        <button type="submit" id='pdf' name="getPdf" class='submit pay'><i
+                                                class="fa-solid fa-file-pdf"></i></button>
+                                    </form>
+                                </th>
                                 <th>Produit</th>
                                 <th>Prix Unitaire</th>
                                 <th>Quantité</th>
@@ -150,7 +155,7 @@
         <?php if (!isset($_POST['getPdf'])) { ?>
             <div>
                 <form method='post' action=''>
-                    <button type="submit pay" name="getPdf" class="submit" id='pdf'>Télécharger la facture en PDF</button>
+                    <button type="submit pdf" name="getPdf" id='pdf' class='submit pay'>Télécharger la facture en PDF</button>
                 </form>
             </div>
         <?php }

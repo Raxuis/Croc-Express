@@ -210,6 +210,10 @@ sup {
     padding: 10px;
 }
 
+#pdf:hover i {
+    color: #d01a1a83;
+}
+
 a:hover,
 nav p:hover,
 nav i:hover,

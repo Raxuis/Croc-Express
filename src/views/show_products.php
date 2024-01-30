@@ -51,7 +51,7 @@ if (isset($products)) { ?>
                                 <?php
                                 $calories = calculateTotalCaloriesPerAliment($food);
                                 $totalCalories += $calories * ($food["weight"] / 100); ?>
-                                <?= $food['name'] . '-' ?>
+                                <?= $food['name'] . ' -' ?>
                                 <?= $food['weight'] . 'g -' ?>
                                 <?= $calories . ' cal/100g' ?> <br>
                             <?php } ?>
@@ -145,12 +145,12 @@ if (isset($products)) { ?>
             foreach ($products as $product) { ?>
                 initializeSlider("slides-container-<?= $product['id'] ?>", "slide-<?= $product['id'] ?>", "arrow-left<?= $product['id'] ?>", "arrow-right<?= $product['id'] ?>");
                 initializeCart("<?= $product['id'] ?>", <?= $product['price'] ?>, 'button-<?= $product['id'] ?>', false);
-                <?php }
+            <?php }
         } ?>
         <?php if (!empty($menuProducts)) {
             foreach ($menuProducts as $menuProduct) { ?>
-                        initializeSlider("slides-container-<?= $menuProduct['id'] ?>", "slide-<?= $menuProduct['id'] ?>", "arrow-left<?= $menuProduct['id'] ?>", "arrow-right<?= $menuProduct['id'] ?>");
-                <?php }
+                initializeSlider("slides-container-<?= $menuProduct['id'] ?>", "slide-<?= $menuProduct['id'] ?>", "arrow-left<?= $menuProduct['id'] ?>", "arrow-right<?= $menuProduct['id'] ?>");
+            <?php }
         } ?>
     });
 </script>
