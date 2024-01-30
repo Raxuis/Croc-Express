@@ -28,8 +28,7 @@ class OrderProductManager extends Manager
 
     public function editOne(object $data): void
     {
-        // TODO: Implement editOne() method.
-        echo "Edit to implement";
+        return;
     }
 
     public function getProductSales(int $product_id): array
