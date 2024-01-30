@@ -63,7 +63,7 @@ Les technologies suivantes ont été utilisées pour ce projet :
 
 ## :white_check_mark: Requirements
 
-Avant de commencer :checkered_flag:, vous avez besoin d'avoir [Git](https://git-scm.com) installé.
+Avant de commencer :checkered_flag:, vous avez besoin d'avoir `composer` installé.
 
 ## :arrow_down: Importation
 
