@@ -76,12 +76,6 @@ Avant de commencer :checkered_flag:, vous avez besoin d'avoir [Git](https://git-
 ## :checkered_flag: Starting
 
 ```bash
-# Cloner le projet
-$ git clone https://github.com/Raxuis/croc-express
-
-# Y accéder
-$ cd croc-express
-
 # Installer les dépendances
 $ composer install
 
@@ -94,11 +88,24 @@ $ composer install
 # Tout devrait fonctionner 😃
 ```
 
+⚠️ Pour être sûr que tout fonctionne bien vous pouvez vider la session de `localhost` via la route `?page=killall`.
+
+## Données de connexion
+Différentes données sont inclues dans la base de données pour pouvoir tester le site. Des commandes ont également été passées avec le compte de l'administrateur.
+
+### Compte administrateur
+- Email : `admin@admin.fr`
+- Mot de passe : `password`
+
+### Compte utilisateur
+- Email : `user@user.fr`
+- Mot de passe : `password`
+
 ## :memo: License
 
 Ce projet est sous license MIT. Pour plus de détails, consultez le fichier [LICENSE](LICENSE.md).
 
-Créé de tout :heart: par <a href="https://github.com/Raxuis" target="_blank">Raphaël</a> et <a href="https://github.com/BenoitPrmt" target="_blank">Benoît</a>
+Créé de tout ❤️ par <a href="https://github.com/Raxuis" target="_blank">Raphaël</a> et <a href="https://github.com/BenoitPrmt" target="_blank">Benoît</a>
 
 &#xa0;
 
