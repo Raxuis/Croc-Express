@@ -8,7 +8,7 @@ $productImageManager = new ProductImageManager($bdd, "images");
 $allFood = $foodManager->getAll();
 
 if (!empty($_POST)) {
-    if (!isset($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+    if (!empty($_POST['token']) && $_POST['token'] != $_SESSION['token']) {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Erreur de vérification du formulaire";
         header('Location: ?page=homepage');

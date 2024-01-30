@@ -3,6 +3,7 @@
 <div class="container">
     <form action="?page=admin_edit_category" method="post" class="form" enctype="multipart/form-data">
         <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+
         <input type="hidden" name="id" value="<?= $category["id"] ?>">
         <input type="text" name="name" placeholder="Nom de la catégorie" value="<?= $category["name"] ?>">
         <input type="text" name="description" placeholder="Description de la catégorie"

@@ -1,12 +1,16 @@
 <?php
 
+
+
 if (!empty($_POST)) {
-    if (!isset($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+
+    if (!empty($_POST['token']) && $_POST['token'] != $_SESSION['token']) {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Erreur de vérification du formulaire";
         header('Location: ?page=homepage');
         exit;
     }
+
     if (isset($_POST['name']) && isset($_POST['description'])) {
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
         $category = $categoryManager->getOne($_POST['id']);
@@ -23,7 +27,7 @@ if (!empty($_POST)) {
                 'image' => $_FILES['image']['name'],
             ]);
             $categoryManager->editOne($category);
-        } else if (empty($_FILES['image'])) {
+        } else {
             $categoryObject = new Category(
                 [
                     'id' => $_POST['id'],
