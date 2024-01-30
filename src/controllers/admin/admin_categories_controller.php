@@ -3,6 +3,7 @@
 if (isset($_POST['delete'])) {
     $categoryManager->deleteOne($_POST['id']);
 }
+
 if (isset($_POST['show_hide'])) {
     $categoryManager->toggleHide($_POST['id']);
     $_SESSION['status'] = 'info';

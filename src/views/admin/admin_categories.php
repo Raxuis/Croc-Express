@@ -37,7 +37,9 @@
                 </form>
                 <form method="post">
                     <input type="hidden" name="id" value="<?= $category['id'] ?>">
-                    <button name="delete" type="submit" class="submit pay orange-button">Supprimer</button>
+                    <button id="delete-<?= $category['id'] ?>" name="delete" type="submit"
+                            class="delete submit pay orange-button">Supprimer
+                    </button>
                 </form>
             </td>
         </tr>

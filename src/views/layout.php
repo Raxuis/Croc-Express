@@ -47,7 +47,8 @@
                             </li>
                             <li><a href="?page=admin_menus" class="nav-links" title="Admin Menus manage">Menus</a>
                             </li>
-                            <li><a href="?page=admin_products" class="nav-links" title="Admin Product manage">Produits</a>
+                            <li><a href="?page=admin_products" class="nav-links"
+                                   title="Admin Product manage">Produits</a>
                             </li>
                             <li><a href="?page=admin_food" class="nav-links" title="Admin Food manage">Ingrédients</a>
                             </li>
@@ -151,8 +152,24 @@
     toastr.<?= $_SESSION['status'] ?>("<?= $_SESSION['message'] ?>")
     <?php }
     unset($_SESSION['status']);
-    unset($_SESSION['message']);
-    ?>
+    unset($_SESSION['message']); ?>
+
+    <?php
+
+//    if (!empty($_SESSION['alerte-status']) && !empty($_SESSION['alerte-title']) && !empty($_SESSION['alerte-message'])) { ?>
+//    Swal.fire({
+//        title: "<?php //= $_SESSION['alerte-title'] ?>//",
+//        text: "<?php //= $_SESSION['alerte-message'] ?>//",
+//        icon: "<?php //= $_SESSION['alerte-status'] ?>//"
+//    });
+//    <?php
+//    unset($_SESSION['alerte-status']);
+//    unset($_SESSION['alerte-title']);
+//    unset($_SESSION['alerte-message']);
+//
+//    } ?>
+
+
 </script>
 </body>
 
