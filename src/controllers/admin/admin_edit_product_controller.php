@@ -5,9 +5,9 @@ $product = $productManager->getOne($_POST['id']);
 $allFoodInProduct = $productFoodManager->getAllFoodOfProduct($_POST['id']);
 $allImages = $productImageManager->getAllImagesOfProduct($_POST['id']);
 
-$categoriesManager = new CategoryManager($bdd, "categories");
-$categories = $categoriesManager->getAll();
-$productImageManager = new ProductImageManager($bdd, "images");
+//$categoriesManager = new CategoryManager($bdd, "categories");
+$categories = $categoryManager->getAll();
+//$productImageManager = new ProductImageManager($bdd, "images");
 
 $allFood = $foodManager->getAll();
 
@@ -50,6 +50,33 @@ if (!empty($_POST)) {
         foreach ($allFoodInProduct as $foodInProd) {
             if (!in_array($foodInProd, $_POST["foodList"])) {
                 $productFoodManager->deleteOne($foodInProd["id"]);
+            }
+        }
+
+        foreach ($_FILES["image"]["name"] as $key => $value) {
+            if ($_FILES['image']['error'][$key] === 0) {
+                $targetDir = '../public/assets/product_images/';
+                $targetFile = $targetDir . basename($_FILES['image']['name'][$key]);
+
+                if (move_uploaded_file($_FILES['image']['tmp_name'][$key], $targetFile)) {
+                    $productPicture = basename($_FILES['image']['name'][$key]);
+
+                    $image = new ProductImage([
+                        'productId' => $_POST["id"],
+                        'image' => $productPicture
+                    ]);
+                    $productImageManager->createOne($image);
+                    $_SESSION['status'] = 'success';
+                    $_SESSION['message'] = 'Image ajoutée avec succès';
+                }
+            }
+        }
+
+        if (isset($_POST["imageToDelete"])) {
+
+            foreach ($_POST["imageToDelete"] as $image) {
+                echo $image . "<br>";
+                $productImageManager->deleteOne($image);
             }
         }
 

@@ -7,16 +7,16 @@
         <textarea type="text" name="description" placeholder="Description"><?= $product["description"] ?></textarea>
         <input type="number" min="1" name="price" placeholder="Prix de vente" value="<?= $product["price"] ?>">
         <input type="number" min="1" name="buyingPrice" placeholder="Coût de production"
-            value="<?= $product["buying_price"] ?>">
+               value="<?= $product["buying_price"] ?>">
 
         <select name="categoryId" id="categoryId">
             <?php foreach ($categories as $category) { ?>
                 <?php if ($category["id"] === $product["category_id"]) { ?>
                     <option value="<?= $category["id"] ?>" selected>
-                    <?php } else { ?>
+                <?php } else { ?>
                     <option value="<?= $category["id"] ?>">
-                    <?php } ?>
-                    <?= $category["name"] ?>
+                <?php } ?>
+                <?= $category["name"] ?>
                 </option>
             <?php } ?>
         </select>
@@ -31,11 +31,11 @@
                 }
                 if ($foodSelected) { ?>
                     <option value="<?= $food["id"] ?>" selected>
-                    <?php } else { ?>
+                <?php } else { ?>
                     <option value="<?= $food["id"] ?>">
-                    <?php } ?>
+                <?php } ?>
 
-                    <?= $food["name"] ?>
+                <?= $food["name"] ?>
                 </option>
             <?php } ?>
         </select>
@@ -49,6 +49,20 @@
             <?php } ?>
         </div>
         <div class="file">
+
+            <div class="current-images">
+                <h4>Images actuelles:</h4>
+                <p>Cochez les images à supprimer</p>
+                <?php foreach ($allImages as $image) { ?>
+                    <div class="image">
+                        <input type="hidden" name="currentImages[]" value="<?= $image["id"] ?>">
+                        <img src="<?= PATH_IMAGES . $image["image"] ?>" alt="<?= $product["name"] ?>" style="width: 3em;">
+                        <p><?= $image["image"] ?></p>
+                        <input type="checkbox" name="imageToDelete[]" value="<?= $image["id"] ?>">
+                    </div>
+                <?php } ?>
+            </div>
+
             <label for="image">Ajouter une image</label>
             <input type="file" name="image[]" id="image" value="" multiple>
         </div>
