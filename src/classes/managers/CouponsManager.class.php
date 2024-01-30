@@ -1,4 +1,5 @@
 <?php
+
 class CouponsManager extends Manager
 {
 
@@ -24,7 +25,15 @@ class CouponsManager extends Manager
 
     public function editOne(object $data): void
     {
-        return;
+
+        $query = "UPDATE coupons SET name = :name, reduction = :reduction WHERE id = :id";
+        $response = $this->bdd->prepare($query);
+        $response->execute([
+            'name' => $data->getName(),
+            'reduction' => $data->getReduction(),
+            'id' => $data->getId()
+        ]);
+
     }
 
     public function getOneByName(string $coupon): array|bool
