@@ -7,6 +7,17 @@ require PATH_TO_PRIVATE . "core/DBconnection.php";
 session_start();
 ob_start();
 if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
+
+    unset($_SESSION['email']);
+    unset($_SESSION['name']);
+    unset($_SESSION['user_id']);
+    unset($_SESSION['is_admin']);
+    unset($_SESSION['logged']);
+
+    ob_clean();
+    header("Location: " . BASE_PATH);
+    exit();
+} else if (isset($_GET['page']) && $_GET['page'] == "killall") {
     session_destroy();
     ob_clean();
     header("Location: " . BASE_PATH);
