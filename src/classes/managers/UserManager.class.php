@@ -19,7 +19,7 @@ class UserManager extends Manager
                 'lastname' => $data->getLastname(),
                 'email' => $data->getEmail(),
                 'password' => $data->getPassword(),
-                'is_admin' => (int) $data->getIsAdmin(),
+                'is_admin' => (int)$data->getIsAdmin(),
             ]);
         }
 
@@ -39,6 +39,7 @@ class UserManager extends Manager
             'id' => $user->getId(),
         ]);
     }
+
     public function getOneByEmail(string $email): array
     {
         $query = "SELECT * FROM users WHERE email = :email";

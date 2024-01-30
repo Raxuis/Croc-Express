@@ -1,6 +1,7 @@
 <?php
 
-class FoodManager extends Manager {
+class FoodManager extends Manager
+{
 
     public function __construct(PDO $database_connection, string $table)
     {
@@ -18,7 +19,7 @@ class FoodManager extends Manager {
                 'protein' => $data->getProtein(),
                 'carbohydrate' => $data->getCarbohydrate(),
                 'weight' => $data->getWeight(),
-                'is_hidden' => (int) $data->getIsHidden()
+                'is_hidden' => (int)$data->getIsHidden()
             ]);
         }
 

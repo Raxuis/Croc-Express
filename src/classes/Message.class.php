@@ -1,6 +1,7 @@
 <?php
 
-class Message {
+class Message
+{
 
     private int $id;
     private string $title;

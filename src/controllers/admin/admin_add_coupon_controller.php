@@ -16,7 +16,7 @@ if (!empty($_POST)) {
         $_SESSION['status'] = "error";
         $_SESSION['message'] = "Veuillez remplir tous les champs";
     }
-    ob_clean();
+//    ob_clean();
     header("location: index.php?page=admin_coupons");
     exit;
 }

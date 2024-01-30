@@ -1,5 +1,7 @@
 <?php
-class User {
+
+class User
+{
     private int $id;
     private string $firstname;
     private string $lastname;
@@ -87,7 +89,7 @@ class User {
 
     public function setIsAdmin(bool $is_admin): void
     {
-        $this->isAdmin = (int) $is_admin;
+        $this->isAdmin = (int)$is_admin;
     }
 
     public function getCreatedAt(): string

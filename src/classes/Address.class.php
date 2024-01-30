@@ -1,5 +1,7 @@
 <?php
-class Address {
+
+class Address
+{
 
     private int $id;
     private int $userId;

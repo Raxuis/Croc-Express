@@ -14,12 +14,12 @@ if (isset($_GET['page']) && $_GET['page'] == "disconnect") {
     unset($_SESSION['is_admin']);
     unset($_SESSION['logged']);
 
-    ob_clean();
+//    ob_clean();
     header("Location: " . BASE_PATH);
     exit();
 } else if (isset($_GET['page']) && $_GET['page'] == "killall") {
     session_destroy();
-    ob_clean();
+//    ob_clean();
     header("Location: " . BASE_PATH);
     exit();
 }
@@ -32,9 +32,9 @@ $availableRoutes = ['homepage', 'register', 'login', 'cart', 'show_products', 'c
 $route = 'homepage';
 if (isset($_GET['page']) && in_array($_GET['page'], $availableRoutes)) {
     $route = $_GET['page'];
-    if (strpos($route, 'admin_') === 0) {
+    if (str_starts_with($route, 'admin_')) {
         if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== 1) {
-            ob_clean();
+//            ob_clean();
             header('Location: index.php');
             exit();
         }

@@ -2,7 +2,6 @@
 
 class OrderManager extends Manager
 {
-
     public function __construct(PDO $database_connection, string $table)
     {
         parent::__construct($database_connection, $table);
@@ -19,7 +18,7 @@ class OrderManager extends Manager
                 'price' => $data->getPrice(),
                 'coupon_id' => $data->getCouponId(),
                 'address_id' => $data->getAddressId(),
-                'is_in_delivery' => (int) $data->getIsInDelivery(),
+                'is_in_delivery' => (int)$data->getIsInDelivery(),
                 'validated_at' => null
             ]);
         }

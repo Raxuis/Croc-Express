@@ -39,6 +39,8 @@ require PATH_TO_PRIVATE . "classes/OrderProduct.class.php";
 require PATH_TO_PRIVATE . "classes/managers/MenuProductManager.class.php";
 require PATH_TO_PRIVATE . "classes/MenuProduct.class.php";
 
+require PATH_TO_PRIVATE . "classes/Calories.class.php";
+
 $userManager = new UserManager($bdd, "users");
 $foodManager = new FoodManager($bdd, "foods");
 $productManager = new ProductManager($bdd, "products");

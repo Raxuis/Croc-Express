@@ -42,6 +42,5 @@ if (!empty($_POST)) {
 }
 
 
-
 $category = $categoryManager->getOne($_POST['id']);
 require PATH_VIEWS . 'admin/admin_edit_category.php';

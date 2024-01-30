@@ -11,7 +11,7 @@ if (!empty($_POST)) {
     if (!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['productList'])) {
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
 
-        if(count($_POST['productList']) < 2) {
+        if (count($_POST['productList']) < 2) {
             $_SESSION['status'] = 'error';
             $_SESSION['message'] = "Veuillez sélectionner au moins 2 produits";
             ob_clean();

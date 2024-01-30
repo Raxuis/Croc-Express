@@ -6,7 +6,8 @@
             <?php foreach ($categories as $category): ?>
                 <?php if ($category['is_hidden'] === 0) { ?>
                     <div class="card">
-                        <div class="card-header"><img src="<?= PATH_IMAGES . $category['image'] ?>" alt="category image"></div>
+                        <div class="card-header"><img src="<?= PATH_IMAGES . $category['image'] ?>"
+                                                      alt="category image"></div>
                         <div class="card-body">
 
                             <h3>
@@ -16,7 +17,8 @@
                                 <?= $category['description'] ?>
                             </p>
                             <button class="orange-button"
-                                onclick="window.location.href='?page=show_products&category_id=<?= $category['id'] ?>'">Tous les
+                                    onclick="window.location.href='?page=show_products&category_id=<?= $category['id'] ?>'">
+                                Tous les
                                 produits<i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
@@ -39,16 +41,18 @@
                             <?php
                             $i = 0;
                             foreach ($menuProducts as $menuProduct) { ?>
-                                <?php /* $productImage = $productImageManager->getImagesByProductId($menuProduct); */?>
-                                <?php echo ('Produit  ' . $i + 1 . ' : ' . $menuProduct['name'] . '<br>');
+                                <?php /* $productImage = $productImageManager->getImagesByProductId($menuProduct); */ ?>
+                                <?php echo('Produit  ' . $i + 1 . ' : ' . $menuProduct['name'] . '<br>');
                                 $i++; ?>
 
                             <?php } ?>
                             <button class="orange-button"
-                                onclick="window.location.href='?page=show_products&menu_id=<?= $menu['id'] ?>'">Tous les
+                                    onclick="window.location.href='?page=show_products&menu_id=<?= $menu['id'] ?>'">Tous
+                                les
                                 produits<i class="fa-solid fa-arrow-right"></i></button>
-                            <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>" data-action="add"
-                                data-type="menu">Ajouter au panier<i class="fa-solid fa-cart-plus"></i></button>
+                            <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>"
+                                    data-action="add"
+                                    data-type="menu">Ajouter au panier<i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 <?php } ?>
@@ -60,11 +64,11 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         <?php if (!empty($menus)) {
-            foreach ($menus as $menu) {
-                if (!$menu["is_hidden"]) { ?>
-                    initializeCart("<?= $menu['id'] ?>", <?= $menu['price'] ?>, 'button-<?= $menu['id'] ?>', false);
-                <?php }
-            }
+        foreach ($menus as $menu) {
+        if (!$menu["is_hidden"]) { ?>
+        initializeCart("<?= $menu['id'] ?>", <?= $menu['price'] ?>, 'button-<?= $menu['id'] ?>', false);
+        <?php }
+        }
         } ?>
     });
 </script>

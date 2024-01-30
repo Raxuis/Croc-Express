@@ -1,6 +1,7 @@
 <?php
 
-class MenuProduct {
+class MenuProduct
+{
     private int $id;
     private int $menuId;
     private int $productId;

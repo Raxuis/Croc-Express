@@ -1,5 +1,7 @@
 <?php
-class Order {
+
+class Order
+{
 
     private int $id;
     private int $userId;
@@ -81,7 +83,7 @@ class Order {
 
     public function setIsInDelivery(bool $isInDelivery): void
     {
-        $this->isInDelivery = (int) $isInDelivery;
+        $this->isInDelivery = (int)$isInDelivery;
     }
 
     public function getValidatedAt(): string

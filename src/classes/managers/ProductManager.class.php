@@ -19,7 +19,7 @@ class ProductManager extends Manager
                 'price' => $data->getPrice(),
                 'buyingPrice' => $data->getBuyingPrice(),
                 'categoryId' => $data->getCategoryId(),
-                'isHidden' => (int) $data->getIsHidden(),
+                'isHidden' => (int)$data->getIsHidden(),
             ]);
         }
 
@@ -37,17 +37,18 @@ class ProductManager extends Manager
             'price' => $data->getPrice(),
             'buyingPrice' => $data->getBuyingPrice(),
             'categoryId' => $data->getCategoryId(),
-            'isHidden' => (int) $data->getIsHidden(),
+            'isHidden' => (int)$data->getIsHidden(),
             'id' => $data->getId(),
         ]);
 
     }
-    public function getProductsByCategoryId(int $category_id, bool $onlyNotHidden=false): array
+
+    public function getProductsByCategoryId(int $category_id, bool $onlyNotHidden = false): array
     {
         if ($onlyNotHidden) {
             $query = "SELECT p.* FROM products as p INNER JOIN categories as c ON p.category_id = c.id WHERE c.id = :category_id AND NOT p.is_hidden";
         } else {
-           $query = "SELECT p.* FROM products as p INNER JOIN categories as c ON p.category_id = c.id WHERE c.id = :category_id";
+            $query = "SELECT p.* FROM products as p INNER JOIN categories as c ON p.category_id = c.id WHERE c.id = :category_id";
         }
 
         $response = $this->bdd->prepare($query);

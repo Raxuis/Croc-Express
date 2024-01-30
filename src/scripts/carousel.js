@@ -13,6 +13,7 @@ function setupSlider(slidesContainer, slides, prevButton, nextButton, currentInd
         });
     }
 }
+
 function initializeSlider(containerId, slidesClass, prevButtonClass, nextButtonClass) {
     const slidesContainer = document.getElementById(containerId);
     const slides = document.querySelectorAll("." + slidesClass);

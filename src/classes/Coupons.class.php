@@ -1,5 +1,7 @@
 <?php
-class Coupon {
+
+class Coupon
+{
 
     private int $id;
     private string $name;

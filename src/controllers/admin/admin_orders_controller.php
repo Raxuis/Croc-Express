@@ -8,7 +8,6 @@ $orders = $orderManager->getAll();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['getPdf'])) {
     try {
         ob_start();
-        /* $_GET['order_id'] = $_POST['getPdf']; */
         include PATH_VIEWS . 'admin/admin_orders.php';
         $content = ob_get_clean();
         ob_end_clean();
@@ -22,7 +21,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['getPdf'])) {
     } catch (Exception $e) {
         echo $e->getMessage();
     }
-
-
 }
 require PATH_VIEWS . 'admin/admin_orders.php';

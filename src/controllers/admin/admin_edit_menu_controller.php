@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
 
-        if(count($_POST['productList']) < 2) {
+        if (count($_POST['productList']) < 2) {
             $_SESSION['status'] = 'error';
             $_SESSION['message'] = "Veuillez sélectionner au moins 2 produits";
             ob_clean();
@@ -67,8 +67,7 @@ if (!empty($_POST)) {
                 $menuProductManager->createOne($product);
             }
         }
-
-        // Delete unused products
+        
         foreach ($products as $product) {
             if (!in_array($product["id"], $_POST["productList"])) {
                 $menuProductManager->deleteOneByProductId($product["id"], $_POST["id"]);

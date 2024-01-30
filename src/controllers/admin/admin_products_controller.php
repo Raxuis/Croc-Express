@@ -13,11 +13,11 @@ if (isset($_POST['show_hide'])) {
 }
 
 $allProducts = $productManager->getAll();
-function calculateCalories($grams, $caloriesPer100g)
+function calculateCalories($grams, $caloriesPer100g): float|int
 {
     return $grams * $caloriesPer100g;
 }
-function calculateTotalCaloriesPerAliment($data)
+function calculateTotalCaloriesPerAliment($data): float|int
 {
     $lipidCalories = calculateCalories($data["lipid"], 9);
     $carboCalories = calculateCalories($data["carbohydrate"], 4);

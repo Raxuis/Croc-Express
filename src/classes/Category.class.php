@@ -54,10 +54,12 @@ class Category
     {
         $this->description = $description;
     }
+
     public function getImage(): string
     {
         return $this->image;
     }
+
     public function setImage(string $image): void
     {
         $this->image = $image;
@@ -70,6 +72,6 @@ class Category
 
     public function setIsHidden(bool $isHidden): void
     {
-        $this->isHidden = (int) $isHidden;
+        $this->isHidden = (int)$isHidden;
     }
 }

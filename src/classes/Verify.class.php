@@ -9,8 +9,6 @@ class Verify
                 return true;
             }
         }
-
-//        echo "Mot de passe incorrect : 8 caractères minimum";
         return false;
     }
 

@@ -1,5 +1,7 @@
 <?php
-class Menu {
+
+class Menu
+{
 
     private int $id;
     private string $name;
@@ -58,6 +60,6 @@ class Menu {
 
     public function setIsHidden(bool $isHidden): void
     {
-        $this->isHidden = (int) $isHidden;
+        $this->isHidden = (int)$isHidden;
     }
 }

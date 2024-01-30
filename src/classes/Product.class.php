@@ -98,9 +98,8 @@ class Product
 
     public function setIsHidden(bool $is_hidden): void
     {
-        $this->isHidden = (int) $is_hidden;
+        $this->isHidden = (int)$is_hidden;
     }
-
 
 
 }

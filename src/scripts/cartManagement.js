@@ -18,11 +18,6 @@ function updateTotalPriceValue(item, value) {
 }
 
 function updateCartTotalValue(cart, value) {
-    // fetch("../src/controllers/cart_manager_controller.php?action=set_total_price&total=" + value).then(r =>
-    //     r.json().then(data => {
-    //         console.log(data);
-    //     })
-    // );
     cart.textContent = value;
 }
 
@@ -99,12 +94,6 @@ function initializeCart(productId, price, buttonId, in_cart = true) {
 
 // PAYMENT
 function validateOrder() {
-    // check if delivery is checked -> if it is, make a form appear to fill in the address
-    // check if the cart is empty
-    // check if the user is logged in
-    // if all is good, redirect to the payment page
-    // else, display an error message
-
     fetch("../src/controllers/payment_controller.php?action=validate_order").then((response) => {
         response.json().then((data) => {
             console.log(data);

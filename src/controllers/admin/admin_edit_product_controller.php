@@ -81,7 +81,7 @@ if (!empty($_POST)) {
         $_SESSION['status'] = "success";
         $_SESSION['message'] = "Modifications enregistrées avec succès";
 
-        ob_clean();
+//        ob_clean();
         header('location: index.php?page=admin_products');
         exit(0);
     }

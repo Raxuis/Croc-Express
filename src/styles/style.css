@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -176,7 +175,7 @@ nav img:hover,
     transform: scale(1.2)
 }
 
-nav>ul {
+nav > ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;

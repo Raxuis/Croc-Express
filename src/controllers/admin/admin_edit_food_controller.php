@@ -1,6 +1,5 @@
 <?php
 
-// edit food
 if (!empty($_POST)) {
     if (!isset($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
         $_SESSION['status'] = "error";

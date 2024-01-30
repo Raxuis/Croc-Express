@@ -21,7 +21,7 @@ function putCountriesInSelect(countries, select) {
         const option = document.createElement('option');
         option.value = country.translations.fra.common;
         option.textContent = country.translations.fra.common;
-        if(country.translations.fra.common === "France") option.setAttribute("selected", "selected")
+        if (country.translations.fra.common === "France") option.setAttribute("selected", "selected")
         select.appendChild(option);
     });
 }

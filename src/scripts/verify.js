@@ -63,5 +63,5 @@ function verify(confirmPassword = null, confirmPasswordLabel = null) {
                 }
             }
         })
-    };
+    }
 }

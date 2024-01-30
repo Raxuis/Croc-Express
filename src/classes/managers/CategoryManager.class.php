@@ -1,4 +1,5 @@
 <?php
+
 class CategoryManager extends Manager
 {
 
@@ -18,7 +19,7 @@ class CategoryManager extends Manager
                 'name' => $data->getName(),
                 'description' => $data->getDescription(),
                 'image' => $data->getImage(),
-                'is_hidden' => (int) $data->getIsHidden()
+                'is_hidden' => (int)$data->getIsHidden()
             ]);
         }
 
@@ -34,7 +35,7 @@ class CategoryManager extends Manager
             $response->execute([
                 'name' => $data->getName(),
                 'description' => $data->getDescription(),
-                'is_hidden' => (int) $data->getIsHidden(),
+                'is_hidden' => (int)$data->getIsHidden(),
                 'image' => $data->getImage(),
                 'id' => $data->getId()
             ]);

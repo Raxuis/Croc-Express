@@ -1,4 +1,5 @@
 <?php
+
 class MenuManager extends Manager
 {
 
@@ -15,7 +16,7 @@ class MenuManager extends Manager
             $response->execute([
                 'name' => $data->getName(),
                 'price' => $data->getPrice(),
-                'is_hidden' => (int) $data->getIsHidden()
+                'is_hidden' => (int)$data->getIsHidden()
             ]);
         }
 
@@ -30,12 +31,13 @@ class MenuManager extends Manager
         $response->execute([
             'name' => $data->getName(),
             'price' => $data->getPrice(),
-            'isHidden' => (int) $data->getIsHidden(),
+            'isHidden' => (int)$data->getIsHidden(),
             'id' => $data->getId(),
         ]);
 
 
     }
+
     public function getAllProductsFromMenu(int $data): array
     {
         $query = "SELECT p.* from products as p 
@@ -49,6 +51,7 @@ class MenuManager extends Manager
         ]);
         return $response->fetchAll();
     }
+
     public function toggleHide(int $id): void
     {
         $query = "UPDATE menus SET is_hidden = NOT is_hidden WHERE id = :id";

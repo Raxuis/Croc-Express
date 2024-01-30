@@ -1,12 +1,7 @@
 <?php
 
-class OrderProduct {
-//    id
-//    order_id
-//    product_id
-//    price
-//    quantity
-
+class OrderProduct
+{
     private int $id;
     private int $orderId;
     private int $productId;

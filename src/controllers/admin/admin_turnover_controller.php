@@ -20,7 +20,7 @@ foreach ($orders as $order) {
 
     foreach ($products as $product) {
 
-        if($product['buying_price'] === 'no_buying_price') {
+        if ($product['buying_price'] === 'no_buying_price') {
             $product['buying_price'] = $product['price'];
         }
 

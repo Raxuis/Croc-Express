@@ -1,5 +1,7 @@
 <?php
-class Food {
+
+class Food
+{
     private int $id;
     private string $name;
     private int $lipid;
@@ -96,7 +98,7 @@ class Food {
 
     public function setIsHidden(bool $isHidden): void
     {
-        $this->isHidden = (int) $isHidden;
+        $this->isHidden = (int)$isHidden;
     }
 
 

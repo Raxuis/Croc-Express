@@ -1,6 +1,7 @@
 <?php
 
-class MessageManager extends Manager {
+class MessageManager extends Manager
+{
 
     public function createOne(object $data): int
     {

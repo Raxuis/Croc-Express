@@ -5,7 +5,7 @@
         <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
         <input type="hidden" name="id" value="<?= $product["id"] ?>">
         <input type="text" name="name" placeholder="Nom du produit" value="<?= $product["name"] ?>">
-        <textarea type="text" name="description" placeholder="Description"><?= $product["description"] ?></textarea>
+        <textarea name="description" placeholder="Description"><?= $product["description"] ?></textarea>
         <input type="number" min="1" name="price" placeholder="Prix de vente" value="<?= $product["price"] ?>">
         <input type="number" min="1" name="buyingPrice" placeholder="Coût de production"
                value="<?= $product["buying_price"] ?>">
@@ -57,7 +57,8 @@
                 <?php foreach ($allImages as $image) { ?>
                     <div class="image">
                         <input type="hidden" name="currentImages[]" value="<?= $image["id"] ?>">
-                        <img src="<?= PATH_IMAGES . $image["image"] ?>" alt="<?= $product["name"] ?>" style="width: 3em;">
+                        <img src="<?= PATH_IMAGES . $image["image"] ?>" alt="<?= $product["name"] ?>"
+                             style="width: 3em;">
                         <p><?= $image["image"] ?></p>
                         <input type="checkbox" name="imageToDelete[]" value="<?= $image["id"] ?>">
                     </div>

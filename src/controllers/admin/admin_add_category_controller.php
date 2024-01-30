@@ -10,7 +10,7 @@ if (!empty($_POST)) {
 
     if (!empty($_POST['name']) && !empty($_POST['description']) && !empty($_FILES['image'])) {
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
-        $_FILES["image"]["name"];
+
         if ($_FILES['image']['error'] === 0) {
             $targetDir = '../public/assets/product_images/';
             $targetFile = $targetDir . basename($_FILES['image']['name']);

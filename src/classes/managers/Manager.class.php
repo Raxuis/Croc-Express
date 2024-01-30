@@ -12,6 +12,7 @@ abstract class Manager
     }
 
     abstract public function createOne(object $data): int;
+
     abstract public function editOne(object $data): void;
 
     public function getOne(int $data_id)

@@ -17,11 +17,11 @@
                 }
                 if ($productSelected) { ?>
                     <option value="<?= $product["id"] ?>" selected>
-                    <?php } else { ?>
+                <?php } else { ?>
                     <option value="<?= $product["id"] ?>">
-                    <?php } ?>
+                <?php } ?>
 
-                    <?= $product["name"] ?>
+                <?= $product["name"] ?>
                 </option>
             <?php } ?>
         </select>

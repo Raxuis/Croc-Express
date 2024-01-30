@@ -6,7 +6,7 @@
         <input type="hidden" name="id" value="<?= $category["id"] ?>">
         <input type="text" name="name" placeholder="Nom de la catégorie" value="<?= $category["name"] ?>">
         <input type="text" name="description" placeholder="Description de la catégorie"
-            value="<?= $category["description"] ?>">
+               value="<?= $category["description"] ?>">
 
         <label for="isHidden">Cacher la catégorie</label>
         <?php if ($category["is_hidden"]) { ?>

@@ -34,7 +34,7 @@
                     <input type="hidden" name="type" value="<?= $type ?>">
 
                     <td class="td-images">
-                        <?php if($dataImage) { ?>
+                        <?php if ($dataImage) { ?>
                             <img src="<?= PATH_IMAGES . $dataImage[0]['image'] ?>" alt="" class='cart-images'>
                         <?php } ?>
                     </td>
@@ -51,9 +51,11 @@
                         <?= $data['price'] * $value["quantity"] ?>
                     </td>
                     <td>
-                        <button class="remove-cart" data-action="remove" data-type="<?= $type ?>" id="<?= 'button-remove-' . $type . '-' . $data['id'] ?>">
+                        <button class="remove-cart" data-action="remove" data-type="<?= $type ?>"
+                                id="<?= 'button-remove-' . $type . '-' . $data['id'] ?>">
                             <i class="fa-solid fa-circle-minus"></i></button>
-                        <button class="add-cart" data-action="add" data-type="<?= $type ?>" id="<?= 'button-add-' . $type . '-' . $data['id'] ?>"><i
+                        <button class="add-cart" data-action="add" data-type="<?= $type ?>"
+                                id="<?= 'button-add-' . $type . '-' . $data['id'] ?>"><i
                                     class="fa-solid fa-circle-plus"></i></button>
                     </td>
                 </tr>
@@ -68,13 +70,6 @@
             <td id="delivery-price">0</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Tax</td>
-            <td>1.00</td>
-        </tr>
-        <tr>
             <td colspan="2">
                 <input type="checkbox" name="livery" id="delivery">
                 <label for="livery">Livrer cette commande pour
@@ -85,7 +80,6 @@
             <td id="total-price">0</td>
             <td>
                 <button type="button" class="submit pay emptyCart" id="emptyCart">Vider le panier</button>
-                <!--                <button type="button" class="submit pay">Payer</button>-->
             </td>
         </tr>
     </table>
