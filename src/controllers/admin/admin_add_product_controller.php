@@ -11,13 +11,6 @@ if (!empty($_POST)) {
     if (!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['buyingPrice']) && !empty($_POST['categoryId'])) {
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
 
-        if (count($_POST["foodList"]) < 3) {
-            $_SESSION['status'] = "error";
-            $_SESSION['message'] = "Le produit doit avoir au moins 3 ingrédients";
-            header("Location: ?page=admin_products");
-            exit;
-        }
-
         $product = new Product($_POST);
         $productId = $productManager->createOne($product);
 

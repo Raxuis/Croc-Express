@@ -37,7 +37,7 @@
                         $products = $orderProductManager->getProductsOfOrder($order['id']);
                         $productsIds = [];
                         foreach ($products as $product) {
-                            if (!in_array($product['id'], $productsIds)) {
+                            if (!in_array($product['type'] . "-" . $product['id'], $productsIds)) {
                                 $productsIds[] = $product['id'];
                             } else {
                                 continue;
