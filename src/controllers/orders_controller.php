@@ -4,6 +4,8 @@ require '../vendor/autoload.php';
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
+$totalCalories = 0;
+
 if (isset($_GET['page'])) {
     if ($_GET['page'] == 'orders' && !isset($_GET['order_id'])) {
         $orders = $orderManager->getOrdersByUserId($_SESSION['user_id']);

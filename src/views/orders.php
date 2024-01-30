@@ -23,20 +23,21 @@
                     </p>
                 </div>
                 <div class="card-body">
-                    <table class='table-cart'>
+                    <table class='table-cart order-cart'>
                         <thead>
-                        <tr>
-                            <th>
-                                <form method='post' action='?page=orders&order_id=<?= $order['id'] ?>'>
-                                    <button type="submit" id='pdf' name="getPdf" class='submit pay'><i
+                            <tr>
+                                <th>
+                                    <form method='post' action='?page=orders&order_id=<?= $order['id'] ?>'>
+                                        <button type="submit" id='pdf' name="getPdf" class='submit pay'><i
                                                 class="fa-solid fa-file-pdf"></i></button>
-                                </form>
-                            </th>
-                            <th>Produit</th>
-                            <th>Prix Unitaire</th>
-                            <th>Quantité</th>
-                            <th>Prix Total</th>
-                        </tr>
+                                    </form>
+                                </th>
+                                <th>Produit</th>
+                                <th>Prix Unitaire</th>
+                                <th>Calories</th>
+                                <th>Quantité</th>
+                                <th>Prix Total</th>
+                            </tr>
                         </thead>
                         <?php
                         $products = $orderProductManager->getProductsOfOrder($order['id']);
@@ -52,8 +53,7 @@
                                 <td class="td-images">
                                     <?php if ($product['type'] === "product") { ?>
                                         <a href="index.php?page=product&id=<?= $product['id'] ?>">
-                                            <img src="<?= PATH_IMAGES . $product['image'] ?>" alt=""
-                                                 class='cart-images'>
+                                            <img src="<?= PATH_IMAGES . $product['image'] ?>" alt="" class='cart-images'>
                                         </a>
                                     <?php } else { ?>
                                         <p>Menu</p>
@@ -64,6 +64,19 @@
                                 </td>
                                 <td>
                                     <?= $product['price'] . '€' ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $foods = $productFoodManager->getAllFoodDatasOfProduct($product['id']);
+                                    foreach ($foods as $food) { ?>
+                                        <?php
+                                        $calories = Calories::calculateTotalCaloriesPerAliment($food);
+                                        $totalCalories += $calories * ($food["weight"] / 100); ?>
+                                    <?php } ?>
+                                    <?= $totalCalories . ' cal' ?>
+                                    <?php
+                                    $totalCalories = 0;
+                                    ?>
                                 </td>
                                 <td>
                                     <?= $product['quantity'] ?>
@@ -78,7 +91,7 @@
                         <?= $coupon ? $coupon["name"] . " (-" . $coupon["reduction"] . "%)" : "Aucun code utilisé" ?>
                     </p>
                     <a href="index.php?page=orders&order_id=<?= $order['id'] ?>">Plus d'informations<i
-                                class="fa-solid fa-circle-info"></i></a>
+                            class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div>
         <?php } ?>
@@ -105,17 +118,18 @@
                 </p>
             </div>
             <div class="card-body">
-                <table class='table-cart'>
+                <table class='table-cart order-cart'>
                     <thead>
-                    <tr>
-                        <?php if (!isset($_POST['getPdf'])) { ?>
-                            <th></th>
-                        <?php } ?>
-                        <th>Produit</th>
-                        <th>Prix Unitaire</th>
-                        <th>Quantité</th>
-                        <th>Prix Total</th>
-                    </tr>
+                        <tr>
+                            <?php if (!isset($_POST['getPdf'])) { ?>
+                                <th></th>
+                            <?php } ?>
+                            <th>Produit</th>
+                            <th>Prix Unitaire</th>
+                            <th>Calories</th>
+                            <th>Quantité</th>
+                            <th>Prix Total</th>
+                        </tr>
                     </thead>
                     <?php
                     $products = $orderProductManager->getProductsOfOrder($order['id']);
@@ -138,6 +152,19 @@
                             </td>
                             <td>
                                 <?= $product['price'] . '€' ?>
+                            </td>
+                            <td>
+                                <?php
+                                $foods = $productFoodManager->getAllFoodDatasOfProduct($product['id']);
+                                foreach ($foods as $food) { ?>
+                                    <?php
+                                    $calories = Calories::calculateTotalCaloriesPerAliment($food);
+                                    $totalCalories += $calories * ($food["weight"] / 100); ?>
+                                <?php } ?>
+                                <?= $totalCalories . ' cal' ?>
+                                <?php
+                                $totalCalories = 0;
+                                ?>
                             </td>
                             <td>
                                 <?= $product['quantity'] ?>

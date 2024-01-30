@@ -70,6 +70,10 @@ main {
     right: 10px;
 }
 
+.order-cart thead {
+    font-size: 0.8em;
+}
+
 .card-orders {
     width: 30em;
 }
@@ -175,7 +179,7 @@ nav img:hover,
     transform: scale(1.2)
 }
 
-nav > ul {
+nav>ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;

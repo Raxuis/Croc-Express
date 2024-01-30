@@ -4,6 +4,8 @@ require '../vendor/autoload.php';
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
+$totalCalories = 0;
+
 $orders = $orderManager->getAll();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['getPdf'])) {
     try {
