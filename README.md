@@ -1,10 +1,11 @@
+<img src = 'https://i.ibb.co/QPFk1cq/Croc-Express.png'>
 # Informations
 
 - Version de PHP : `8.2`
 - Dépendances utilisées (TODO : ajouter les liens)
-    - DomPdf
-    - Toastr
-    - Select2
+  - DomPdf
+  - Toastr
+  - Select2
 
 # Tester le projet
 
@@ -12,7 +13,7 @@
 
 ### 1 - Importer la base de données
 
-1. Dans PHPMyAdmin créer une base de données `croc_express` 
+1. Dans PHPMyAdmin créer une base de données `croc_express`
 2. Récupérer la base de données avec les données d'exemple dans le dossier `database/models/`
 3. Drag and drop le fichier `croc_express.sql` dans la base de données `croc_express` sur PHPMyAdmin
 
