@@ -24,6 +24,7 @@
 
             <td>
                 <form method="post">
+                    <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
                     <input type="hidden" name="id" value="<?= $category['id'] ?>">
                     <button name="show_hide" type="submit" class="submit pay orange-button">
                         <?= $category['is_hidden'] ? "Afficher" : "Masquer" ?>

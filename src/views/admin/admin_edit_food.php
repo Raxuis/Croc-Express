@@ -2,6 +2,7 @@
 
 <div class="container">
     <form action="" method="post" class="form">
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
         <input type="hidden" name="id" value="<?= $food['id'] ?>">
         <input type="text" name="name" placeholder="Nom de l'ingrédient" value="<?= $food['name'] ?>">
         <input type="number" name="lipid" min="0" placeholder="Lipides" value="<?= $food['lipid'] ?>">

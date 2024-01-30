@@ -2,6 +2,8 @@
 <div class="container">
     <form action="" method="post" class="form" enctype='multipart/form-data'>
 
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+
         <input type="text" name="name" placeholder="Nom du produit">
         <textarea type="text" name="description" placeholder="Description"></textarea>
         <input type="number" min="1" name="price" placeholder="Prix de vente">

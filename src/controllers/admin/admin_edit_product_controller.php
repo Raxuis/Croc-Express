@@ -2,13 +2,11 @@
 
 global $productManager, $productFoodManager, $foodManager, $bdd;
 $product = $productManager->getOne($_POST['id']);
+
 $allFoodInProduct = $productFoodManager->getAllFoodOfProduct($_POST['id']);
 $allImages = $productImageManager->getAllImagesOfProduct($_POST['id']);
 
-//$categoriesManager = new CategoryManager($bdd, "categories");
 $categories = $categoryManager->getAll();
-//$productImageManager = new ProductImageManager($bdd, "images");
-
 $allFood = $foodManager->getAll();
 
 if (!empty($_POST)) {

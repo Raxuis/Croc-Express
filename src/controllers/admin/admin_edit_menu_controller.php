@@ -19,6 +19,12 @@ function findObjectById($id, $arrayList): bool
 }
 
 if (!empty($_POST)) {
+    if (!isset($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+        $_SESSION['status'] = "error";
+        $_SESSION['message'] = "Erreur de vérification du formulaire";
+        header('Location: ?page=homepage');
+        exit;
+    }
     if (isset($_POST['name']) && isset($_POST['price']) && isset($_POST['productList'])) {
         if ($_POST["productList"] === "") {
             $_SESSION['status'] = 'error';

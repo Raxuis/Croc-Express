@@ -8,6 +8,13 @@ $productImageManager = new ProductImageManager($bdd, "images");
 $allFood = $foodManager->getAll();
 
 if (!empty($_POST)) {
+    if (!isset($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+        $_SESSION['status'] = "error";
+        $_SESSION['message'] = "Erreur de vérification du formulaire";
+        header('Location: ?page=homepage');
+        exit;
+    }
+
     if (!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['buyingPrice']) && !empty($_POST['categoryId'])) {
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
 

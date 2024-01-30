@@ -2,6 +2,12 @@
 
 // edit food
 if (!empty($_POST)) {
+    if (!isset($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+        $_SESSION['status'] = "error";
+        $_SESSION['message'] = "Erreur de vérification du formulaire";
+        header('Location: ?page=homepage');
+        exit;
+    }
     if (isset($_POST['name']) && isset($_POST['lipid']) && isset($_POST['carbohydrate']) && isset($_POST['protein'])) {
 
         $dbFood = $foodManager->getOne($_POST['id']);

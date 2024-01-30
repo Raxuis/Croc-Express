@@ -1,5 +1,13 @@
 <?php
 if (!empty($_POST)) {
+
+    if (!isset($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+        $_SESSION['status'] = "error";
+        $_SESSION['message'] = "Erreur de vérification du formulaire";
+        header('Location: ?page=homepage');
+        exit;
+    }
+
     if (!empty($_POST['name']) && !empty($_POST['description']) && !empty($_FILES['image'])) {
         $_POST['isHidden'] = isset($_POST['isHidden']) ? 1 : 0;
         $_FILES["image"]["name"];

@@ -2,6 +2,7 @@
 <div class="container">
     <form action="" method="post" class="form" enctype='multipart/form-data'>
 
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
         <input type="hidden" name="id" value="<?= $product["id"] ?>">
         <input type="text" name="name" placeholder="Nom du produit" value="<?= $product["name"] ?>">
         <textarea type="text" name="description" placeholder="Description"><?= $product["description"] ?></textarea>
