@@ -37,10 +37,11 @@ function getTotalCartValue(cart) {
 function updateCart(productId, price, action, type, in_cart = true) {
     let cartEle = document.getElementById("cart-quantity");
 
-    console.log(productId, price, action, type, in_cart)
     fetch("../src/controllers/cart_manager_controller.php?id=" + productId + "&price=" + price + "&action=" + action + "&type=" + type).then((response) => {
         response.json().then((data) => {
             // format of data : { id: { quantity: itemQuantity, totalPrice: totalPriceOfItems }, ...}
+
+            let empty = true;
 
             cartEle.textContent = 0;
             for (const itemType in data["cart"]) {
@@ -58,20 +59,25 @@ function updateCart(productId, price, action, type, in_cart = true) {
                                 getTotalCartValue(document.getElementById("total-price"));
 
                                 if (item["quantity"] === 0) {
-                                    // TODO: Réparer le bug de suppression d'un produit du panier
-                                    console.log("ici")
-
                                     document.getElementById("item-" + type + "-" + productId).remove();
                                     updateTotalPriceValue(document.getElementById("total-price"), item["totalPrice"]);
+
                                 }
                             }
                         }
                     }
+
+                    if (data["cart"][itemType][itemId]["quantity"] !== 0) {
+                        empty = false;
+                    }
+                }
+
+                if (data["cart"][itemType] === {}) {
+                    empty = false;
                 }
             }
 
-            // si panier vide -> redirection vers la page d'accueil
-            if (data["cart"].length === 0) {
+            if (empty) {
                 window.location.href = "?page=homepage";
             }
         });
@@ -93,7 +99,6 @@ function initializeCart(productId, price, buttonId, in_cart = true) {
 
 // PAYMENT
 function validateOrder() {
-    // TODO: Implement this function
     // check if delivery is checked -> if it is, make a form appear to fill in the address
     // check if the cart is empty
     // check if the user is logged in

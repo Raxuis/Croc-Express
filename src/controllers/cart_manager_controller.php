@@ -32,14 +32,13 @@ if (!empty($_GET["action"])) {
             ];
         }
 
-        if ($_SESSION["cart"][$_GET["type"]][$_GET["id"]]["quantity"] > 1) {
+        if ($_SESSION["cart"][$_GET["type"]][$_GET["id"]]["quantity"] > 0) {
             $_SESSION["cart"][$_GET["type"]][$_GET["id"]] = [
                 "quantity" => $_SESSION["cart"][$_GET["type"]][$_GET["id"]]["quantity"] - 1,
                 "totalPrice" => $_SESSION["cart"][$_GET["type"]][$_GET["id"]]["totalPrice"] - $_GET["price"]
             ];
-        } else {
-            unset($_SESSION["cart"][$_GET["type"]][$_GET["id"]]);
         }
+
     } else if ($_GET["action"] === "set_price" && !empty($_GET["price"])) {
         $_SESSION["cart"][$_GET["type"]][$_GET["id"]] = [
             "quantity" => $_SESSION["cart"][$_GET["type"]][$_GET["id"]]["quantity"],
@@ -78,3 +77,17 @@ if (isset($_SESSION["cart"])) {
 }
 
 echo json_encode($cartData);
+
+if (isset($_GET["type"]) && isset($_GET["id"])) {
+    if ($_GET["action"] === "remove" && $_SESSION["cart"][$_GET["type"]][$_GET["id"]]["quantity"] === 0) {
+        unset($_SESSION["cart"][$_GET["type"]][$_GET["id"]]);
+    }
+
+    if (empty($_SESSION["cart"][$_GET["type"]])) {
+        unset($_SESSION["cart"][$_GET["type"]]);
+    }
+
+    if (empty($_SESSION["cart"])) {
+        unset($_SESSION["cart"]);
+    }
+}
