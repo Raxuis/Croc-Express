@@ -155,7 +155,7 @@
         <?php if (!isset($_POST['getPdf'])) { ?>
             <div>
                 <form method='post' action=''>
-                    <button type="submit pdf" name="getPdf" id='pdf' class='submit pay'>Télécharger la facture en PDF</button>
+                    <button type="submit" name="getPdf" id='pdf' class='submit pay'>Télécharger la facture en PDF</button>
                 </form>
             </div>
         <?php }
