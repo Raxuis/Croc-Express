@@ -10,7 +10,7 @@ $menuProductManager = new MenuProductManager($bdd, "menus_products");
 
 function findObjectById($id, $arrayList): bool
 {
-    foreach ($arrayList as $element ) {
+    foreach ($arrayList as $element) {
         if ($id == $element["id"]) {
             return true;
         }
@@ -56,7 +56,6 @@ if (!empty($_POST)) {
 
         // Delete unused products
         foreach ($products as $product) {
-            var_dump($product);
             if (!in_array($product["id"], $_POST["productList"])) {
                 $menuProductManager->deleteOneByProductId($product["id"], $_POST["id"]);
             }

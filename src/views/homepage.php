@@ -6,8 +6,9 @@
             <?php foreach ($categories as $category): ?>
                 <?php if ($category['is_hidden'] === 0) { ?>
                     <div class="card">
+                        <div class="card-header"><img src="<?= PATH_IMAGES . $category['image'] ?>" alt="category image"></div>
                         <div class="card-body">
-                            <img src="<?= PATH_IMAGES . $category['image'] ?>" alt="category image">
+
                             <h3>
                                 <?= $category['name'] ?>
                             </h3>

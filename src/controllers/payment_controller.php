@@ -45,8 +45,6 @@ if (!empty($_POST)) {
         }
     }
 
-    var_dump($_POST['coupon']);
-
     $coupon = null;
     if (!empty($_POST['coupon'])) {
         $coupon = $couponManager->getOneByName($_POST['coupon']);

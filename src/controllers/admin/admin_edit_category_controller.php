@@ -33,11 +33,9 @@ if (!empty($_POST)) {
         header('location: index.php?page=admin_categories');
         exit(0);
     }
-    var_dump($_POST);
 }
 
 
 
 $category = $categoryManager->getOne($_POST['id']);
-var_dump($category);
 require PATH_VIEWS . 'admin/admin_edit_category.php';
