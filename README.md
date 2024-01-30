@@ -28,7 +28,7 @@
 ## :dart: About
 
 - Version de PHP : `8.2`
-- Dépendances utilisées (TODO : ajouter les liens)
+- Dépendances utilisées
   - [DomPdf](https://dompdf.github.io/)
   - [Toastr](https://codeseven.github.io/toastr/)
   - [Select2](https://select2.org/)
@@ -40,20 +40,19 @@
 
 ### Partie Utilisateur :
 
-:heavy_check_mark: Se connecter / Créer un compte;\
-:heavy_check_mark: Modifier son profil / Se déconnecter;\
-:heavy_check_mark: Ajouter un produit ou un menu au panier;\
-:heavy_check_mark: Regarder, Modifier, Valider (avec ou sans livraison) notre panier;\
-:heavy_check_mark: Consulter ses commandes et télécharger si nécessaire chaque commande en PDF;\
-:heavy_check_mark: Envoyer un message à l'administrateur;\
+:heavy_check_mark: Se connecter / Créer un compte\
+:heavy_check_mark: Modifier son profil / Se déconnecter\
+:heavy_check_mark: Ajouter un produit ou un menu au panier\
+:heavy_check_mark: Regarder, Modifier, Valider (avec ou sans livraison) notre panier\
+:heavy_check_mark: Consulter ses commandes et télécharger si nécessaire chaque commande en PDF\
+:heavy_check_mark: Envoyer un message à l'administrateur
 
 ### Partie Administrateur :
 
-:heavy_check_mark: Consulter toutes les commandes de tous les utilisateurs et télécharger si nécessaire chaque commande en PDF;\
-:heavy_check_mark: Consulter son chiffres d'affaires et ses produits ou menu phares des 7 derniers jours;\
-:heavy_check_mark: Ajouter / Modifier / Supprimer des produits, menus, aliments et catégories;\
-:heavy_check_mark: Créer / Modifier / Supprimer un bon d'achat;\
-:heavy_check_mark: ;\
+:heavy_check_mark: Consulter toutes les commandes de tous les utilisateurs et télécharger si nécessaire chaque commande en PDF\
+:heavy_check_mark: Consulter son chiffres d'affaires et ses produits ou menu phares des 7 derniers jours\
+:heavy_check_mark: Ajouter / Modifier / Supprimer des produits, menus, aliments et catégories\
+:heavy_check_mark: Créer / Modifier / Supprimer un bon d'achat
 
 ## :rocket: Technologies
 
