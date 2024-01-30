@@ -1,10 +1,12 @@
 <?php
 
-class Category {
+class Category
+{
 
     private int $id;
     private string $name;
     private string $description;
+    private string $image;
     private bool $isHidden;
 
     public function __construct(array $data)
@@ -51,6 +53,14 @@ class Category {
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
     }
 
     public function getIsHidden(): bool

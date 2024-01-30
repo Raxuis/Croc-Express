@@ -7,6 +7,7 @@
                 <?php if ($category['is_hidden'] === 0) { ?>
                     <div class="card">
                         <div class="card-body">
+                            <img src="<?= PATH_IMAGES . $category['image'] ?>" alt="category image">
                             <h3>
                                 <?= $category['name'] ?>
                             </h3>
@@ -45,8 +46,8 @@
                             <button class="orange-button"
                                 onclick="window.location.href='?page=show_products&menu_id=<?= $menu['id'] ?>'">Tous les
                                 produits<i class="fa-solid fa-arrow-right"></i></button>
-                            <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>"
-                                data-action="add" data-type="menu">Ajouter au panier<i class="fa-solid fa-cart-plus"></i></button>
+                            <button type="button" class="orange-button" id="<?= 'button-' . $menu['id'] ?>" data-action="add"
+                                data-type="menu">Ajouter au panier<i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 <?php } ?>

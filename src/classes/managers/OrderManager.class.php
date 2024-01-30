@@ -19,7 +19,7 @@ class OrderManager extends Manager
                 'price' => $data->getPrice(),
                 'coupon_id' => $data->getCouponId(),
                 'address_id' => $data->getAddressId(),
-                'is_in_delivery' => (int)$data->getIsInDelivery(),
+                'is_in_delivery' => (int) $data->getIsInDelivery(),
                 'validated_at' => null
             ]);
         }
@@ -72,6 +72,4 @@ class OrderManager extends Manager
         $response->execute();
         return $response->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
 }

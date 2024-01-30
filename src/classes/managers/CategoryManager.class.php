@@ -12,11 +12,12 @@ class CategoryManager extends Manager
         if ($data instanceof Category) {
             echo $data->getIsHidden();
 
-            $query = "INSERT INTO categories (name, description, is_hidden) VALUES (:name, :description, :is_hidden)";
+            $query = "INSERT INTO categories (name, description, image, is_hidden) VALUES (:name, :description,:image, :is_hidden)";
             $response = $this->bdd->prepare($query);
             $response->execute([
                 'name' => $data->getName(),
                 'description' => $data->getDescription(),
+                'image' => $data->getImage(),
                 'is_hidden' => (int) $data->getIsHidden()
             ]);
         }
@@ -28,12 +29,13 @@ class CategoryManager extends Manager
     public function editOne(object $data): void
     {
         if ($data instanceof Category) {
-            $query = "UPDATE categories SET name = :name, description = :description, is_hidden = :is_hidden WHERE id = :id";
+            $query = "UPDATE categories SET name = :name, description = :description, image=:image, is_hidden = :is_hidden WHERE id = :id";
             $response = $this->bdd->prepare($query);
             $response->execute([
                 'name' => $data->getName(),
                 'description' => $data->getDescription(),
                 'is_hidden' => (int) $data->getIsHidden(),
+                'image' => $data->getImage(),
                 'id' => $data->getId()
             ]);
         }

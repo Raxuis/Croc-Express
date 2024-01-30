@@ -10,7 +10,7 @@
 }
 
 .swal2-icon-content {
-    color: #0433ff;
+    color: #facea8;
 }
 
 button {
@@ -77,6 +77,10 @@ main {
 
 .card-products {
     height: 60%;
+}
+
+.current-image {
+    display: flex;
 }
 
 .card img,
