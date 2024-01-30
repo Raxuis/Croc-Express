@@ -18,7 +18,7 @@
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#arrow_down-installation">Installation</a> &#xa0; | &#xa0;
+  <a href="#arrow_down-importation">Importation</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
 </p>
@@ -65,15 +65,13 @@ Les technologies suivantes ont été utilisées pour ce projet :
 
 Avant de commencer :checkered_flag:, vous avez besoin d'avoir [Git](https://git-scm.com) installé.
 
-## :arrow_down: Installation
+## :arrow_down: Importation
 
-### 1 - Importer la base de données
+### Importer la base de données
 
 1. Dans PHPMyAdmin créer une base de données `croc_express`
 2. Récupérer la base de données avec les données d'exemple dans le dossier `database/models/`
 3. Drag and drop le fichier `croc_express.sql` dans la base de données `croc_express` sur PHPMyAdmin
-
-### 2 - Installer les dépendances
 
 ## :checkered_flag: Starting
 
@@ -83,6 +81,9 @@ $ git clone https://github.com/Raxuis/croc-express
 
 # Y accéder
 $ cd croc-express
+
+# Installer les dépendances
+$ composer install
 
 # Utiliser MAMP/XAMP/LAMP ou WAMP et lancer le serveur
 
