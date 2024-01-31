@@ -103,12 +103,12 @@ Different datas are included in the database to be able to try the website. Orde
 ### Administrator account
 
 - Email : `admin@admin.fr`
-- Mot de passe : `password`
+- Password : `password`
 
 ### User account
 
 - Email : `user@user.fr`
-- Mot de passe : `password`
+- Password : `password`
 
 ## :memo: License
 
