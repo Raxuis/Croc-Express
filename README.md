@@ -27,86 +27,95 @@
 
 ## :dart: About
 
-- Version de PHP : `8.2`
-- Dépendances utilisées
+- PHP Version : `8.2`
+- Dependencies used :
   - [DomPdf](https://dompdf.github.io/)
   - [Toastr](https://codeseven.github.io/toastr/)
   - [Select2](https://select2.org/)
-- Dépend d'une base de données
-- Tout ajout au panier et modification est fait avec fetch
-- L'architecture du projet est en MVC
+- Depends on a Database
+- Every adding and edit of the shopping cart is done with fetch
+- The project architecture is in MVC
 
 ## :sparkles: Features
 
-### Partie Utilisateur :
+### User Side :
 
-:heavy_check_mark: Se connecter / Créer un compte\
-:heavy_check_mark: Modifier son profil / Se déconnecter\
-:heavy_check_mark: Ajouter un produit ou un menu au panier\
-:heavy_check_mark: Regarder, Modifier, Valider (avec ou sans livraison) notre panier\
-:heavy_check_mark: Consulter ses commandes et télécharger si nécessaire chaque commande en PDF\
-:heavy_check_mark: Envoyer un message à l'administrateur
+:heavy_check_mark: Log in / Create an account\
+:heavy_check_mark: Edit your profile / Log out\
+:heavy_check_mark: Add a product or a menu to the shopping cart\
+:heavy_check_mark: Look, Edit, Validate (with or without delivery) your shopping cart\
+:heavy_check_mark: Consult your orders et download if needed every order in PDF\
+:heavy_check_mark: Send a message to the administrators
 
-### Partie Administrateur :
+### Administrators Side :
 
-:heavy_check_mark: Consulter toutes les commandes de tous les utilisateurs et télécharger si nécessaire chaque commande en PDF\
-:heavy_check_mark: Consulter son chiffres d'affaires et ses produits ou menu phares des 7 derniers jours\
-:heavy_check_mark: Ajouter / Modifier / Supprimer des produits, menus, aliments et catégories\
-:heavy_check_mark: Créer / Modifier / Supprimer un bon d'achat
+:heavy_check_mark: Consult every order of all the users and download if needed every order in PDF\
+:heavy_check_mark: Consult your sales revenues and your flagship products or menus during the last 7 days\
+:heavy_check_mark: Add / Edit / Delete products, menus, foods and categories\
+:heavy_check_mark: Create / Edit / Delete coupons
 
 ## :rocket: Technologies
 
-Les technologies suivantes ont été utilisées pour ce projet :
+The following technologies were used for this project :
 
 - [PHP](https://www.php.net/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## :white_check_mark: Requirements
 
-Avant de commencer :checkered_flag:, vous avez besoin d'avoir `composer` installé.
+Before starting :checkered_flag:, you need `composer` and `git` installed.
 
 ## :arrow_down: Importation
 
-### Importer la base de données
+### Import the Database
 
-1. Dans PHPMyAdmin créer une base de données `croc_express`
-2. Récupérer la base de données avec les données d'exemple dans le dossier `database/models/`
-3. Drag and drop le fichier `croc_express.sql` dans la base de données `croc_express` sur PHPMyAdmin
+1. In PHPMyAdmin create a database called `croc_express`
+2. Collect the database with the example datas in the folder `database/models/`
+3. Drag and drop the file `croc_express.sql` in the database `croc_express` on PHPMyAdmin
 
 ## :checkered_flag: Starting
 
 ```bash
-# Installer les dépendances
+# Clone the project
+$ git clone https://github.com/Raxuis/Croc-Express.git
+
+# Go to the project's root folder
+$ cd Croc-Express
+
+# Install the dependencies
 $ composer install
 
-# Utiliser MAMP/XAMP/LAMP ou WAMP et lancer le serveur
+# Use MAMP/XAMP/LAMP or WAMP and start the server
 
-# Le server va s'initializer à l'URL <http://localhost:8888/>
+# The server will initialize at the URL <http://localhost:8888/>
 
-# Accéder ensuite à l'URL <http://localhost:8888/Croc-Express/public/>
+# Then, go to the URL <http://localhost:8888/Croc-Express/public/>
 
-# Tout devrait fonctionner 😃
+# Everything should work perfectly fine 😃
 ```
 
-⚠️ Pour être sûr que tout fonctionne bien vous pouvez vider la session de `localhost` via la route `?page=killall`.
+⚠️ To be sure that everything works you can wipe the session of `localhost` thanks to the path `?page=killall`.
 
-## Données de connexion
-Différentes données sont inclues dans la base de données pour pouvoir tester le site. Des commandes ont également été passées avec le compte de l'administrateur.
+## Connection datas
 
-### Compte administrateur
+Different datas are included in the database to be able to try the website. Orders were also placed using the administrator's account.
+
+### Administrator account
+
 - Email : `admin@admin.fr`
 - Mot de passe : `password`
 
-### Compte utilisateur
+### User account
+
 - Email : `user@user.fr`
 - Mot de passe : `password`
 
 ## :memo: License
 
-Ce projet est sous license MIT. Pour plus de détails, consultez le fichier [LICENSE](LICENSE.md).
+This project is under MIT license. For more details, check the [LICENSE](LICENSE.md).
 
-Créé de tout ❤️ par <a href="https://github.com/Raxuis" target="_blank">Raphaël</a> et <a href="https://github.com/BenoitPrmt" target="_blank">Benoît</a>
+Made with ❤️ by <a href="https://github.com/Raxuis" target="_blank">Raphaël</a> and <a href="https://github.com/BenoitPrmt" target="_blank">Benoît</a>
 
 &#xa0;
 
-<a href="#top">Revenir tout en haut</a>
+<a href="#top">Go back to top</a>
