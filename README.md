@@ -60,6 +60,7 @@ The following technologies were used for this project :
 
 - [PHP](https://www.php.net/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [MySQL](https://dev.mysql.com/doc/refman/5.7/en/data-types.html)
 
 ## :white_check_mark: Requirements
 

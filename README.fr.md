@@ -60,6 +60,7 @@ Les technologies suivantes ont été utilisées pour ce projet :
 
 - [PHP](https://www.php.net/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [MySQL](https://dev.mysql.com/doc/refman/5.7/en/data-types.html)
 
 ## :white_check_mark: Requirements
 
@@ -91,13 +92,16 @@ $ composer install
 ⚠️ Pour être sûr que tout fonctionne bien vous pouvez vider la session de `localhost` via la route `?page=killall`.
 
 ## Données de connexion
+
 Différentes données sont inclues dans la base de données pour pouvoir tester le site. Des commandes ont également été passées avec le compte de l'administrateur.
 
 ### Compte administrateur
+
 - Email : `admin@admin.fr`
 - Mot de passe : `password`
 
 ### Compte utilisateur
+
 - Email : `user@user.fr`
 - Mot de passe : `password`
 
