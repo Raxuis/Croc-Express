@@ -8,6 +8,13 @@
     font-family: "Work Sans", sans-serif;
 }
 
+
+html {
+    cursor: none;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 .circle {
     --circle-size: 30px;
     position: fixed;
@@ -29,7 +36,7 @@
 button {
     border: none;
     outline: none;
-    cursor: pointer;
+    cursor: none;
 }
 
 body {
@@ -76,7 +83,7 @@ main {
     background-color: #f97111;
     border-radius: 10px;
     padding: 10px;
-    cursor: pointer;
+    cursor: none;
     transition: 0.3s;
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     font-size: 1em;
@@ -127,7 +134,7 @@ main {
     bottom: 20px;
     border-radius: 10px;
     padding: 10px;
-    cursor: pointer;
+    cursor: none;
     transition: 0.3s;
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     font-size: 1em;
@@ -182,7 +189,7 @@ nav a[href="?page=homepage"]:hover {
 nav img {
     margin-left: 5px;
     height: 3.5em;
-    cursor: pointer;
+    cursor: none;
     user-select: none;
     transition: 0.5s;
 }
@@ -218,7 +225,7 @@ sup {
     text-decoration: none;
     color: #788c82;
     transition: 0.5s;
-    cursor: pointer;
+    cursor: none;
     user-select: none;
 }
 
@@ -270,7 +277,7 @@ nav p:hover .fa-caret-down {
 .fa-caret-down {
     margin-left: 5px;
     transition: 0.5s;
-    cursor: pointer;
+    cursor: none;
 }
 
 .dropdown-main:hover .dropdown-menu {
@@ -347,7 +354,7 @@ select {
     font-size: 18px;
     font-weight: 500;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: none;
     background-color: #d01a1a83;
     transition: 0.5s;
     width: 100%;
@@ -438,7 +445,7 @@ select {
     height: 4rem;
     border: none;
     font-size: 2rem;
-    cursor: pointer;
+    cursor: none;
     background-color: transparent;
 }
 
@@ -458,7 +465,7 @@ select {
 .burger-menu {
     display: none;
     user-select: none;
-    cursor: pointer;
+    cursor: none;
 }
 
 .hidden {
