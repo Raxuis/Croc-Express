@@ -19,7 +19,7 @@ switch (PHP_OS) {
 }
 define('PROJECT_NAME', 'Croc-Express');
 define('DNS', 'http://localhost:8888/');
-define('PATH', PROJECT_NAME . "/public/");
+define('PATH', PROJECT_NAME . '/public/');
 define('BASE_PATH', DNS . PATH);
 define('PATH_IMAGES', BASE_PATH . 'assets/product_images/');
 define('PATH_PRIVATE', DNS . PROJECT_NAME . '/src/');
