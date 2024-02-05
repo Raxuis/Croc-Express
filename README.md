@@ -74,6 +74,13 @@ Before starting :checkered_flag:, you need `composer` and `git` installed.
 2. Collect the database with the example datas in the folder `database/models/`
 3. Drag and drop the file `croc_express.sql` in the database `croc_express` on PHPMyAdmin
 
+## :lock_with_ink_pen: Configuration
+
+### Configure the config file
+
+1. Edit config.example.php with the Database's name (DATABASE) and the Project's name (PROJECT_NAME)
+2. Rename config.example.php to config.php
+
 ## :checkered_flag: Starting
 
 ```bash
