@@ -8,6 +8,20 @@
     font-family: "Work Sans", sans-serif;
 }
 
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    opacity: 0.7;
+    z-index: 10000;
+}
+
 .swal2-icon-content {
     color: #facea8;
 }
