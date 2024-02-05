@@ -10,11 +10,13 @@ buttons.forEach(button => {
     button.addEventListener('mouseover', () => {
         circleElement.style.border = '1px solid #000';
         circleElement.style.boxShadow = '0 0 0 1px #000';
+        circleElement.style.setProperty('--circle-size', '10px');
     });
 
     button.addEventListener('mouseout', () => {
         circleElement.style.border = '1px solid #FFF';
         circleElement.style.boxShadow = '0 0 0 0';
+        circleElement.style.setProperty('--circle-size', '30px');
     });
 });
 window.addEventListener('mousemove', (e) => {
