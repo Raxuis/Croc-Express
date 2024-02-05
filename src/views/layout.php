@@ -124,7 +124,6 @@
     <script src="../src/scripts/burgerMenu.js"></script>
     <script src="../src/scripts/cursorStyle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../src/scripts/sweetAlert.js"></script>
     <script src="<?= PATH_SCRIPTS . 'verify.js' ?>"></script>
 
     <script>
