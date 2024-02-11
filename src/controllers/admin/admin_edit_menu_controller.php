@@ -67,7 +67,7 @@ if (!empty($_POST)) {
                 $menuProductManager->createOne($product);
             }
         }
-        
+
         foreach ($products as $product) {
             if (!in_array($product["id"], $_POST["productList"])) {
                 $menuProductManager->deleteOneByProductId($product["id"], $_POST["id"]);

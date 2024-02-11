@@ -1,7 +1,7 @@
 <h3>Aliments</h3>
 <div class="container">
     <form action="" method="post" class="form">
-        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>" />
         <input type="text" name="name" placeholder="Nom de l'ingrédient">
         <input type="number" name="lipid" min="0" placeholder="Lipides (en grammes)">
         <input type="number" name="protein" min="0" placeholder="Protéines (en grammes)">

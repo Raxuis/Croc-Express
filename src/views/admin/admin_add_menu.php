@@ -1,7 +1,7 @@
 <h3>Ajouter un menu à la carte</h3>
 <div class="container">
     <form action="" method="post" class="form">
-        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>" />
 
         <input type="text" name="name" placeholder="Nom du menu">
         <input type="number" name="price" placeholder="Prix de vente">
@@ -23,7 +23,7 @@
 </div>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#productList').select2();
     });
 </script>

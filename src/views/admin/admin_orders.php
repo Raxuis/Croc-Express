@@ -6,7 +6,7 @@
         <?php foreach ($orders as $order) {
             $coupon = $orderManager->getCouponOfOrder($order["id"]);
             $coupon = $coupon ? $coupon[0] : null;
-            ?>
+        ?>
             <div class="card-orders">
                 <div class="card-header">
                     <h3>Commande n°
@@ -28,8 +28,7 @@
                             <tr>
                                 <th>
                                     <form method='post' action='?page=orders&order_id=<?= $order['id'] ?>'>
-                                        <button type="submit" id='pdf' name="getPdf" class='submit pay'><i
-                                                class="fa-solid fa-file-pdf"></i></button>
+                                        <button type="submit" id='pdf' name="getPdf" class='submit pay'><i class="fa-solid fa-file-pdf"></i></button>
                                     </form>
                                 </th>
                                 <th>Produit</th>
@@ -137,7 +136,7 @@
                         } else {
                             continue;
                         }
-                        ?>
+                    ?>
                         <tr>
                             <?php if (!isset($_POST['getPdf'])) { ?>
                                 <td class="td-images">
@@ -184,6 +183,6 @@
                     </button>
                 </form>
             </div>
-        <?php }
+    <?php }
     } ?>
 </div>

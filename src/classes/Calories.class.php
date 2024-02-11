@@ -14,6 +14,4 @@ class Calories
         $proteinCalories = Calories::calculateCalories($data["protein"], 4);
         return $lipidCalories + $carboCalories + $proteinCalories;
     }
-
-
 }

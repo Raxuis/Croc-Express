@@ -2,16 +2,16 @@
 <div class="container">
     <table>
         <thead>
-        <tr>
-            <th>Référence</th>
-            <th>Commandée le</th>
-            <th>Livrable</th>
-            <th>Livrée le</th>
-            <th>Tax</th>
-            <th>Prix</th>
-        </tr>
+            <tr>
+                <th>Référence</th>
+                <th>Commandée le</th>
+                <th>Livrable</th>
+                <th>Livrée le</th>
+                <th>Tax</th>
+                <th>Prix</th>
+            </tr>
         </thead>
-        <?php foreach ($orders as $order): ?>
+        <?php foreach ($orders as $order) : ?>
             <tr>
                 <td>
                     <?= $order['id'] ?>

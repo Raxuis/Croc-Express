@@ -3,12 +3,12 @@
 <table class='table-cart'>
 
     <thead>
-    <th>ID</th>
-    <th>Nom</th>
-    <th>Lipides</th>
-    <th>Glucides</th>
-    <th>Proteines</th>
-    <th><a href="?page=admin_add_food" title="Add food admin">Nouvel ingrédient</a></th>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Lipides</th>
+        <th>Glucides</th>
+        <th>Proteines</th>
+        <th><a href="?page=admin_add_food" title="Add food admin">Nouvel ingrédient</a></th>
     </thead>
 
     <?php foreach ($allFood as $food) { ?>

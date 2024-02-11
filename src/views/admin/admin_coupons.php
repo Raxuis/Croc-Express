@@ -3,10 +3,10 @@
 <table class="table-coupons">
 
     <thead>
-    <th>ID</th>
-    <th>Nom</th>
-    <th>Réduction</th>
-    <th><a href="?page=admin_add_coupon" title="Add coupon admin">Nouvelle réduction</a></th>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Réduction</th>
+        <th><a href="?page=admin_add_coupon" title="Add coupon admin">Nouvelle réduction</a></th>
     </thead>
 
     <?php foreach ($allCoupons as $coupon) { ?>
@@ -31,8 +31,7 @@
                 </form>
             </td>
         </tr>
-        <?php
+    <?php
     }
     ?>
 </table>
-

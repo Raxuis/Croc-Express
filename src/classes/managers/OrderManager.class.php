@@ -55,8 +55,8 @@ class OrderManager extends Manager
 
     public function markDelivered(int $order_id): void
     {
-        $query = "UPDATE orders 
-        SET is_in_delivery = 0, validated_at = NOW() 
+        $query = "UPDATE orders
+        SET is_in_delivery = 0, validated_at = NOW()
         WHERE id = :order_id";
         $response = $this->bdd->prepare($query);
         $response->execute([

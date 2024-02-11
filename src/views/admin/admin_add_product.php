@@ -2,7 +2,7 @@
 <div class="container">
     <form action="" method="post" class="form" enctype='multipart/form-data'>
 
-        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>" />
 
         <input type="text" name="name" placeholder="Nom du produit">
         <textarea name="description" placeholder="Description"></textarea>
@@ -39,7 +39,7 @@
     </form>
 </div>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#foodList').select2();
     });
 </script>

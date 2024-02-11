@@ -40,7 +40,6 @@ class ProductManager extends Manager
             'isHidden' => (int)$data->getIsHidden(),
             'id' => $data->getId(),
         ]);
-
     }
 
     public function getProductsByCategoryId(int $category_id, bool $onlyNotHidden = false): array

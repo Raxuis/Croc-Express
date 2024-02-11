@@ -2,15 +2,15 @@
 
 <table class='table-cart'>
     <thead>
-    <th>ID</th>
-    <th>Nom</th>
-    <th>Prix de vente</th>
-    <th>Prix d'achat</th>
-    <th>Calories</th>
-    <th>Aliments</th>
-    <th>Ventes</th>
-    <th>Publier</th>
-    <th><a href="?page=admin_add_product" title="Add product admin">Nouveau produit</a></th>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prix de vente</th>
+        <th>Prix d'achat</th>
+        <th>Calories</th>
+        <th>Aliments</th>
+        <th>Ventes</th>
+        <th>Publier</th>
+        <th><a href="?page=admin_add_product" title="Add product admin">Nouveau produit</a></th>
     </thead>
     <?php foreach ($allProducts as $product) { ?>
         <?php

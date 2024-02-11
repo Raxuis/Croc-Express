@@ -40,7 +40,6 @@ if (!empty($_POST)) {
         //    ob_clean();
         header('Location: ?page=admin_categories');
         exit;
-
     }
 }
 

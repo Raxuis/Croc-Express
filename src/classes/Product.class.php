@@ -100,6 +100,4 @@ class Product
     {
         $this->isHidden = (int)$is_hidden;
     }
-
-
 }

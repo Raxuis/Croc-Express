@@ -2,10 +2,10 @@
 
 <table class="table-cart">
     <thead>
-    <th>ID</th>
-    <th>Utilisateur</th>
-    <th>Titre</th>
-    <th>Contenu</th>
+        <th>ID</th>
+        <th>Utilisateur</th>
+        <th>Titre</th>
+        <th>Contenu</th>
     </thead>
     <?php foreach ($allMessages as $message) { ?>
         <?php $currentUser = $userManager->getOne($message['user_id']); ?>

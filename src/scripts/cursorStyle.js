@@ -1,5 +1,6 @@
 const circleElement = document.querySelector('.circle');
 const buttons = document.querySelectorAll('button');
+const inputs = document.querySelectorAll('input');
 const mouse = { x: 0, y: 0 };
 const previousMouse = { x: 0, y: 0 };
 const circle = { x: 0, y: 0 };
@@ -10,16 +11,31 @@ let currentAngle = 0;
 buttons.forEach(button => {
     button.addEventListener('mouseover', () => {
         circleElement.style.border = '1px solid #000';
-        circleElement.style.boxShadow = '0 0 0 1px #000';/* 
+        circleElement.style.boxShadow = '0 0 0 1px #000';/*
         circleElement.style.setProperty('--circle-size', '10px'); */
     });
 
     button.addEventListener('mouseout', () => {
         circleElement.style.border = '1px solid #FFF';
-        circleElement.style.boxShadow = '0 0 0 0';/* 
+        circleElement.style.boxShadow = '0 0 0 0';/*
         circleElement.style.setProperty('--circle-size', '30px'); */
     });
 });
+
+inputs.forEach(input => {
+    input.addEventListener('mouseover', () => {
+        circleElement.style.border = '1px solid #000';
+        circleElement.style.boxShadow = '0 0 0 1px #000';/*
+        circleElement.style.setProperty('--circle-size', '10px'); */
+    });
+
+    input.addEventListener('mouseout', () => {
+        circleElement.style.border = '1px solid #FFF';
+        circleElement.style.boxShadow = '0 0 0 0';/*
+        circleElement.style.setProperty('--circle-size', '30px'); */
+    });
+});
+
 document.addEventListener('mousedown', () => {
     circleElement.style.transitionDuration = '0.3s';
     circleElement.style.border = '1px solid #000';
@@ -44,7 +60,7 @@ const tick = () => {
 
     const translateTransform = `translate(${circle.x}px, ${circle.y}px)`;
 
-    //Squeeze
+    // Squeeze
     const deltaMouseX = mouse.x - previousMouse.x;
     const deltaMouseY = mouse.y - previousMouse.y;
     previousMouse.x = mouse.x;

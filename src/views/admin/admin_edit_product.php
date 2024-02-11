@@ -2,24 +2,23 @@
 <div class="container">
     <form action="" method="post" class="form" enctype='multipart/form-data'>
 
-        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>" />
         <input type="hidden" name="id" value="<?= $product["id"] ?>">
         <input type="text" name="name" placeholder="Nom du produit" value="<?= $product["name"] ?>">
         <textarea name="description" placeholder="Description"><?= $product["description"] ?></textarea>
         <input type="number" min="1" name="price" placeholder="Prix de vente" value="<?= $product["price"] ?>">
-        <input type="number" min="1" name="buyingPrice" placeholder="Coût de production"
-               value="<?= $product["buying_price"] ?>">
+        <input type="number" min="1" name="buyingPrice" placeholder="Coût de production" value="<?= $product["buying_price"] ?>">
 
         <select name="categoryId" id="categoryId">
             <?php foreach ($categories as $category) { ?>
                 <?php if ($category["id"] === $product["category_id"]) { ?>
                     <option value="<?= $category["id"] ?>" selected>
-                <?php } else { ?>
+                    <?php } else { ?>
                     <option value="<?= $category["id"] ?>">
+                    <?php } ?>
+                    <?= $category["name"] ?>
+                    </option>
                 <?php } ?>
-                <?= $category["name"] ?>
-                </option>
-            <?php } ?>
         </select>
 
         <select name="foodList[]" id="foodList" multiple>
@@ -32,13 +31,13 @@
                 }
                 if ($foodSelected) { ?>
                     <option value="<?= $food["id"] ?>" selected>
-                <?php } else { ?>
+                    <?php } else { ?>
                     <option value="<?= $food["id"] ?>">
-                <?php } ?>
+                    <?php } ?>
 
-                <?= $food["name"] ?>
-                </option>
-            <?php } ?>
+                    <?= $food["name"] ?>
+                    </option>
+                <?php } ?>
         </select>
 
         <div class="hidden">
@@ -57,8 +56,7 @@
                 <?php foreach ($allImages as $image) { ?>
                     <div class="image">
                         <input type="hidden" name="currentImages[]" value="<?= $image["id"] ?>">
-                        <img src="<?= PATH_IMAGES . $image["image"] ?>" alt="<?= $product["name"] ?>"
-                             style="width: 3em;">
+                        <img src="<?= PATH_IMAGES . $image["image"] ?>" alt="<?= $product["name"] ?>" style="width: 3em;">
                         <p><?= $image["image"] ?></p>
                         <input type="checkbox" name="imageToDelete[]" value="<?= $image["id"] ?>">
                     </div>
@@ -74,7 +72,7 @@
     </form>
 </div>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#foodList').select2();
     });
 </script>

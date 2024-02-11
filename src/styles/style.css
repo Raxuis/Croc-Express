@@ -1,13 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-
 * {
     margin: 0;
     padding: 0;
-    color: #FFF;
+    color: #fff;
     font-family: "Work Sans", sans-serif;
 }
-
 
 html {
     cursor: none;
@@ -26,7 +24,7 @@ html {
     left: calc(var(--circle-size) / 2 * -1);
     pointer-events: none;
     opacity: 0.7;
-    z-index: 10000;
+    z-index: 100;
 }
 
 .swal2-icon-content {
@@ -47,6 +45,10 @@ main {
     margin: 20px 0 0 20px;
 }
 
+input:hover {
+    cursor: none;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -59,7 +61,6 @@ main {
 .address-hidden {
     display: none;
 }
-
 
 .card,
 .card-products,
@@ -79,7 +80,7 @@ main {
 
 .products-menu {
     position: absolute;
-    color: #FFF;
+    color: #fff;
     background-color: #f97111;
     border-radius: 10px;
     padding: 10px;
@@ -112,7 +113,6 @@ main {
     width: 100%;
     border-radius: 10px;
     user-select: none;
-
 }
 
 .card-header {
@@ -128,7 +128,7 @@ main {
 
 .add-cart-button {
     position: absolute;
-    color: #FFF;
+    color: #fff;
     background-color: #f97111;
     right: 20px;
     bottom: 20px;
@@ -142,9 +142,8 @@ main {
 
 .add-cart-button:hover {
     color: #f97111;
-    background-color: #FFF;
+    background-color: #fff;
 }
-
 
 #copyrights {
     font-size: 0.8em;
@@ -197,10 +196,10 @@ nav img {
 nav img:hover,
 .remove-cart i:hover,
 .add-cart i:hover {
-    transform: scale(1.2)
+    transform: scale(1.2);
 }
 
-nav>ul {
+nav > ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
@@ -242,12 +241,12 @@ a:hover,
 nav p:hover,
 nav i:hover,
 nav sup:hover {
-    color: #FFF;
+    color: #fff;
 }
 
 nav a:hover .fa-caret-down {
     transform: rotate(180deg);
-    color: #FFF;
+    color: #fff;
 }
 
 .fa-circle-info {
@@ -270,9 +269,8 @@ a:hover .fa-backward {
 
 nav p:hover .fa-caret-down {
     transform: rotate(180deg);
-    color: #FFF;
+    color: #fff;
 }
-
 
 .fa-caret-down {
     margin-left: 5px;
@@ -318,7 +316,7 @@ option {
 }
 
 .file #image {
-    color: #FFF;
+    color: #fff;
 }
 
 h3 {
@@ -335,7 +333,7 @@ h3 {
     padding: 5px 0 5px 5px;
     width: 100%;
     border-radius: 5px;
-    caret-color: #F00;
+    caret-color: #f00;
     color: #000;
 }
 
@@ -343,10 +341,9 @@ select {
     padding: 5px 0 5px 5px;
     width: 100%;
     border-radius: 5px;
-    caret-color: #F00;
+    caret-color: #f00;
     color: #000;
 }
-
 
 .submit {
     width: 100%;
@@ -361,7 +358,7 @@ select {
 }
 
 .submit:hover {
-    background-color: #FFF;
+    background-color: #fff;
     color: #d01a1a83;
 }
 
@@ -390,7 +387,7 @@ select {
 
 .orange-button:hover,
 .products-menu:hover {
-    background-color: #FFF;
+    background-color: #fff;
     color: #f97111;
 }
 
@@ -451,7 +448,7 @@ select {
 
 .carousel-arrows {
     user-select: none;
-    color: #FFF;
+    color: #fff;
 }
 
 .slide-arrow-prev {
@@ -544,7 +541,6 @@ td i {
     padding: 10px;
 }
 
-
 thead th {
     padding: 10px;
     background-color: #52525b;
@@ -555,7 +551,7 @@ thead th a {
     color: #f6720d;
     text-decoration: none;
     display: inline-block;
-    transition: transform .3s ease-out;
+    transition: transform 0.3s ease-out;
 }
 
 thead th a:hover {
@@ -583,7 +579,6 @@ thead th a:hover {
     justify-content: flex-start;
 }
 
-
 .row-body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -601,10 +596,8 @@ thead th a:hover {
 }
 
 canvas {
-
     width: 800px !important;
     height: 400px !important;
-
 }
 
 .chart {
@@ -699,7 +692,6 @@ canvas {
     .td-images img {
         object-fit: cover;
         width: 2rem;
-
     }
 
     table * {

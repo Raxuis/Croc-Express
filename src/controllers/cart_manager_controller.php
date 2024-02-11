@@ -38,7 +38,6 @@ if (!empty($_GET["action"])) {
                 "totalPrice" => $_SESSION["cart"][$_GET["type"]][$_GET["id"]]["totalPrice"] - $_GET["price"]
             ];
         }
-
     } else if ($_GET["action"] === "set_price" && !empty($_GET["price"])) {
         $_SESSION["cart"][$_GET["type"]][$_GET["id"]] = [
             "quantity" => $_SESSION["cart"][$_GET["type"]][$_GET["id"]]["quantity"],

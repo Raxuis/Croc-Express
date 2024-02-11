@@ -8,12 +8,9 @@
     <link rel="stylesheet" href="../src/styles/style.css">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -25,8 +22,8 @@
         <nav>
             <a href="?page=homepage"><img src="./assets/favicon.ico" alt='favicon'>Croc Express</a>
             <ul class="nav-menu">
-                <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true): ?>
-                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
+                <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true) : ?>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1) : ?>
                         <li class="dropdown-main">
                             <p>Administration<i class="fa-solid fa-caret-down"></i></p>
                             <ul class="dropdown-menu">
@@ -58,8 +55,7 @@
                         </li>
                     <?php endif; ?>
                     <li class="dropdown-main"><a href="?page=edit_profile" class="nav-links" title="Edit Profile">
-                            <?= isset($_SESSION['name']) ? htmlspecialchars($_SESSION['name']) : 'Anonymous' ?><i
-                                class="fa-solid fa-caret-down"></i>
+                            <?= isset($_SESSION['name']) ? htmlspecialchars($_SESSION['name']) : 'Anonymous' ?><i class="fa-solid fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="?page=edit_profile" class="nav-links" title="Edit Profile">Modifier mon profil</a>
@@ -75,7 +71,7 @@
                             <i class="fa-solid fa-bars" id="burger-icon"></i>
                         </a>
                     </div>
-                <?php else: ?>
+                <?php else : ?>
                     <li><a href="?page=login" class="nav-links not-logged" title="Log">Se connecter</a></li>
                     <li><a href="?page=register" class="nav-links not-logged" title="Register">S'inscrire</a></li>
                     <div class="burger-menu">
@@ -118,9 +114,7 @@
             <p id="copyrights">© 2024 Raphaël | Benoît, CODA-Orléans. All Rights Reserved</p>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../src/scripts/burgerMenu.js"></script>
     <script src="../src/scripts/cursorStyle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -132,7 +126,6 @@
         <?php }
         unset($_SESSION['status']);
         unset($_SESSION['message']); ?>
-
     </script>
 </body>
 

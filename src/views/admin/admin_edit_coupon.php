@@ -3,7 +3,7 @@
 <div class="container">
     <form action="" method="post" class="form">
 
-        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>" />
         <input type="hidden" name="id" value="<?= $coupon["id"] ?>">
 
         <label for="code">Code de réduction</label>

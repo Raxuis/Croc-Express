@@ -18,8 +18,7 @@
         type: 'line',
         data: {
             labels: date,
-            datasets: [
-                {
+            datasets: [{
                     label: "Chiffre d'affaires",
                     data: price.length >= 7 ? price.slice(-7) : price,
                     borderColor: '#FFFFFF',
@@ -68,4 +67,3 @@
         }
     });
 </script>
-

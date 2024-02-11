@@ -101,5 +101,4 @@ class User
     {
         $this->createdAt = $created_at;
     }
-
 }

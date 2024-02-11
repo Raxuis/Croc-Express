@@ -50,9 +50,9 @@ class OrderProductManager extends Manager
         INNER JOIN orders_products as op ON op.product_id = p.id
         INNER JOIN orders as o ON o.id = op.order_id
         WHERE o.id = :order_id AND op.type = 'product')
-        
+
         UNION ALL
-        
+
         (SELECT m.id, m.name, m.price, 'no_buying_price' as buying_price, 'Menu' as image, op.price as total_price, op.type, o.is_in_delivery, op.quantity
         FROM menus as m
         INNER JOIN orders_products as op ON op.product_id = m.id

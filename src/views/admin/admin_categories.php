@@ -3,11 +3,11 @@
 <table class="table-coupons">
 
     <thead>
-    <th>ID</th>
-    <th>Nom</th>
-    <th>Description</th>
-    <th>Visibilité</th>
-    <th><a href="?page=admin_add_category" title="Add category admin">Nouvelle catégorie</a></th>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Visibilité</th>
+        <th><a href="?page=admin_add_category" title="Add category admin">Nouvelle catégorie</a></th>
     </thead>
 
     <?php foreach ($allCategories as $category) { ?>
@@ -24,7 +24,7 @@
 
             <td>
                 <form method="post">
-                    <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+                    <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>" />
                     <input type="hidden" name="id" value="<?= $category['id'] ?>">
                     <button name="show_hide" type="submit" class="submit pay orange-button">
                         <?= $category['is_hidden'] ? "Afficher" : "Masquer" ?>
@@ -38,13 +38,12 @@
                 </form>
                 <form method="post">
                     <input type="hidden" name="id" value="<?= $category['id'] ?>">
-                    <button id="delete-<?= $category['id'] ?>" name="delete" type="submit"
-                            class="delete submit pay orange-button">Supprimer
+                    <button id="delete-<?= $category['id'] ?>" name="delete" type="submit" class="delete submit pay orange-button">Supprimer
                     </button>
                 </form>
             </td>
         </tr>
-        <?php
+    <?php
     }
     ?>
 </table>

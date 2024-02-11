@@ -100,6 +100,4 @@ class Food
     {
         $this->isHidden = (int)$isHidden;
     }
-
-
 }

@@ -83,5 +83,4 @@ class Message
     {
         $this->createdAt = $createdAt;
     }
-
 }

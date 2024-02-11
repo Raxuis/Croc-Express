@@ -1,7 +1,7 @@
 <h3>Page de création de compte</h3>
 <div class="container">
     <form action="" method="post" class="form">
-        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>"/>
+        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>" />
         <label for="firstname">
             Prénom:
         </label>
@@ -19,7 +19,7 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         verify(document.getElementById("password-confirmation"), document.getElementById("password-confirmation-label"));
     });
 </script>

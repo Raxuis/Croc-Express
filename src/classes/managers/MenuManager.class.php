@@ -34,15 +34,13 @@ class MenuManager extends Manager
             'isHidden' => (int)$data->getIsHidden(),
             'id' => $data->getId(),
         ]);
-
-
     }
 
     public function getAllProductsFromMenu(int $data): array
     {
-        $query = "SELECT p.* from products as p 
-        INNER JOIN menus_products as mp ON mp.product_id = p.id 
-        INNER JOIN menus as m ON mp.menu_id = m.id 
+        $query = "SELECT p.* from products as p
+        INNER JOIN menus_products as mp ON mp.product_id = p.id
+        INNER JOIN menus as m ON mp.menu_id = m.id
         WHERE m.id = :menu_id;
         ";
         $response = $this->bdd->prepare($query);

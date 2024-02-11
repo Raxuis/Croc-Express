@@ -1,13 +1,13 @@
 <h3>Gestions des menus à la carte</h3>
 <table class='table-cart'>
     <thead>
-    <th>ID</th>
-    <th>Nom</th>
-    <th>Prix de vente</th>
-    <th>Produits</th>
-    <th>Ventes</th>
-    <th>Publier</th>
-    <th><a href="?page=admin_add_menu" title="Add menu admin">Nouveau menu</a></th>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prix de vente</th>
+        <th>Produits</th>
+        <th>Ventes</th>
+        <th>Publier</th>
+        <th><a href="?page=admin_add_menu" title="Add menu admin">Nouveau menu</a></th>
     </thead>
     <?php foreach ($menus as $menu) { ?>
         <?php $products = $menusManager->getAllProductsFromMenu($menu['id']) ?>

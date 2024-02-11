@@ -33,7 +33,6 @@ class CouponsManager extends Manager
             'reduction' => $data->getReduction(),
             'id' => $data->getId()
         ]);
-
     }
 
     public function getOneByName(string $coupon): array|bool

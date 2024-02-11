@@ -57,5 +57,4 @@ class ProductFood
     {
         $this->foodId = $foodId;
     }
-
 }

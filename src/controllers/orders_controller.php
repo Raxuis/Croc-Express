@@ -42,8 +42,6 @@ if (isset($_GET['page'])) {
             } catch (Exception $e) {
                 echo $e->getMessage();
             }
-
-
         }
     }
 }

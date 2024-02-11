@@ -16,20 +16,18 @@
         type: 'line',
         data: {
             labels: productsSold,
-            datasets: [
-                {
-                    label: "Ventes",
-                    data: quantitySold,
-                    borderColor: '#FFFFFF',
-                    borderWidth: 1,
-                    fill: false,
-                    pointBackgroundColor: '#FFFFFF',
-                    backgroundColor: '#FFFFFF',
-                    pointBorderColor: '#FFFFFF',
-                    pointHoverBackgroundColor: '#FFFFFF',
-                    pointHoverBorderColor: '#FFFFFF',
-                }
-            ],
+            datasets: [{
+                label: "Ventes",
+                data: quantitySold,
+                borderColor: '#FFFFFF',
+                borderWidth: 1,
+                fill: false,
+                pointBackgroundColor: '#FFFFFF',
+                backgroundColor: '#FFFFFF',
+                pointBorderColor: '#FFFFFF',
+                pointHoverBackgroundColor: '#FFFFFF',
+                pointHoverBorderColor: '#FFFFFF',
+            }],
         },
         options: {
             responsive: true,
@@ -54,4 +52,3 @@
         }
     });
 </script>
-
