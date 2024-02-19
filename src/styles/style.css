@@ -78,10 +78,6 @@ main {
     width: 30em;
 }
 
-.card-products {
-    height: 60%;
-}
-
 .current-image {
     display: flex;
 }
