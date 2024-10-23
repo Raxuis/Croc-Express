@@ -560,9 +560,10 @@ thead th a:hover {
 
 
 .row-body {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
 }
 
 .row-title {
@@ -576,7 +577,6 @@ thead th a:hover {
 }
 
 canvas {
-
     width: 800px !important;
     height: 400px !important;
 
@@ -701,4 +701,17 @@ canvas {
     .address-form {
         width: 70%;
     }
+}
+
+
+@media (max-width: 1024px) {
+  .row-body {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .row-body {
+      grid-template-columns: 1fr;
+  }
 }
